@@ -1,0 +1,250 @@
+{
+  "catalog_prevalence": {
+    "average_rating": {
+      "ge_4_rate": 0.6736,
+      "present_rate": 1.0
+    },
+    "description_present_rate": 0.52226,
+    "feature_count": {
+      "ge_5_rate": 0.64818,
+      "mean": 5.01684,
+      "median": 5.0
+    },
+    "n": 50000,
+    "price_present_rate": 0.21054,
+    "rating_number": {
+      "mean": 241.40886,
+      "median": 12.0
+    }
+  },
+  "conditional_residual_signal_beyond_rating_number": {
+    "average_rating_ge_4": {
+      "active_under_preregistered_rule": false,
+      "by_popularity_decile": [
+        {
+          "catalog_n": 3049,
+          "conditional_log_odds_ratio": 0.553715,
+          "popularity_decile": 2,
+          "target_n": 1
+        },
+        {
+          "catalog_n": 5487,
+          "conditional_log_odds_ratio": -0.122237,
+          "popularity_decile": 4,
+          "target_n": 2
+        },
+        {
+          "catalog_n": 4993,
+          "conditional_log_odds_ratio": -1.601969,
+          "popularity_decile": 6,
+          "target_n": 1
+        },
+        {
+          "catalog_n": 5048,
+          "conditional_log_odds_ratio": -0.405534,
+          "popularity_decile": 7,
+          "target_n": 3
+        },
+        {
+          "catalog_n": 5052,
+          "conditional_log_odds_ratio": 0.053292,
+          "popularity_decile": 8,
+          "target_n": 13
+        },
+        {
+          "catalog_n": 5007,
+          "conditional_log_odds_ratio": 0.858945,
+          "popularity_decile": 9,
+          "target_n": 130
+        }
+      ],
+      "derived_runtime_weight": 0.0,
+      "median_conditional_log_odds_ratio": -0.034472,
+      "nonempty_target_popularity_deciles": 6,
+      "same_sign_in_at_least_70_percent_of_nonempty_popularity_deciles": false,
+      "same_sign_required": 5
+    },
+    "description_present": {
+      "active_under_preregistered_rule": false,
+      "by_popularity_decile": [
+        {
+          "catalog_n": 3049,
+          "conditional_log_odds_ratio": 1.210861,
+          "popularity_decile": 2,
+          "target_n": 1
+        },
+        {
+          "catalog_n": 5487,
+          "conditional_log_odds_ratio": -0.001822,
+          "popularity_decile": 4,
+          "target_n": 2
+        },
+        {
+          "catalog_n": 4993,
+          "conditional_log_odds_ratio": 0.877856,
+          "popularity_decile": 6,
+          "target_n": 1
+        },
+        {
+          "catalog_n": 5048,
+          "conditional_log_odds_ratio": 1.591279,
+          "popularity_decile": 7,
+          "target_n": 3
+        },
+        {
+          "catalog_n": 5052,
+          "conditional_log_odds_ratio": 0.171781,
+          "popularity_decile": 8,
+          "target_n": 13
+        },
+        {
+          "catalog_n": 5007,
+          "conditional_log_odds_ratio": -0.195444,
+          "popularity_decile": 9,
+          "target_n": 130
+        }
+      ],
+      "derived_runtime_weight": 0.0,
+      "median_conditional_log_odds_ratio": 0.524819,
+      "nonempty_target_popularity_deciles": 6,
+      "same_sign_in_at_least_70_percent_of_nonempty_popularity_deciles": false,
+      "same_sign_required": 5
+    },
+    "feature_count_ge_5": {
+      "active_under_preregistered_rule": true,
+      "by_popularity_decile": [
+        {
+          "catalog_n": 3049,
+          "conditional_log_odds_ratio": 1.15174,
+          "popularity_decile": 2,
+          "target_n": 1
+        },
+        {
+          "catalog_n": 5487,
+          "conditional_log_odds_ratio": 1.37181,
+          "popularity_decile": 4,
+          "target_n": 2
+        },
+        {
+          "catalog_n": 4993,
+          "conditional_log_odds_ratio": 0.149358,
+          "popularity_decile": 6,
+          "target_n": 1
+        },
+        {
+          "catalog_n": 5048,
+          "conditional_log_odds_ratio": 0.614058,
+          "popularity_decile": 7,
+          "target_n": 3
+        },
+        {
+          "catalog_n": 5052,
+          "conditional_log_odds_ratio": -0.829549,
+          "popularity_decile": 8,
+          "target_n": 13
+        },
+        {
+          "catalog_n": 5007,
+          "conditional_log_odds_ratio": 0.626424,
+          "popularity_decile": 9,
+          "target_n": 130
+        }
+      ],
+      "derived_runtime_weight": 0.062024,
+      "median_conditional_log_odds_ratio": 0.620241,
+      "nonempty_target_popularity_deciles": 6,
+      "same_sign_in_at_least_70_percent_of_nonempty_popularity_deciles": true,
+      "same_sign_required": 5
+    },
+    "price_present": {
+      "active_under_preregistered_rule": true,
+      "by_popularity_decile": [
+        {
+          "catalog_n": 3049,
+          "conditional_log_odds_ratio": 2.753186,
+          "popularity_decile": 2,
+          "target_n": 1
+        },
+        {
+          "catalog_n": 5487,
+          "conditional_log_odds_ratio": 3.088384,
+          "popularity_decile": 4,
+          "target_n": 2
+        },
+        {
+          "catalog_n": 4993,
+          "conditional_log_odds_ratio": 2.322958,
+          "popularity_decile": 6,
+          "target_n": 1
+        },
+        {
+          "catalog_n": 5048,
+          "conditional_log_odds_ratio": 3.05591,
+          "popularity_decile": 7,
+          "target_n": 3
+        },
+        {
+          "catalog_n": 5052,
+          "conditional_log_odds_ratio": 3.299404,
+          "popularity_decile": 8,
+          "target_n": 13
+        },
+        {
+          "catalog_n": 5007,
+          "conditional_log_odds_ratio": 2.778825,
+          "popularity_decile": 9,
+          "target_n": 130
+        }
+      ],
+      "derived_runtime_weight": 0.291737,
+      "median_conditional_log_odds_ratio": 2.917368,
+      "nonempty_target_popularity_deciles": 6,
+      "same_sign_in_at_least_70_percent_of_nonempty_popularity_deciles": true,
+      "same_sign_required": 5
+    }
+  },
+  "derived_weights": {
+    "average_rating_ge_4": 0.0,
+    "description_present": 0.0,
+    "feature_count_ge_5": 0.062024,
+    "price_present": 0.291737
+  },
+  "development_target_prevalence": {
+    "average_rating": {
+      "ge_4_rate": 0.926667,
+      "present_rate": 1.0
+    },
+    "description_present_rate": 0.466667,
+    "feature_count": {
+      "ge_5_rate": 0.946667,
+      "mean": 7.66,
+      "median": 8.0
+    },
+    "n": 150,
+    "price_present_rate": 0.893333,
+    "rating_number": {
+      "mean": 17169.766667,
+      "median": 6290.0
+    }
+  },
+  "diagnostic_discrimination_not_a_runtime_model": {
+    "auc_lift_from_static_fields": 0.021578,
+    "balanced_rows": 300,
+    "five_fold_auc_popularity_only": 0.954778,
+    "five_fold_auc_popularity_plus_static_fields": 0.976356,
+    "target_rows": 150
+  },
+  "existing_popularity_control": "K006C popularity_order=rrf, rating_number order conditioned by catalog deciles",
+  "experiment": "M002_catalog_factorized_prior_audit",
+  "next_action": "do not create or run a challenger",
+  "no_holdout": true,
+  "pre_registered_challenger_rule": {
+    "activation": "at least two static fields pass stable conditional direction and AUC lift >= .05",
+    "candidate_membership": "unchanged; adjustment is before existing RRF and hard safety only",
+    "conditional_field_activation": "median conditional log odds magnitude >= log(1.2), same sign in >=70% of nonempty target popularity deciles (minimum three)",
+    "separate_development_gate": "score delta >= .003, no HR loss, paired bootstrap lower CI > 0",
+    "weight_formula": "clip(0.10 * median conditional log odds, -0.30, +0.30)"
+  },
+  "residual_signal_gate_passed": false,
+  "split": "development_only"
+}

@@ -1,0 +1,966 @@
+{
+  "class_oracle": {
+    "A_relevance": {
+      "candidate_group_mrr_if_fixed": 0.917677,
+      "count": 29,
+      "rank1_gain": 29
+    },
+    "B_propensity": {
+      "candidate_group_mrr_if_fixed": 0.868661,
+      "count": 17,
+      "rank1_gain": 17
+    },
+    "E_shortlist_miss": {
+      "candidate_group_mrr_if_fixed": null,
+      "count": 1,
+      "rank1_gain": null
+    }
+  },
+  "classification_counts": {
+    "A_relevance": 29,
+    "B_propensity": 17,
+    "E_shortlist_miss": 1
+  },
+  "e060_oof_candidate_group_mrr": 0.786338,
+  "e060_oof_rank1": 103,
+  "experiment": "E060_residual_error_audit",
+  "headroom_flags": {
+    "fraction_popularity_favors_target": 0.3043,
+    "fraction_relevance_favors_target": 0.2174,
+    "residual_non_rank1": 46,
+    "target_better_category_rank_than_top1": 5,
+    "target_more_popular_than_top1": 14,
+    "target_more_relevant_than_top1": 10
+  },
+  "holdout_used": false,
+  "missing_sessions": [
+    "public_0035"
+  ],
+  "n_groups": 149,
+  "n_missing_shortlist": 1,
+  "n_residual_non_rank1": 46,
+  "residual_rows": [
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.0,
+        "propensity": 0.201711,
+        "relevance": -0.473895
+      },
+      "culprit_group": "relevance",
+      "fold": 3,
+      "logit_gap": -0.272184,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0027",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": true,
+      "target_more_relevant": false,
+      "target_rank": 2,
+      "turn": 2
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.0,
+        "propensity": 1.254714,
+        "relevance": -1.310202
+      },
+      "culprit_group": "relevance",
+      "fold": 0,
+      "logit_gap": -0.055487,
+      "opening_category_path": "boys pants",
+      "opening_category_pool_size": 8,
+      "sample_id": "public_0037",
+      "scenario": "browsing",
+      "target_better_category_rank": false,
+      "target_more_popular": true,
+      "target_more_relevant": false,
+      "target_rank": 2,
+      "turn": 1
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -0.881099,
+        "relevance": -0.105387
+      },
+      "culprit_group": "propensity",
+      "fold": 3,
+      "logit_gap": -0.986486,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0074",
+      "scenario": "browsing",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": true,
+      "target_rank": 2,
+      "turn": 2
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": -0.053771,
+        "propensity": -0.417158,
+        "relevance": -0.334907
+      },
+      "culprit_group": "propensity",
+      "fold": 0,
+      "logit_gap": -0.805836,
+      "opening_category_path": "underwear undershirts",
+      "opening_category_pool_size": 46,
+      "sample_id": "public_0081",
+      "scenario": "browsing",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": true,
+      "target_rank": 2,
+      "turn": 1
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -0.195683,
+        "relevance": -0.098754
+      },
+      "culprit_group": "propensity",
+      "fold": 1,
+      "logit_gap": -0.294437,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0083",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": true,
+      "target_rank": 2,
+      "turn": 2
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": -0.023486,
+        "propensity": 0.202868,
+        "relevance": -1.720574
+      },
+      "culprit_group": "relevance",
+      "fold": 4,
+      "logit_gap": -1.541192,
+      "opening_category_path": "panties briefs",
+      "opening_category_pool_size": 44,
+      "sample_id": "public_0093",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 2,
+      "turn": 1
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 1.200897,
+        "propensity": -0.642865,
+        "relevance": -1.167945
+      },
+      "culprit_group": "relevance",
+      "fold": 3,
+      "logit_gap": -0.609912,
+      "opening_category_path": "women leggings",
+      "opening_category_pool_size": 107,
+      "sample_id": "public_0095",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 2,
+      "turn": 2
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -0.412088,
+        "relevance": -1.373361
+      },
+      "culprit_group": "relevance",
+      "fold": 4,
+      "logit_gap": -1.785449,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0096",
+      "scenario": "intent_override",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 2,
+      "turn": 3
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -0.325417,
+        "relevance": -0.510994
+      },
+      "culprit_group": "relevance",
+      "fold": 2,
+      "logit_gap": -0.83641,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0120",
+      "scenario": "browsing",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 2,
+      "turn": 3
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.0,
+        "propensity": 0.427567,
+        "relevance": -0.921751
+      },
+      "culprit_group": "relevance",
+      "fold": 4,
+      "logit_gap": -0.494184,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0136",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": true,
+      "target_more_relevant": false,
+      "target_rank": 2,
+      "turn": 1
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.0,
+        "propensity": 1.142563,
+        "relevance": -1.529101
+      },
+      "culprit_group": "relevance",
+      "fold": 0,
+      "logit_gap": -0.386537,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0138",
+      "scenario": "browsing",
+      "target_better_category_rank": false,
+      "target_more_popular": true,
+      "target_more_relevant": false,
+      "target_rank": 2,
+      "turn": 2
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.0,
+        "propensity": 0.535967,
+        "relevance": -0.650725
+      },
+      "culprit_group": "relevance",
+      "fold": 0,
+      "logit_gap": -0.114758,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0145",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": true,
+      "target_more_relevant": false,
+      "target_rank": 2,
+      "turn": 2
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -0.959649,
+        "relevance": 0.442179
+      },
+      "culprit_group": "propensity",
+      "fold": 0,
+      "logit_gap": -0.51747,
+      "opening_category_path": "women dresses",
+      "opening_category_pool_size": 87,
+      "sample_id": "public_0146",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": true,
+      "target_rank": 2,
+      "turn": 2
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": -0.022174,
+        "propensity": -0.247281,
+        "relevance": -0.389057
+      },
+      "culprit_group": "relevance",
+      "fold": 2,
+      "logit_gap": -0.658512,
+      "opening_category_path": "panties bikinis",
+      "opening_category_pool_size": 24,
+      "sample_id": "public_0148",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 2,
+      "turn": 1
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -0.239818,
+        "relevance": -0.258716
+      },
+      "culprit_group": "relevance",
+      "fold": 3,
+      "logit_gap": -0.498535,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0157",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 2,
+      "turn": 1
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": 1.642072,
+        "propensity": -2.570297,
+        "relevance": 0.105443
+      },
+      "culprit_group": "propensity",
+      "fold": 4,
+      "logit_gap": -0.822782,
+      "opening_category_path": "boots rain",
+      "opening_category_pool_size": 2,
+      "sample_id": "public_0166",
+      "scenario": "intent_override",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": true,
+      "target_rank": 2,
+      "turn": 4
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.017475,
+        "propensity": 0.215219,
+        "relevance": -0.602506
+      },
+      "culprit_group": "relevance",
+      "fold": 3,
+      "logit_gap": -0.369812,
+      "opening_category_path": "sets tracksuits",
+      "opening_category_pool_size": 84,
+      "sample_id": "public_0181",
+      "scenario": "browsing",
+      "target_better_category_rank": true,
+      "target_more_popular": true,
+      "target_more_relevant": false,
+      "target_rank": 2,
+      "turn": 1
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.0,
+        "propensity": 0.72248,
+        "relevance": -1.242164
+      },
+      "culprit_group": "relevance",
+      "fold": 2,
+      "logit_gap": -0.519683,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0087",
+      "scenario": "browsing",
+      "target_better_category_rank": false,
+      "target_more_popular": true,
+      "target_more_relevant": false,
+      "target_rank": 3,
+      "turn": 3
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": -0.108566,
+        "propensity": -0.592412,
+        "relevance": -1.164801
+      },
+      "culprit_group": "relevance",
+      "fold": 3,
+      "logit_gap": -1.865779,
+      "opening_category_path": "piercing jewelry screws",
+      "opening_category_pool_size": 14,
+      "sample_id": "public_0141",
+      "scenario": "browsing",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 3,
+      "turn": 1
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -0.308657,
+        "relevance": -0.278804
+      },
+      "culprit_group": "propensity",
+      "fold": 2,
+      "logit_gap": -0.587461,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0163",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 3,
+      "turn": 1
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": -0.012356,
+        "propensity": -0.131153,
+        "relevance": -1.41276
+      },
+      "culprit_group": "relevance",
+      "fold": 1,
+      "logit_gap": -1.556269,
+      "opening_category_path": "athletic water shoes",
+      "opening_category_pool_size": 168,
+      "sample_id": "public_0173",
+      "scenario": "browsing",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 3,
+      "turn": 2
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": 0.012356,
+        "propensity": -1.237702,
+        "relevance": 0.368732
+      },
+      "culprit_group": "propensity",
+      "fold": 1,
+      "logit_gap": -0.856614,
+      "opening_category_path": "luggage travel gear waist packs",
+      "opening_category_pool_size": 26,
+      "sample_id": "public_0176",
+      "scenario": "browsing",
+      "target_better_category_rank": true,
+      "target_more_popular": true,
+      "target_more_relevant": false,
+      "target_rank": 3,
+      "turn": 1
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.035145,
+        "propensity": 0.320558,
+        "relevance": -1.035703
+      },
+      "culprit_group": "relevance",
+      "fold": 2,
+      "logit_gap": -0.680001,
+      "opening_category_path": "shorts denim",
+      "opening_category_pool_size": 41,
+      "sample_id": "public_0189",
+      "scenario": "buying",
+      "target_better_category_rank": true,
+      "target_more_popular": true,
+      "target_more_relevant": false,
+      "target_rank": 3,
+      "turn": 1
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.0,
+        "propensity": 0.230586,
+        "relevance": -1.404251
+      },
+      "culprit_group": "relevance",
+      "fold": 2,
+      "logit_gap": -1.173665,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0198",
+      "scenario": "intent_override",
+      "target_better_category_rank": false,
+      "target_more_popular": true,
+      "target_more_relevant": false,
+      "target_rank": 3,
+      "turn": 4
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.022174,
+        "propensity": 0.274401,
+        "relevance": -1.977595
+      },
+      "culprit_group": "relevance",
+      "fold": 2,
+      "logit_gap": -1.68102,
+      "opening_category_path": "athletic soccer",
+      "opening_category_pool_size": 28,
+      "sample_id": "public_0048",
+      "scenario": "browsing",
+      "target_better_category_rank": true,
+      "target_more_popular": true,
+      "target_more_relevant": false,
+      "target_rank": 4,
+      "turn": 1
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -1.658085,
+        "relevance": 0.721799
+      },
+      "culprit_group": "propensity",
+      "fold": 4,
+      "logit_gap": -0.936286,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0068",
+      "scenario": "intent_override",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": true,
+      "target_rank": 4,
+      "turn": 3
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": -0.252083,
+        "propensity": -1.464193,
+        "relevance": 0.386547
+      },
+      "culprit_group": "propensity",
+      "fold": 3,
+      "logit_gap": -1.329728,
+      "opening_category_path": "watches watch bands",
+      "opening_category_pool_size": 93,
+      "sample_id": "public_0164",
+      "scenario": "browsing",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": true,
+      "target_rank": 4,
+      "turn": 1
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -0.891021,
+        "relevance": -0.499089
+      },
+      "culprit_group": "propensity",
+      "fold": 4,
+      "logit_gap": -1.39011,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0172",
+      "scenario": "browsing",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": true,
+      "target_rank": 4,
+      "turn": 2
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -0.619724,
+        "relevance": -0.922891
+      },
+      "culprit_group": "relevance",
+      "fold": 2,
+      "logit_gap": -1.542615,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0144",
+      "scenario": "intent_override",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 5,
+      "turn": 4
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": -0.025541,
+        "propensity": -0.241958,
+        "relevance": -1.598803
+      },
+      "culprit_group": "relevance",
+      "fold": 4,
+      "logit_gap": -1.866302,
+      "opening_category_path": "fashion combat",
+      "opening_category_pool_size": 109,
+      "sample_id": "public_0170",
+      "scenario": "browsing",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 5,
+      "turn": 1
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -1.117615,
+        "relevance": 0.325688
+      },
+      "culprit_group": "propensity",
+      "fold": 0,
+      "logit_gap": -0.791927,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0183",
+      "scenario": "intent_override",
+      "target_better_category_rank": false,
+      "target_more_popular": true,
+      "target_more_relevant": false,
+      "target_rank": 5,
+      "turn": 4
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -2.267051,
+        "relevance": 0.343038
+      },
+      "culprit_group": "propensity",
+      "fold": 1,
+      "logit_gap": -1.924013,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0029",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": true,
+      "target_rank": 6,
+      "turn": 2
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": -0.121623,
+        "propensity": -0.518727,
+        "relevance": -0.840175
+      },
+      "culprit_group": "relevance",
+      "fold": 0,
+      "logit_gap": -1.480525,
+      "opening_category_path": "bras sports bras",
+      "opening_category_pool_size": 166,
+      "sample_id": "public_0167",
+      "scenario": "browsing",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 6,
+      "turn": 1
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": -0.107543,
+        "propensity": -0.750961,
+        "relevance": -0.926385
+      },
+      "culprit_group": "relevance",
+      "fold": 0,
+      "logit_gap": -1.784889,
+      "opening_category_path": "bikinis sets",
+      "opening_category_pool_size": 197,
+      "sample_id": "public_0171",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 6,
+      "turn": 1
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -0.529281,
+        "relevance": -2.048373
+      },
+      "culprit_group": "relevance",
+      "fold": 2,
+      "logit_gap": -2.577654,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0002",
+      "scenario": "intent_override",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 7,
+      "turn": 3
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 1.298179,
+        "propensity": -0.891209,
+        "relevance": -2.121114
+      },
+      "culprit_group": "relevance",
+      "fold": 0,
+      "logit_gap": -1.714144,
+      "opening_category_path": "women hoodies",
+      "opening_category_pool_size": 64,
+      "sample_id": "public_0076",
+      "scenario": "browsing",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 7,
+      "turn": 3
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -0.161043,
+        "relevance": -1.546452
+      },
+      "culprit_group": "relevance",
+      "fold": 3,
+      "logit_gap": -1.707495,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0200",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": true,
+      "target_more_relevant": false,
+      "target_rank": 7,
+      "turn": 1
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 1.255623,
+        "propensity": -1.113454,
+        "relevance": -1.849181
+      },
+      "culprit_group": "relevance",
+      "fold": 4,
+      "logit_gap": -1.707012,
+      "opening_category_path": "shirts tanks tops",
+      "opening_category_pool_size": 42,
+      "sample_id": "public_0018",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 8,
+      "turn": 1
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -0.91083,
+        "relevance": -0.62197
+      },
+      "culprit_group": "propensity",
+      "fold": 3,
+      "logit_gap": -1.5328,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0154",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 8,
+      "turn": 1
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": 0.053771,
+        "propensity": -1.159419,
+        "relevance": -0.866121
+      },
+      "culprit_group": "propensity",
+      "fold": 0,
+      "logit_gap": -1.971769,
+      "opening_category_path": "shapewear bodysuits",
+      "opening_category_pool_size": 27,
+      "sample_id": "public_0059",
+      "scenario": "browsing",
+      "target_better_category_rank": true,
+      "target_more_popular": true,
+      "target_more_relevant": false,
+      "target_rank": 9,
+      "turn": 1
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": -0.012356,
+        "propensity": -1.353442,
+        "relevance": -2.108978
+      },
+      "culprit_group": "relevance",
+      "fold": 1,
+      "logit_gap": -3.474776,
+      "opening_category_path": "outdoor work work safety",
+      "opening_category_pool_size": 47,
+      "sample_id": "public_0151",
+      "scenario": "browsing",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 10,
+      "turn": 1
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -0.962139,
+        "relevance": -0.739579
+      },
+      "culprit_group": "propensity",
+      "fold": 4,
+      "logit_gap": -1.701718,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0161",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": true,
+      "target_rank": 10,
+      "turn": 2
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": 0.0,
+        "propensity": -1.066689,
+        "relevance": -1.625338
+      },
+      "culprit_group": "relevance",
+      "fold": 1,
+      "logit_gap": -2.692027,
+      "opening_category_path": null,
+      "opening_category_pool_size": 0,
+      "sample_id": "public_0179",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 13,
+      "turn": 1
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": 1.247475,
+        "propensity": -2.110287,
+        "relevance": -1.667778
+      },
+      "culprit_group": "propensity",
+      "fold": 4,
+      "logit_gap": -2.53059,
+      "opening_category_path": "socks calf socks",
+      "opening_category_pool_size": 52,
+      "sample_id": "public_0106",
+      "scenario": "buying",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 17,
+      "turn": 1
+    },
+    {
+      "class": "B_propensity",
+      "contrib": {
+        "category": -0.319328,
+        "propensity": -2.403392,
+        "relevance": -0.982684
+      },
+      "culprit_group": "propensity",
+      "fold": 3,
+      "logit_gap": -3.705404,
+      "opening_category_path": "athletic sport sandals slides",
+      "opening_category_pool_size": 132,
+      "sample_id": "public_0192",
+      "scenario": "boundary",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 18,
+      "turn": 1
+    },
+    {
+      "class": "A_relevance",
+      "contrib": {
+        "category": -0.234607,
+        "propensity": 0.197876,
+        "relevance": -2.354544
+      },
+      "culprit_group": "relevance",
+      "fold": 3,
+      "logit_gap": -2.391275,
+      "opening_category_path": "accessories bandanas",
+      "opening_category_pool_size": 33,
+      "sample_id": "public_0047",
+      "scenario": "browsing",
+      "target_better_category_rank": false,
+      "target_more_popular": false,
+      "target_more_relevant": false,
+      "target_rank": 20,
+      "turn": 1
+    }
+  ],
+  "split": "development_only",
+  "target_used": "offline label only; never a runtime feature"
+}

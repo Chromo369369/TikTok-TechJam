@@ -1,0 +1,68 @@
+{
+  "affected_question_counts": {
+    "brand": 1,
+    "no_question": 2
+  },
+  "catalog_duplicate_family_count": 614,
+  "catalog_products": 50000,
+  "catalog_products_in_duplicate_families": 1276,
+  "display_events": 434,
+  "duplicate_slots_consumed": 4,
+  "events_with_duplicate_displayed_family": 3,
+  "examples": [
+    {
+      "display_limit": 3,
+      "families": [
+        {
+          "asins": [
+            "B086QKCK2T",
+            "B088D46Y26"
+          ],
+          "leaf_category": "Compression Pants & Tights",
+          "store": "TQD",
+          "title": "TQD Women's Yoga Pants with Pockets High Waist Capris Workout Running Athletic Sports Leggings Pants"
+        }
+      ],
+      "question": "brand",
+      "session_id": "public_46c51aa65b2e400b88300db34aadb26a",
+      "turn": 7
+    },
+    {
+      "display_limit": 10,
+      "families": [
+        {
+          "asins": [
+            "B07BKSJN3K",
+            "B07BM9FH8Y",
+            "B07BMCCXDW"
+          ],
+          "leaf_category": "Casual Button-Down Shirts",
+          "store": "Goodthreads",
+          "title": "Goodthreads Men's Standard-Fit Long-Sleeve Brushed Flannel Shirt"
+        }
+      ],
+      "question": "no_question",
+      "session_id": "public_9141c793cba442ec9997226854de9326",
+      "turn": 9
+    },
+    {
+      "display_limit": 10,
+      "families": [
+        {
+          "asins": [
+            "B095BQQ5G9",
+            "B09MLNFNNT"
+          ],
+          "leaf_category": "T-Shirts",
+          "store": "FCHICH",
+          "title": "Wild Soul Bleached Shirt Women Vintage Western T-Shirt Boho Cow Skull Rodeo Shirt Casual Short Sleeve Graphic Tee Tops"
+        }
+      ],
+      "question": "no_question",
+      "session_id": "public_44612383a27a4b6ea338e88dcd6856f6",
+      "turn": 10
+    }
+  ],
+  "family_definition": "normalized exact title + store + leaf category",
+  "scope": "P007D development displayed recommendations only"
+}

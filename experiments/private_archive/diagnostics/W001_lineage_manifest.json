@@ -1,0 +1,189 @@
+{
+  "experiment": "W001_lineage_preservation",
+  "exposure_projection": {
+    "E060": {
+      "maximum_turns": null,
+      "recommendation_limit": null,
+      "recommendation_limit_while_asking": null,
+      "recommendation_schedule": "named_information_aware",
+      "release_after_no_information": null,
+      "release_reserve_on_final_turn": null,
+      "repeat_policy": "hard_exclusion",
+      "reset_repeats_on_override": true
+    },
+    "P007D": {
+      "maximum_turns": null,
+      "recommendation_limit": null,
+      "recommendation_limit_while_asking": null,
+      "recommendation_schedule": "wildcard_aware",
+      "release_after_no_information": null,
+      "release_reserve_on_final_turn": null,
+      "repeat_policy": "hard_exclusion",
+      "reset_repeats_on_override": true
+    },
+    "P008A": {
+      "maximum_turns": null,
+      "recommendation_limit": null,
+      "recommendation_limit_while_asking": null,
+      "recommendation_schedule": "named_information_aware",
+      "release_after_no_information": null,
+      "release_reserve_on_final_turn": null,
+      "repeat_policy": "hard_exclusion",
+      "reset_repeats_on_override": true
+    }
+  },
+  "frozen_configs": {
+    "E060": {
+      "agent": {
+        "atomic_wildcard_facts": true,
+        "attribute_answerability": {
+          "brand": 0.031496,
+          "budget": 0.0,
+          "color": 0.375,
+          "feature": 0.986301,
+          "material": 0.941176,
+          "size": 0.023438,
+          "style": 0.063492,
+          "use_case": 0.02439
+        },
+        "candidate_multiplier": 10,
+        "constraint_reranking": true,
+        "constraint_safe_popularity": true,
+        "constraint_state_mode": "strength",
+        "constraint_weight": 4.0,
+        "fingerprint_retrieval": true,
+        "hard_violation_penalty": 12.0,
+        "minimum_attribute_coverage": 0.2,
+        "popularity_order": "rrf",
+        "popularity_rrf_k": 60,
+        "question_candidate_limit": 100,
+        "question_policy": "answerability_split",
+        "question_strategy": "other_until_exhausted",
+        "recommendation_schedule": "named_information_aware",
+        "repeat_policy": "hard_exclusion",
+        "reset_repeats_on_override": true,
+        "reset_wildcard_on_override": true,
+        "target_propensity_model": "experiments/models/E060_early_union_posterior.json",
+        "use_history": true
+      },
+      "path": "configs\\E060A_p008_target_propensity.json",
+      "sha256": "641056b68726a01183bc6e30f10debe2adc13867fcca22b7437b7c67c9af6824"
+    },
+    "P007D": {
+      "agent": {
+        "atomic_wildcard_facts": true,
+        "attribute_answerability": {
+          "brand": 0.031496,
+          "budget": 0.0,
+          "color": 0.375,
+          "feature": 0.986301,
+          "material": 0.941176,
+          "size": 0.023438,
+          "style": 0.063492,
+          "use_case": 0.02439
+        },
+        "candidate_multiplier": 10,
+        "constraint_reranking": true,
+        "constraint_safe_popularity": true,
+        "constraint_state_mode": "strength",
+        "constraint_weight": 4.0,
+        "fingerprint_retrieval": true,
+        "hard_violation_penalty": 12.0,
+        "minimum_attribute_coverage": 0.2,
+        "popularity_order": "rrf",
+        "popularity_rrf_k": 60,
+        "question_candidate_limit": 100,
+        "question_policy": "answerability_split",
+        "question_strategy": "other_until_exhausted",
+        "recommendation_schedule": "wildcard_aware",
+        "repeat_policy": "hard_exclusion",
+        "reset_repeats_on_override": true,
+        "reset_wildcard_on_override": true,
+        "use_history": true
+      },
+      "path": "configs\\P007D_p006c_wildcard_aware_exposure.json",
+      "sha256": "c25334ab3a88eebb91df3e592bb856bc666389403641dad09c7cb33a142641dd"
+    },
+    "P008A": {
+      "agent": {
+        "atomic_wildcard_facts": true,
+        "attribute_answerability": {
+          "brand": 0.031496,
+          "budget": 0.0,
+          "color": 0.375,
+          "feature": 0.986301,
+          "material": 0.941176,
+          "size": 0.023438,
+          "style": 0.063492,
+          "use_case": 0.02439
+        },
+        "candidate_multiplier": 10,
+        "constraint_reranking": true,
+        "constraint_safe_popularity": true,
+        "constraint_state_mode": "strength",
+        "constraint_weight": 4.0,
+        "fingerprint_retrieval": true,
+        "hard_violation_penalty": 12.0,
+        "minimum_attribute_coverage": 0.2,
+        "popularity_order": "rrf",
+        "popularity_rrf_k": 60,
+        "question_candidate_limit": 100,
+        "question_policy": "answerability_split",
+        "question_strategy": "other_until_exhausted",
+        "recommendation_schedule": "named_information_aware",
+        "repeat_policy": "hard_exclusion",
+        "reset_repeats_on_override": true,
+        "reset_wildcard_on_override": true,
+        "use_history": true
+      },
+      "path": "configs\\P008A_p006c_named_information_aware_exposure.json",
+      "sha256": "6bf97a611ab14a1df86d5a7b672ca3d4815065a42eb8799664e807eb670f5362"
+    }
+  },
+  "holdout_used": false,
+  "semantic_projection": {
+    "E060": {
+      "atomic_wildcard_facts": true,
+      "constraint_state_mode": "strength",
+      "contradiction_aware_state": null,
+      "downstream_state_semantics": null,
+      "negative_state_weights": null,
+      "operation_aware_state": null,
+      "override_reset_policy": null,
+      "question_policy": "answerability_split",
+      "question_strategy": "other_until_exhausted",
+      "reset_wildcard_on_override": true,
+      "soft_decay_gamma": null,
+      "state_strength_weights": null
+    },
+    "P007D": {
+      "atomic_wildcard_facts": true,
+      "constraint_state_mode": "strength",
+      "contradiction_aware_state": null,
+      "downstream_state_semantics": null,
+      "negative_state_weights": null,
+      "operation_aware_state": null,
+      "override_reset_policy": null,
+      "question_policy": "answerability_split",
+      "question_strategy": "other_until_exhausted",
+      "reset_wildcard_on_override": true,
+      "soft_decay_gamma": null,
+      "state_strength_weights": null
+    },
+    "P008A": {
+      "atomic_wildcard_facts": true,
+      "constraint_state_mode": "strength",
+      "contradiction_aware_state": null,
+      "downstream_state_semantics": null,
+      "negative_state_weights": null,
+      "operation_aware_state": null,
+      "override_reset_policy": null,
+      "question_policy": "answerability_split",
+      "question_strategy": "other_until_exhausted",
+      "reset_wildcard_on_override": true,
+      "soft_decay_gamma": null,
+      "state_strength_weights": null
+    }
+  },
+  "split": "development_only"
+}

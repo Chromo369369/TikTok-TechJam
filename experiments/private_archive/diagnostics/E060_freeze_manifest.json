@@ -1,0 +1,101 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1207,
+      "path": "configs/E060A_p008_target_propensity.json",
+      "sha256": "641056b68726a01183bc6e30f10debe2adc13867fcca22b7437b7c67c9af6824"
+    },
+    {
+      "bytes": 1923,
+      "path": "experiments/models/E060_early_union_posterior.json",
+      "sha256": "0f1142b4d66f36dfcc52e29ae569e8a4bf97c371853eb172ad8489391ce45da0"
+    },
+    {
+      "bytes": 1964,
+      "path": "experiments/models/E060_folds/fold_0.json",
+      "sha256": "0864d0f69bc1cf7481277c1d11a347d848a162182e2aa2d5bdd04b53fb776c3f"
+    },
+    {
+      "bytes": 1961,
+      "path": "experiments/models/E060_folds/fold_1.json",
+      "sha256": "062bad4e99a925fa09826c89aaa9ac751610b1036f830532da4f94fcfb3e8998"
+    },
+    {
+      "bytes": 1965,
+      "path": "experiments/models/E060_folds/fold_2.json",
+      "sha256": "b51444c2012a8555b0e92301ffa7222b19881bdcb940a9e9f7fa75743de60554"
+    },
+    {
+      "bytes": 1957,
+      "path": "experiments/models/E060_folds/fold_3.json",
+      "sha256": "a088ba5005716a1619dc054a1f47d617d241c5e32922aa4f64396b3481228f56"
+    },
+    {
+      "bytes": 1961,
+      "path": "experiments/models/E060_folds/fold_4.json",
+      "sha256": "eb92f35b1d7a03f74948a7e161a7db12642105818ec5f7984b951cb2dcb8029f"
+    },
+    {
+      "bytes": 16318,
+      "path": "experiments/early_union_posterior.py",
+      "sha256": "70e6b128bcfd1a437faec07ea522ab49c6c3ef12d86b178a8b12e84e2fea867a"
+    },
+    {
+      "bytes": 3805,
+      "path": "experiments/evaluate_e060_oof.py",
+      "sha256": "b48bfc84fe04693994057d4744b49d6dc68f5e5e2a7d9c7fa429cfed02b1d8b6"
+    },
+    {
+      "bytes": 3564,
+      "path": "experiments/analyze_e060_oof.py",
+      "sha256": "34c51da3414ed3696fdfd74e3799092119f0b66f7b0106a07d8d3702056d4df2"
+    },
+    {
+      "bytes": 10805,
+      "path": "experiments/audit_e060_attribution_controls.py",
+      "sha256": "643362c11e022a98ed10f4f54d823b596653b8b3f41dee7c7d6cbfcd3440a2c6"
+    },
+    {
+      "bytes": 13075381,
+      "path": "experiments/diagnostics/E060_early_union_posterior.json",
+      "sha256": "e7b29209c04447047163449d6553c7e928988033adf23897f38a878a0ec9466f"
+    },
+    {
+      "bytes": 29788,
+      "path": "experiments/diagnostics/E060_end_to_end_oof_development.json",
+      "sha256": "7e6c160d3c8bb83cf526139890923bd092771dc25eea4b521a404d17b5f69ff6"
+    },
+    {
+      "bytes": 5116,
+      "path": "experiments/diagnostics/E060_end_to_end_oof_paired.json",
+      "sha256": "63c0045bc8e6f9640344ad5550ddb3c61507b57854c0e84038b5e2863b3b0cfd"
+    },
+    {
+      "bytes": 25337,
+      "path": "experiments/diagnostics/E060_attribution_controls.json",
+      "sha256": "983607b6a1c1642cfeb3fcfd98eb4432b422316551a8ab472e1b110ec24940e1"
+    },
+    {
+      "bytes": 114,
+      "path": "experiments/diagnostics/E060_residual_question_oracle.json",
+      "sha256": "8401215be5566ec2aad89faea9bc9d2b7aae741295c877bf43db0daa200e80b7"
+    },
+    {
+      "bytes": 225,
+      "path": "experiments/diagnostics/E060A_runtime_profile.json",
+      "sha256": "db9e05bf180b507b9869785a221226328b3b88aa38eaa69c6052fdbf80247e98"
+    },
+    {
+      "bytes": 4765,
+      "path": "experiments/notes/E060_early_union_target_posterior.md",
+      "sha256": "56172b8857a6ef6a05be37d94b615cd61b677f76ff55c208e2c0a998fa0baa10"
+    },
+    {
+      "bytes": 3594,
+      "path": "experiments/notes/E060_attribution_controls.md",
+      "sha256": "188e0272bfdbe87afa5e6a4faf0bc705b3ff0c52e6e014cbef8111f0b717a686"
+    }
+  ],
+  "git_head": "fdffef200e00a8165d9c10692040656199f0c26b",
+  "purpose": "E060 freeze manifest; no E060 changes while evaluating any new prior"
+}

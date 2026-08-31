@@ -1,0 +1,146 @@
+id,name,split,baseline,git_commit,hit_rate_at_10,mrr,mttc,efficiency,technical_score,buying_hr,browsing_hr,intent_override_hr,boundary_hr,decision,notes
+B003A,old_belief_old_response,development,K001C,fdffef2,0.993333,0.738111,2.313333,0.868667,0.891833,0.983871,1.0,1.0,1.0,KEEP,Exact K001C control
+B003B,calibrated_belief_old_response,development,K001C,fdffef2,0.993333,0.750444,2.353333,0.864667,0.894733,0.983871,1.0,1.0,1.0,REJECT,Development gain failed holdout
+B003B,calibrated_belief_old_response,holdout,K001C,fdffef2,0.96,0.736,2.56,0.844,0.8696,0.944444,1.0,1.0,0.8,REJECT,Score regressed versus K001C control
+B003C,calibrated_belief_empirical_spec_response,development,B003B,fdffef2,0.993333,0.733667,2.293333,0.870667,0.8909,0.983871,1.0,1.0,1.0,REJECT,Empirical event approximation regressed development score
+C001,global_popularity_cycle,development,E012,5f66f94,0.24,0.059474,9.46,0.154,0.168642,0.258065,0.245902,0.181818,0.2,REJECT,Weak control: global popularity cycling ignores user intent
+C002,no_questions,development,E012,5f66f94,0.513333,0.244995,7.006667,0.399333,0.410032,0.596774,0.344262,0.772727,0.4,REJECT,Weak control: E012 retrieval and ranking with clarification disabled
+E000,baseline,full,,5f66f94,0.125,0.068034,9.81,0.119,0.10671,0.2375,0.025,0.133333,0.0,KEEP,Official weak BM25 control
+E001,cumulative_history,full,E000,5f66f94,0.27,0.151381,8.6,0.24,0.228414,0.35,0.0875,0.566667,0.2,KEEP,Cumulative session history improved all aggregate metrics
+E002,override_aware_hard_exclusion,development,E001,5f66f94,0.506667,0.231894,7.326667,0.367333,0.396368,0.596774,0.344262,0.727273,0.4,KEEP,Development split record for current best
+E002,override_aware_hard_exclusion,full,E001,5f66f94,0.525,0.216905,7.275,0.3725,0.402072,0.6,0.4,0.7,0.4,KEEP,Current best; override-aware hard exclusion
+E002,override_aware_hard_exclusion,holdout,E001,5f66f94,0.58,0.171937,7.12,0.388,0.419181,0.611111,0.578947,0.625,0.4,KEEP,Holdout confirmation for current best
+E003,confidence_weighted_constraints,development,E002,5f66f94,0.506667,0.23764,7.013333,0.398667,0.404359,0.596774,0.344262,0.727273,0.4,KEEP,Development improvement confirmed on holdout
+E003,confidence_weighted_constraints,full,E002,5f66f94,0.525,0.222748,6.98,0.402,0.409724,0.6,0.4,0.7,0.4,KEEP,Confirmed on development and holdout; new current best
+E003,confidence_weighted_constraints,holdout,E002,5f66f94,0.58,0.178071,6.88,0.412,0.425821,0.611111,0.578947,0.625,0.4,KEEP,Holdout confirmed development improvement
+E004,simple_candidate_split,development,E003,5f66f94,0.9,0.516209,4.866667,0.613333,0.727529,0.83871,0.934426,1.0,0.8,KEEP,Development baseline refreshed with question-outcome diagnostics
+E004,simple_candidate_split,full,E003,5f66f94,0.905,0.512565,4.785,0.6215,0.730569,0.8375,0.95,1.0,0.8,KEEP,Confirmed on holdout; new current best
+E004,simple_candidate_split,holdout,E003,5f66f94,0.92,0.501635,4.54,0.646,0.739691,0.833333,1.0,1.0,0.8,KEEP,Holdout confirmed V1 split policy
+E005,unweighted_entropy,development,E004,5f66f94,0.893333,0.501735,4.92,0.608,0.718787,0.83871,0.934426,0.954545,0.8,REJECT,Regressed against simpler split policy
+E006,probability_weighted_entropy,development,E005,5f66f94,0.9,0.512984,4.933333,0.606667,0.725229,0.83871,0.934426,1.0,0.8,REJECT,Beat E005 but did not beat current-best E004
+E007,expected_competition_value,development,E006,5f66f94,0.893333,0.495193,4.953333,0.604667,0.716158,0.83871,0.934426,0.954545,0.8,REJECT,Expected-value proxy regressed against E006 and E004
+E008,probability_weighted_split,development,E004,5f66f94,0.893333,0.51382,4.913333,0.608667,0.722546,0.83871,0.934426,0.954545,0.8,REJECT,Weighted split regressed against E004
+E009,expected_elimination,development,E004,5f66f94,0.893333,0.515606,4.913333,0.608667,0.723082,0.83871,0.934426,0.954545,0.8,REJECT,Expected elimination regressed against E004
+E010,answerability_adjusted_split,development,E004,5f66f94,0.913333,0.544251,3.526667,0.747333,0.769408,0.870968,0.95082,0.954545,0.8,KEEP,Frozen E010 verified after diagnostics-only infrastructure
+E010,answerability_adjusted_split,full,E004,5f66f94,0.92,0.542242,3.46,0.754,0.773473,0.875,0.9625,0.966667,0.8,KEEP,Confirmed on holdout; new current best
+E010,answerability_adjusted_split,holdout,E004,5f66f94,0.94,0.536214,3.26,0.774,0.785664,0.888889,1.0,1.0,0.8,KEEP,Holdout confirmed answerability-adjusted split
+E011,confidence_aware_question_gating,development,E004,5f66f94,0.826667,0.48523,5.22,0.578,0.674503,0.741935,0.901639,0.863636,0.8,REJECT,Minimum-score gating retained high-score low-answerability questions
+E012,constraint_strength_representation,development,E010,5f66f94,0.92,0.554939,3.513333,0.748667,0.776215,0.870968,0.95082,1.0,0.8,INCONCLUSIVE,Valid three-level constraint-strength development evaluation
+E012,constraint_strength_representation,development,E010,5f66f94,0.92,0.554939,3.513333,0.748667,0.776215,0.870968,0.95082,1.0,0.8,KEEP,Development gain confirmed on holdout
+E012,constraint_strength_representation,full,E010,5f66f94,0.925,0.552321,3.46,0.754,0.778996,0.875,0.9625,1.0,0.8,KEEP,Confirmed on holdout; accepted state representation
+E012,constraint_strength_representation,full,E010,5f66f94,0.925,0.552321,3.46,0.754,0.778996,0.875,0.9625,1.0,0.8,KEEP,Confirmed three-level constraint strength; current best
+E012,constraint_strength_representation,holdout,E010,5f66f94,0.94,0.544468,3.3,0.77,0.78734,0.888889,1.0,1.0,0.8,INCONCLUSIVE,Holdout confirmation for three-level constraint strength
+E012,constraint_strength_representation,holdout,E010,5f66f94,0.94,0.544468,3.3,0.77,0.78734,0.888889,1.0,1.0,0.8,KEEP,Holdout confirmed ranking gain
+E013,operation_aware_state,development,E012,5f66f94,0.92,0.554939,3.513333,0.748667,0.776215,0.870968,0.95082,1.0,0.8,INCONCLUSIVE,Operation-aware state development evaluation
+E013,operation_aware_state,development,E012,5f66f94,0.92,0.554939,3.513333,0.748667,0.776215,0.870968,0.95082,1.0,0.8,REJECT,Metric-neutral with many false-looking lexical operations
+E014,selective_intent_reset,development,E012,5f66f94,0.92,0.55605,3.513333,0.748667,0.776548,0.870968,0.95082,1.0,0.8,REJECT,Tiny override-only MRR shift insufficient for promotion
+E014,selective_intent_reset,development,E012,5f66f94,0.92,0.55605,3.513333,0.748667,0.776548,0.870968,0.95082,1.0,0.8,INCONCLUSIVE,Selective intent-reset development evaluation
+E015A,soft_decay_gamma_1_0,development,E012,5f66f94,0.92,0.554939,3.513333,0.748667,0.776215,0.870968,0.95082,1.0,0.8,REJECT,Control reproduced E012; no aged soft constraints
+E015A,soft_decay_gamma_1_0,development,E012,5f66f94,0.92,0.554939,3.513333,0.748667,0.776215,0.870968,0.95082,1.0,0.8,INCONCLUSIVE,Soft decay gamma control 1.0
+E015B,soft_decay_gamma_0_9,development,E012,5f66f94,0.92,0.554939,3.513333,0.748667,0.776215,0.870968,0.95082,1.0,0.8,REJECT,No decayed constraint turns
+E015B,soft_decay_gamma_0_9,development,E012,5f66f94,0.92,0.554939,3.513333,0.748667,0.776215,0.870968,0.95082,1.0,0.8,INCONCLUSIVE,Soft decay gamma 0.9
+E015C,soft_decay_gamma_0_8,development,E012,5f66f94,0.92,0.554939,3.513333,0.748667,0.776215,0.870968,0.95082,1.0,0.8,REJECT,No decayed constraint turns
+E015C,soft_decay_gamma_0_8,development,E012,5f66f94,0.92,0.554939,3.513333,0.748667,0.776215,0.870968,0.95082,1.0,0.8,INCONCLUSIVE,Soft decay gamma 0.8
+E016,contradiction_aware_state,development,E012,5f66f94,0.92,0.554939,3.513333,0.748667,0.776215,0.870968,0.95082,1.0,0.8,REJECT,No contradictions detected; metric-neutral
+E016,contradiction_aware_state,development,E012,5f66f94,0.92,0.554939,3.513333,0.748667,0.776215,0.870968,0.95082,1.0,0.8,INCONCLUSIVE,Contradiction-aware state development evaluation
+E017,state_semantic_ranking,development,E012,5f66f94,0.92,0.549402,3.48,0.752,0.775221,0.870968,0.95082,1.0,0.8,REJECT,MTTC and hard compliance improved but MRR and total score regressed
+E017,state_semantic_ranking,development,E012,5f66f94,0.92,0.549402,3.48,0.752,0.775221,0.870968,0.95082,1.0,0.8,INCONCLUSIVE,State-semantic ranking development evaluation
+E018,always_other,development,E012,5f66f94,0.933333,0.59628,3.073333,0.792667,0.804084,0.951613,0.967213,0.954545,0.2,INCONCLUSIVE,Always-other development evaluation
+E019,other_first_then_e012,development,E012,5f66f94,0.973333,0.604696,2.88,0.812,0.830475,0.983871,0.967213,1.0,0.8,INCONCLUSIVE,Other-first development evaluation
+E020,other_until_exhausted,development,E012,5f66f94,0.966667,0.639013,2.9,0.81,0.837037,0.967742,0.967213,1.0,0.8,INCONCLUSIVE,Other-until-exhausted development evaluation
+E021,intent_fingerprint_retrieval,development,E012,5f66f94,0.92,0.598862,3.38,0.762,0.792059,0.887097,0.934426,1.0,0.8,INCONCLUSIVE,Catalog-only fingerprint retrieval development evaluation
+E021,intent_fingerprint_retrieval,holdout,E012,5f66f94,0.96,0.570111,2.98,0.802,0.811433,0.944444,1.0,1.0,0.8,KEEP,Robust promotion: catalog-only challenger confirmed on major-checkpoint holdout
+E022,other_plus_fingerprint,development,E012,5f66f94,0.973333,0.673868,2.726667,0.827333,0.854294,0.967742,0.983607,1.0,0.8,KEEP,"Evaluator-track finding; detailed offline trace added, not a robust-default promotion"
+E022,other_plus_fingerprint,holdout,E012,5f66f94,0.98,0.668325,2.74,0.826,0.855697,0.944444,1.0,1.0,1.0,KEEP,Evaluator-track major-checkpoint holdout; not a robust-default promotion
+E023,scenario_aware_routing,development,E012,5f66f94,0.9,0.538828,3.613333,0.738667,0.759382,0.870968,0.934426,1.0,0.4,INCONCLUSIVE,Observable scenario-router development evaluation
+E024A,diversity_10_exploit_0_explore,development,E012,5f66f94,0.92,0.554939,3.513333,0.748667,0.776215,0.870968,0.95082,1.0,0.8,INCONCLUSIVE,Diversity control 10 exploit 0 explore
+E024B,diversity_8_exploit_2_explore,development,E012,5f66f94,0.92,0.554603,3.506667,0.749333,0.776248,0.870968,0.95082,1.0,0.8,INCONCLUSIVE,Diversity 8 exploit 2 explore
+E024C,diversity_6_exploit_4_explore,development,E012,5f66f94,0.92,0.554881,3.506667,0.749333,0.776331,0.870968,0.95082,1.0,0.8,INCONCLUSIVE,Diversity 6 exploit 4 explore
+E025A,phrase_baseline,development,E021,5f66f94,0.92,0.606085,3.373333,0.762667,0.794359,0.887097,0.934426,1.0,0.8,INCONCLUSIVE,E021 phrase-route reproduction baseline for E025 representation ablation.
+E025B,controlled_values,development,E021,5f66f94,0.96,0.546339,3.006667,0.799333,0.803768,0.935484,1.0,0.954545,0.8,INCONCLUSIVE,Controlled catalog singleton evidence plus E021 phrase evidence.
+E025C,structured_evidence,development,E021,5f66f94,0.96,0.45482,3.18,0.782,0.772846,0.935484,1.0,0.954545,0.8,INCONCLUSIVE,"Structured catalog evidence route, without phrase evidence."
+E025D,aggregated_evidence,debug-public_0001,E021,5f66f94,0.0,0.0,11.0,0.0,0.0,0.0,,,,INCONCLUSIVE,Clarification exhaustion diagnostic.
+E025D,aggregated_evidence,debug-public_0028,E021,5f66f94,0.0,0.0,11.0,0.0,0.0,0.0,,,,INCONCLUSIVE,Clarification exhaustion diagnostic.
+E025D,aggregated_evidence,debug-public_0069,E021,5f66f94,0.0,0.0,11.0,0.0,0.0,,0.0,,,INCONCLUSIVE,Clarification exhaustion diagnostic.
+E025D,aggregated_evidence,debug-public_0161,E021,5f66f94,0.0,0.0,11.0,0.0,0.0,0.0,,,,INCONCLUSIVE,Clarification exhaustion diagnostic.
+E025D,aggregated_evidence,development,E021,5f66f94,0.973333,0.541688,3.053333,0.794667,0.808106,0.951613,0.983607,1.0,1.0,KEEP,Clarification exhaustion diagnostic rerun; E025D behavior unchanged.
+E025D,aggregated_evidence,full,E021,5f66f94,0.975,0.552536,3.055,0.7945,0.812161,0.9625,0.9875,1.0,0.9,KEEP,Robust promotion: field-aware aggregation confirmed on development and holdout.
+E025D,aggregated_evidence,holdout,E021,5f66f94,0.98,0.585079,3.06,0.794,0.824324,1.0,1.0,1.0,0.8,KEEP,Robust promotion: field-aware aggregation improved development and holdout without wildcard-question dependence.
+E026,residual_recall_audit,development,E025D,5f66f94,0.973333,0.541688,3.053333,0.794667,0.808106,0.951613,0.983607,1.0,1.0,INCONCLUSIVE,Forensic residual-recall audit; no scoring change from E025D.
+E027,reranker_regression_audit,development,E025D,5f66f94,0.973333,0.541688,3.053333,0.794667,0.808106,0.951613,0.983607,1.0,1.0,INCONCLUSIVE,Stage-by-stage reranker regression audit; no scoring change from E025D.
+E028,conservative_multiroute_fusion,development,E025D,5f66f94,0.96,0.555339,3.133333,0.786667,0.803935,0.935484,1.0,0.954545,0.8,REJECT,"Conservative BM25, structured, and phrase route-consensus fusion regressed E025D technical score."
+E029,evidence_coverage_reranker,development,E028,5f66f94,0.953333,0.558733,3.26,0.774,0.799086,0.935484,0.983607,0.909091,1.0,REJECT,Distinct coverage improved conditional ranking but regressed HR@10 and technical score.
+E031A,protected_control,development,E025D,5f66f94,0.973333,0.541688,3.053333,0.794667,0.808106,0.951613,0.983607,1.0,1.0,INCONCLUSIVE,Protected membership control.
+E031B,protected_coverage,development,E025D,5f66f94,0.973333,0.522114,3.053333,0.794667,0.802234,0.951613,0.983607,1.0,1.0,INCONCLUSIVE,Protected Top-10 coverage-only ordering.
+E031C,protected_near_tie,development,E025D,5f66f94,0.973333,0.538817,3.053333,0.794667,0.807245,0.951613,0.983607,1.0,1.0,INCONCLUSIVE,Protected Top-10 near-tie coverage tie-break.
+E031D,protected_interpolation,development,E025D,5f66f94,0.973333,0.540114,3.053333,0.794667,0.807634,0.951613,0.983607,1.0,1.0,INCONCLUSIVE,Protected Top-10 conservative coverage interpolation.
+E032A,structured_pool_100,development,E025D,5f66f94,0.953333,0.535807,3.186667,0.781333,0.793675,0.935484,0.95082,1.0,1.0,INCONCLUSIVE,Structured evidence route capped at 100.
+E032B,structured_pool_150,development,E025D,5f66f94,0.96,0.543963,3.166667,0.783333,0.799856,0.951613,0.95082,1.0,1.0,INCONCLUSIVE,Structured evidence route capped at 150.
+E032C,structured_pool_300,development,E025D,5f66f94,0.966667,0.550899,3.106667,0.789333,0.80647,0.951613,0.967213,1.0,1.0,INCONCLUSIVE,Structured evidence route expanded to 300.
+E034,structured_state_bm25,development,E025D,5f66f94,0.973333,0.540939,3.073333,0.792667,0.807482,0.951613,0.983607,1.0,1.0,INCONCLUSIVE,Conservative active structured-state lexical BM25 expansion.
+E035A,exhaustion_control,development,E025D,5f66f94,0.973333,0.541688,3.053333,0.794667,0.808106,0.951613,0.983607,1.0,1.0,INCONCLUSIVE,E025D control for exhaustion recovery.
+E035B,ungated_exhaustion,development,E025D,5f66f94,0.986667,0.557614,2.973333,0.802667,0.821151,0.967742,1.0,1.0,1.0,INCONCLUSIVE,Ask the highest existing-scored attribute only after exhaustion.
+E035B,ungated_exhaustion,holdout,E025D,5f66f94,0.98,0.601746,3.02,0.798,0.830124,1.0,1.0,1.0,0.8,INCONCLUSIVE,Holdout confirmation for exhaustion recovery development winner.
+E035C,explicit_exhaustion,development,E025D,5f66f94,0.986667,0.557614,3.013333,0.798667,0.820351,0.967742,1.0,1.0,1.0,INCONCLUSIVE,Recover only when shopper explicitly requests clarification.
+E036,evaluator_other_terminal,development,E035B,5f66f94,0.993333,0.564003,2.953333,0.804667,0.826801,0.983871,1.0,1.0,1.0,REJECT,Six terminal other questions improve E035B but do not approach E022 evaluator-track score; no holdout or evaluator promotion.
+E043A,one_early_other,development,E035B,5f66f94,0.986667,0.604701,2.593333,0.840667,0.842877,0.967742,1.0,1.0,1.0,REJECT,E043B was stronger; neither bounded variant reaches E022.
+E043B,two_early_other,development,E035B,5f66f94,0.993333,0.616553,2.506667,0.849333,0.851499,0.983871,1.0,1.0,1.0,REJECT,Holdout below E022 evaluator champion.
+E043B,two_early_other,holdout,E035B,5f66f94,0.98,0.609167,2.7,0.83,0.83875,1.0,1.0,1.0,0.8,REJECT,.838750 holdout below E022 .855697; no evaluator promotion.
+E046,category_conditional_specificity,development,E035B,5f66f94,0.986667,0.59714,2.893333,0.810667,0.834609,0.967742,1.0,1.0,1.0,REJECT,Holdout below E035B despite five-fold development win.
+E046,category_conditional_specificity,holdout,E035B,5f66f94,0.98,0.594222,2.96,0.804,0.829067,1.0,1.0,1.0,0.8,REJECT,.829067 holdout below E035B .830124; no robust promotion.
+E052,evaluator_wildcard_field_evidence,development,E022,5f66f94,0.993333,0.617146,2.513333,0.848667,0.851544,0.983871,1.0,1.0,1.0,REJECT,Below E022 .854294 development score; no holdout or evaluator promotion.
+E054,catalog_interaction_reranker,development,E035B,5f66f94,0.986667,0.557362,2.973333,0.802667,0.821075,0.967742,1.0,1.0,1.0,REJECT,Catalog-only model regresses E035B development score by .000076.
+E057,punctuation_invariant_evidence,development,E035B,5f66f94,0.986667,0.557614,2.973333,0.802667,0.821151,0.967742,1.0,1.0,1.0,RETEST,Bug-hardening gate: punctuation/category conjunction invariance only.
+E057,punctuation_invariant_evidence,holdout,E035B,5f66f94,0.98,0.601746,3.02,0.798,0.830124,1.0,1.0,1.0,0.8,KEEP,Development-identical bug hardening; holdout confirmation.
+E058,phrase_idf_key_correction,development,P002A,5f66f94,0.993333,0.655071,2.073333,0.892667,0.871721,0.983871,1.0,1.0,1.0,KEEP,Formal development gate passed; surgical exact-phrase IDF correction accepted after confirmation.
+E058,phrase_idf_key_correction,full,P002A,5f66f94,0.99,0.658615,2.125,0.8875,0.870084,0.9875,1.0,1.0,0.9,KEEP,Accepted surgical phrase-IDF correction: development and confirmation holdout gains with zero confirmed Top-10 hard violations.
+E058,phrase_idf_key_correction,holdout,P002A,5f66f94,0.98,0.669246,2.28,0.872,0.865174,1.0,1.0,1.0,0.8,KEEP,Confirmation-only holdout improved MRR and score with unchanged HR and zero hard violations.
+E060A,p008_target_propensity,development,P008A,fdffef2,0.993333,0.968889,2.44,0.856,0.958533,1.0,1.0,1.0,0.8,INCONCLUSIVE,One frozen grouped-OOF-qualified target-propensity challenger; development only; no holdout.
+E060A,p008_target_propensity,holdout,P008A,fdffef2,0.98,0.96,2.82,0.818,0.9416,0.944444,1.0,1.0,1.0,INCONCLUSIVE,
+K003A,e058_k4_while_asking,development,K001C,fdffef2,0.993333,0.765778,2.42,0.858,0.898,0.983871,1.0,1.0,1.0,INCONCLUSIVE,"K003 preregistered development sweep; k=4 while asking, 10 otherwise."
+K003B,e058_k5_while_asking_control,development,K001C,fdffef2,0.993333,0.738111,2.313333,0.868667,0.891833,0.983871,1.0,1.0,1.0,INCONCLUSIVE,"K003 preregistered development control; k=5 while asking, 10 otherwise."
+K003C,e058_k6_while_asking,development,K001C,fdffef2,0.993333,0.709222,2.24,0.876,0.884633,0.983871,1.0,1.0,1.0,INCONCLUSIVE,"K003 preregistered development sweep; k=6 while asking, 10 otherwise."
+K003D,e058_k3_while_asking,development,K001C,fdffef2,0.986667,0.791111,2.56,0.844,0.899467,0.983871,1.0,0.954545,1.0,INCONCLUSIVE,"K003 preregistered development boundary check; k=3 while asking, 10 otherwise."
+K003D,e058_k3_while_asking,holdout,K001C,fdffef2,0.96,0.78,2.72,0.828,0.8796,0.944444,1.0,1.0,0.8,INCONCLUSIVE,Single preregistered holdout confirmation for development-selected K003D; no holdout model selection.
+K003E,e058_k7_while_asking,development,K001C,fdffef2,0.993333,0.676238,2.173333,0.882667,0.876071,0.983871,1.0,1.0,1.0,INCONCLUSIVE,"K003 preregistered development boundary check; k=7 while asking, 10 otherwise."
+K004,p006c_k3_while_asking,development,P006C,fdffef2,0.993333,0.86,2.586667,0.841333,0.922933,1.0,1.0,1.0,0.8,INCONCLUSIVE,"Development-only P006C x K003D factorial, declared after K003D holdout; no new factorial holdout permitted."
+K004,p006c_k3_while_asking,holdout,P006C,fdffef2,0.98,0.813333,2.68,0.832,0.9004,0.944444,1.0,1.0,1.0,INCONCLUSIVE,Single frozen P006C x K003D holdout measurement; no tuning or follow-up holdout selection.
+K005A,e058_k2_while_asking,development,K003D,fdffef2,0.986667,0.840397,2.84,0.816,0.908653,0.983871,1.0,0.954545,1.0,INCONCLUSIVE,"Development-only lower-boundary exposure sweep; k=2 while asking, 10 otherwise; no K005 holdout."
+K005B,e058_k1_while_asking,development,K003D,fdffef2,0.973333,0.929222,3.46,0.754,0.916233,0.983871,0.983607,0.909091,1.0,INCONCLUSIVE,"Development-only lower-boundary exposure sweep; k=1 while asking, 10 otherwise; no K005 holdout."
+K005C,e058_k0_while_asking,development,K003D,fdffef2,0.893333,0.699558,8.846667,0.215333,0.699601,0.967742,0.983607,0.409091,1.0,INCONCLUSIVE,"Development-only ask-only boundary check; k=0 while asking, 10 otherwise; no K005 holdout."
+K006A,early_aggressive_exposure,development,K003D,fdffef2,0.986667,0.87373,2.953333,0.804667,0.916386,0.983871,1.0,0.954545,1.0,REJECT,Beaten on development by the predeclared A6 schedule.
+K006B,two_turn_aggressive_exposure,development,K003D,fdffef2,0.986667,0.875556,2.926667,0.807333,0.917467,0.983871,1.0,0.954545,1.0,REJECT,Beaten on development by the predeclared A6 schedule.
+K006C,substantive_answer_exposure,development,K003D,fdffef2,0.986667,0.872778,2.84,0.816,0.918367,0.983871,1.0,0.954545,1.0,KEEP,Frozen score-optimized champion; T001 rerun reproduced development score exactly.
+K006C,substantive_answer_exposure,holdout,K003D,fdffef2,0.96,0.843333,2.98,0.802,0.8934,0.944444,1.0,1.0,0.8,KEEP,One-shot holdout confirmed +.013800 over K3 at unchanged HR.
+K006D,wildcard_aware_exposure,development,K003D,fdffef2,0.986667,0.791111,2.56,0.844,0.899467,0.983871,1.0,0.954545,1.0,REJECT,Exact K3 reproduction because the non-wildcard track did not activate other questions.
+K007A,e058_cumulative_early_cap,development,K006C,fdffef2,0.986667,0.862778,2.84,0.816,0.915367,0.983871,1.0,0.954545,1.0,REJECT,Development-only cumulative cap reduced MRR and score by .003000 versus K006C at identical HR and efficiency.
+K007B,e058_rank_churn_exposure,development,K003D,fdffef2,0.986667,0.872778,2.84,0.816,0.918367,0.983871,1.0,0.954545,1.0,REJECT,Development-only rank-churn policy exactly reproduced K006C aggregate behavior; it supplied no independent gain.
+M002A,factorized_catalog_prior,development,K006C,fdffef2,0.986667,0.864667,2.813333,0.818667,0.916467,0.983871,1.0,0.954545,1.0,INCONCLUSIVE,One pre-registered static catalog-prior challenger; development-only separate gate.
+P001A,popularity_control,development,E035B,5f66f94,0.986667,0.557614,2.973333,0.802667,0.821151,0.967742,1.0,1.0,1.0,INCONCLUSIVE,Explicit E035B control for catalog-popularity ordering family.
+P001B,pure_popularity_order,development,E035B,5f66f94,0.933333,0.431341,2.813333,0.818667,0.759802,0.919355,0.95082,0.954545,0.8,REJECT,Extreme visible rating_number reorder violated constraints and regressed E035B.
+P001C,popularity_near_tie,development,E035B,5f66f94,0.993333,0.573934,2.846667,0.815333,0.831913,0.983871,1.0,1.0,1.0,REJECT,Clear improvement but below predeclared P001D RRF; no separate holdout.
+P001D,popularity_rrf,development,E035B,5f66f94,0.993333,0.63919,2.08,0.892,0.866824,0.983871,1.0,1.0,1.0,KEEP,Promoted robust: fixed k=60 rank/popularity RRF improves technical score and every scenario HR versus E035B.
+P001D,popularity_rrf,full,E035B,5f66f94,0.99,0.642446,2.145,0.8855,0.864834,0.9875,1.0,1.0,0.9,KEEP,Fixed k=60 E035B-rank plus visible rating_number RRF. Confirmed development and holdout gains without scenario HR regression.
+P001D,popularity_rrf,holdout,E035B,5f66f94,0.98,0.652214,2.34,0.866,0.858864,1.0,1.0,1.0,0.8,KEEP,"Holdout confirmed P001D robust promotion: .858864 technical score, no scenario HR regression."
+P002A,constraint_safe_popularity_rrf,development,P001D,5f66f94,0.993333,0.638979,2.073333,0.892667,0.866894,0.983871,1.0,1.0,1.0,KEEP,Promoted robust: score-neutral hard-constraint safety removed all confirmed violations.
+P002A,constraint_safe_popularity_rrf,full,P001D,5f66f94,0.99,0.642565,2.14,0.886,0.86497,0.9875,1.0,1.0,0.9,KEEP,"Promoted robust: P001D RRF plus confirmed-hard-constraint safety, zero Top-10 confirmed violations on development and holdout."
+P002A,constraint_safe_popularity_rrf,holdout,P001D,5f66f94,0.98,0.653325,2.34,0.866,0.859198,1.0,1.0,1.0,0.8,KEEP,Holdout confirmed robust safety promotion with zero confirmed violations.
+P002B,e022_wildcard_popularity_rrf,development,E022,5f66f94,0.993333,0.72478,2.153333,0.884667,0.891034,1.0,1.0,1.0,0.8,KEEP,Promoted wildcard-specific factorial: E022 dialogue plus popularity RRF.
+P002B,e022_wildcard_popularity_rrf,full,E022,5f66f94,0.99,0.715187,2.205,0.8795,0.885456,0.9875,1.0,1.0,0.9,KEEP,Promoted wildcard-specific/released-evaluator champion: frozen E022 dialogue plus fixed P001D popularity RRF.
+P002B,e022_wildcard_popularity_rrf,holdout,E022,5f66f94,0.98,0.686405,2.36,0.864,0.868722,0.944444,1.0,1.0,1.0,KEEP,Holdout confirmed wildcard-specific released-evaluator champion.
+P002C,e022_wildcard_popularity_rrf_safe,development,P002B,5f66f94,0.993333,0.724873,2.153333,0.884667,0.891062,1.0,1.0,1.0,0.8,KEEP,Promoted evaluator-specific safety extension; zero confirmed violations.
+P002C,e022_wildcard_popularity_rrf_safe,full,P002B,5f66f94,0.99,0.715256,2.205,0.8795,0.885477,0.9875,1.0,1.0,0.9,KEEP,Promoted evaluator-specific: P002B wildcard/popularity RRF plus zero-cost confirmed-hard-constraint safety.
+P002C,e022_wildcard_popularity_rrf_safe,holdout,P002B,5f66f94,0.98,0.686405,2.36,0.864,0.868722,0.944444,1.0,1.0,1.0,KEEP,Holdout confirmed evaluator-specific safety extension.
+P006,atomic_wildcard_facts,development,P002C,5f66f94,0.993333,0.748233,2.146667,0.885333,0.898203,1.0,1.0,1.0,0.8,KEEP,Evaluator-only: atomize released wildcard reply clauses after development information-flow gate; E058 and P002C remain frozen references.
+P006B,wildcard_override_reset,development,P002C,5f66f94,0.993333,0.727373,2.14,0.886,0.892078,1.0,1.0,1.0,0.8,KEEP,Evaluator-only independent lifecycle correction: intent override no longer consumes a pending wildcard question or carries wildcard exhaustion into the new intent.
+P006C,atomic_wildcard_facts_override_reset,development,P006,5f66f94,0.993333,0.750733,2.133333,0.886667,0.89922,1.0,1.0,1.0,0.8,KEEP,Evaluator-only validated factorial: atomic wildcard facts plus independent override lifecycle correction; no coefficient or question-count tuning.
+P006C,atomic_wildcard_facts_override_reset,holdout,P006,5f66f94,0.98,0.686484,2.34,0.866,0.869145,0.944444,1.0,1.0,1.0,KEEP,Untuned confirmation of the development-locked evaluator-only P006C factorial; no rule changes from holdout.
+P007A,p006c_k2_while_asking,development,K004,fdffef2,0.986667,0.880944,2.76,0.824,0.922417,0.983871,1.0,1.0,0.8,REJECT,Regressed versus the frozen K004 control.
+P007B,p006c_k1_while_asking,development,K004,fdffef2,0.973333,0.918019,3.16,0.784,0.918872,0.983871,1.0,0.909091,0.8,REJECT,Regressed score and lost three development hits versus K004.
+P007C,p006c_substantive_answer_exposure,development,K004,fdffef2,0.986667,0.889286,2.786667,0.821333,0.924386,0.983871,1.0,1.0,0.8,REJECT,Gain below the .003 branch threshold and paired interval crossed zero.
+P007D,p006c_wildcard_aware_exposure,development,K004,fdffef2,0.986667,0.922619,2.906667,0.809333,0.931986,0.983871,1.0,1.0,0.8,KEEP,Frozen wildcard champion; T001 rerun reproduced development score exactly.
+P007D,p006c_wildcard_aware_exposure,holdout,K004,fdffef2,0.98,0.92,3.1,0.79,0.924,0.944444,1.0,1.0,1.0,INCONCLUSIVE,
+P008A,p006c_named_information_aware_exposure,development,P007D,fdffef2,0.986667,0.943452,2.96,0.804,0.937169,0.983871,1.0,1.0,0.8,KEEP,Development-only qualified challenger: +.005183 versus P007D with paired interval excluding zero; no additional holdout is authorized.
+P008A,p006c_named_information_aware_exposure,development,P007D,fdffef2,0.986667,0.943452,2.96,0.804,0.937169,0.983871,1.0,1.0,0.8,INCONCLUSIVE,
+T001A,taxonomy_popularity_k006c,development,K006C,fdffef2,0.986667,0.824,2.78,0.822,0.904933,0.983871,1.0,0.954545,1.0,REJECT,Taxonomy retrieval-route challenger regressed development score -0.013434 vs K006C (MRR -0.0488).
+T001B,taxonomy_popularity_p007d,development,P007D,fdffef2,0.993333,0.913519,3.006667,0.799333,0.930589,0.983871,1.0,1.0,1.0,REJECT,Taxonomy retrieval-route challenger neutral/negative -0.001397 vs P007D; no incremental mechanism evidence.

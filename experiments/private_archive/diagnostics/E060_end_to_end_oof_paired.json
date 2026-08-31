@@ -1,0 +1,268 @@
+{
+  "baseline_technical_score": 0.937169,
+  "bootstrap": {
+    "ci95": [
+      0.010516666667,
+      0.032666666667
+    ],
+    "draws": 10000,
+    "probability_positive": 1.0,
+    "seed": 60,
+    "unit": "session/target"
+  },
+  "comparison": "P008A",
+  "counts": {
+    "improved": 43,
+    "unchanged": 102,
+    "worsened": 5
+  },
+  "experiment": "E060_end_to_end_oof",
+  "holdout_used": false,
+  "largest_improvements": [
+    {
+      "baseline": {
+        "hit": false,
+        "rank": null,
+        "reward": 0.0,
+        "turn": null
+      },
+      "delta": 0.7,
+      "oof": {
+        "hit": true,
+        "rank": 3,
+        "reward": 0.7,
+        "turn": 6
+      },
+      "sample_id": "public_0161"
+    },
+    {
+      "baseline": {
+        "hit": true,
+        "rank": 3,
+        "reward": 0.72,
+        "turn": 5
+      },
+      "delta": 0.24,
+      "oof": {
+        "hit": true,
+        "rank": 1,
+        "reward": 0.96,
+        "turn": 3
+      },
+      "sample_id": "public_0192"
+    },
+    {
+      "baseline": {
+        "hit": true,
+        "rank": 4,
+        "reward": 0.615,
+        "turn": 9
+      },
+      "delta": 0.225,
+      "oof": {
+        "hit": true,
+        "rank": 1,
+        "reward": 0.84,
+        "turn": 9
+      },
+      "sample_id": "public_0087"
+    },
+    {
+      "baseline": {
+        "hit": true,
+        "rank": 8,
+        "reward": 0.5775,
+        "turn": 9
+      },
+      "delta": 0.2125,
+      "oof": {
+        "hit": true,
+        "rank": 2,
+        "reward": 0.79,
+        "turn": 4
+      },
+      "sample_id": "public_0047"
+    },
+    {
+      "baseline": {
+        "hit": true,
+        "rank": 7,
+        "reward": 0.562857142857,
+        "turn": 10
+      },
+      "delta": 0.187142857143,
+      "oof": {
+        "hit": true,
+        "rank": 2,
+        "reward": 0.75,
+        "turn": 6
+      },
+      "sample_id": "public_0076"
+    },
+    {
+      "baseline": {
+        "hit": true,
+        "rank": 2,
+        "reward": 0.79,
+        "turn": 4
+      },
+      "delta": 0.17,
+      "oof": {
+        "hit": true,
+        "rank": 1,
+        "reward": 0.96,
+        "turn": 3
+      },
+      "sample_id": "public_0040"
+    },
+    {
+      "baseline": {
+        "hit": true,
+        "rank": 2,
+        "reward": 0.79,
+        "turn": 4
+      },
+      "delta": 0.17,
+      "oof": {
+        "hit": true,
+        "rank": 1,
+        "reward": 0.96,
+        "turn": 3
+      },
+      "sample_id": "public_0174"
+    },
+    {
+      "baseline": {
+        "hit": true,
+        "rank": 3,
+        "reward": 0.62,
+        "turn": 10
+      },
+      "delta": 0.11,
+      "oof": {
+        "hit": true,
+        "rank": 2,
+        "reward": 0.73,
+        "turn": 7
+      },
+      "sample_id": "public_0144"
+    },
+    {
+      "baseline": {
+        "hit": true,
+        "rank": 1,
+        "reward": 0.88,
+        "turn": 7
+      },
+      "delta": 0.1,
+      "oof": {
+        "hit": true,
+        "rank": 1,
+        "reward": 0.98,
+        "turn": 2
+      },
+      "sample_id": "public_0018"
+    },
+    {
+      "baseline": {
+        "hit": true,
+        "rank": 1,
+        "reward": 0.84,
+        "turn": 9
+      },
+      "delta": 0.08,
+      "oof": {
+        "hit": true,
+        "rank": 1,
+        "reward": 0.92,
+        "turn": 5
+      },
+      "sample_id": "public_0029"
+    }
+  ],
+  "mean_paired_delta": 0.020230952381,
+  "oof_technical_score": 0.9574,
+  "regressions": [
+    {
+      "baseline": {
+        "hit": true,
+        "rank": 1,
+        "reward": 0.88,
+        "turn": 7
+      },
+      "delta": -0.11,
+      "oof": {
+        "hit": true,
+        "rank": 2,
+        "reward": 0.77,
+        "turn": 5
+      },
+      "sample_id": "public_0154"
+    },
+    {
+      "baseline": {
+        "hit": true,
+        "rank": 1,
+        "reward": 0.96,
+        "turn": 3
+      },
+      "delta": -0.02,
+      "oof": {
+        "hit": true,
+        "rank": 1,
+        "reward": 0.94,
+        "turn": 4
+      },
+      "sample_id": "public_0068"
+    },
+    {
+      "baseline": {
+        "hit": true,
+        "rank": 1,
+        "reward": 1.0,
+        "turn": 1
+      },
+      "delta": -0.02,
+      "oof": {
+        "hit": true,
+        "rank": 1,
+        "reward": 0.98,
+        "turn": 2
+      },
+      "sample_id": "public_0176"
+    },
+    {
+      "baseline": {
+        "hit": true,
+        "rank": 1,
+        "reward": 0.98,
+        "turn": 2
+      },
+      "delta": -0.02,
+      "oof": {
+        "hit": true,
+        "rank": 1,
+        "reward": 0.96,
+        "turn": 3
+      },
+      "sample_id": "public_0181"
+    },
+    {
+      "baseline": {
+        "hit": true,
+        "rank": 1,
+        "reward": 0.94,
+        "turn": 4
+      },
+      "delta": -0.02,
+      "oof": {
+        "hit": true,
+        "rank": 1,
+        "reward": 0.92,
+        "turn": 5
+      },
+      "sample_id": "public_0183"
+    }
+  ],
+  "split": "development_only"
+}

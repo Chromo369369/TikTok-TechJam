@@ -1,0 +1,1782 @@
+{
+  "deterministic_input_only": true,
+  "experiment": "W001_wildcard_microtests",
+  "holdout_used": false,
+  "split": "development_only",
+  "test_count": 10,
+  "tests": [
+    {
+      "id": "atomic_material_feature",
+      "messages": [
+        "I am looking for a jacket and need cotton, waterproof material."
+      ],
+      "variants": {
+        "E060": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B0BLW17ZWL"
+            ],
+            "semantic_state_fingerprint": "595577d2dfcd6110cd4a999aeeb39ade5ecaa0e33aef8995cd6956f24444d1a7",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "cotton, waterproof material"
+                  ]
+                },
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": true,
+                  "strength": 0.7,
+                  "values": [
+                    "a jacket and need cotton, waterproof material"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "material"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P007D": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "wildcard_aware:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B0BLW17ZWL"
+            ],
+            "semantic_state_fingerprint": "595577d2dfcd6110cd4a999aeeb39ade5ecaa0e33aef8995cd6956f24444d1a7",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "cotton, waterproof material"
+                  ]
+                },
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": true,
+                  "strength": 0.7,
+                  "values": [
+                    "a jacket and need cotton, waterproof material"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "material"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P008A": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B0BLW17ZWL"
+            ],
+            "semantic_state_fingerprint": "595577d2dfcd6110cd4a999aeeb39ade5ecaa0e33aef8995cd6956f24444d1a7",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "cotton, waterproof material"
+                  ]
+                },
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": true,
+                  "strength": 0.7,
+                  "values": [
+                    "a jacket and need cotton, waterproof material"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "material"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "two_atomic_specs",
+      "messages": [
+        "I need shoes with breathable fabric and a zipper pocket."
+      ],
+      "variants": {
+        "E060": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B09MKL5TBK"
+            ],
+            "semantic_state_fingerprint": "6fc160368deadacd284a5af1ad290464eb3cf96893b89004f2ff854cb3bd19f7",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "shoes with breathable fabric and a zipper pocket"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "material"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P007D": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "wildcard_aware:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B09MKL5TBK"
+            ],
+            "semantic_state_fingerprint": "6fc160368deadacd284a5af1ad290464eb3cf96893b89004f2ff854cb3bd19f7",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "shoes with breathable fabric and a zipper pocket"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "material"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P008A": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B09MKL5TBK"
+            ],
+            "semantic_state_fingerprint": "6fc160368deadacd284a5af1ad290464eb3cf96893b89004f2ff854cb3bd19f7",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "shoes with breathable fabric and a zipper pocket"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "material"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "freeform_wildcard",
+      "messages": [
+        "I am browsing for something comfortable for hiking in winter."
+      ],
+      "variants": {
+        "E060": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B07T6HGMSL"
+            ],
+            "semantic_state_fingerprint": "301da8dbb227bf9eb831c857c81604ab9cded617ade8338793c8983f581d9b8c",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P007D": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "wildcard_aware:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B07SCQDKKP"
+            ],
+            "semantic_state_fingerprint": "301da8dbb227bf9eb831c857c81604ab9cded617ade8338793c8983f581d9b8c",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P008A": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B07SCQDKKP"
+            ],
+            "semantic_state_fingerprint": "301da8dbb227bf9eb831c857c81604ab9cded617ade8338793c8983f581d9b8c",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "no_preference",
+      "messages": [
+        "I need a casual shirt.",
+        "I have no preference on that."
+      ],
+      "variants": {
+        "E060": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B0B4BRW7JT"
+            ],
+            "semantic_state_fingerprint": "0049454aa4d60577daa42c8c0b68c095ddb06d8f359d6700ad6cfc189cda74c5",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "use_case",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "a casual shirt"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "use_case"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          },
+          {
+            "ask_attribute": "material",
+            "display_limit": 2,
+            "exposure_rule_id": "named_information:high_information|ask=material|k=2/10",
+            "override_detected": false,
+            "recommendations": [
+              "B07KQ4PF54",
+              "B07W4CFNFG"
+            ],
+            "semantic_state_fingerprint": "2ef1dd1dc2130ce0ddf92f9c78168f3440de981f9c608077cc85defbb6ae0f49",
+            "state_after": {
+              "asked_attributes": [
+                "material",
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "use_case",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "a casual shirt"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "use_case"
+              ],
+              "last_asked_attribute": "material",
+              "last_state_operation": null,
+              "no_preference": [
+                "other"
+              ],
+              "other_exhausted": true,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P007D": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "wildcard_aware:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B0B4BRW7JT"
+            ],
+            "semantic_state_fingerprint": "0049454aa4d60577daa42c8c0b68c095ddb06d8f359d6700ad6cfc189cda74c5",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "use_case",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "a casual shirt"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "use_case"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          },
+          {
+            "ask_attribute": "material",
+            "display_limit": 3,
+            "exposure_rule_id": "wildcard_aware:named|ask=material|k=3/10",
+            "override_detected": false,
+            "recommendations": [
+              "B07KQ4PF54",
+              "B07MZ942LH",
+              "B07D4DTSQ7"
+            ],
+            "semantic_state_fingerprint": "2ef1dd1dc2130ce0ddf92f9c78168f3440de981f9c608077cc85defbb6ae0f49",
+            "state_after": {
+              "asked_attributes": [
+                "material",
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "use_case",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "a casual shirt"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "use_case"
+              ],
+              "last_asked_attribute": "material",
+              "last_state_operation": null,
+              "no_preference": [
+                "other"
+              ],
+              "other_exhausted": true,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P008A": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B0B4BRW7JT"
+            ],
+            "semantic_state_fingerprint": "0049454aa4d60577daa42c8c0b68c095ddb06d8f359d6700ad6cfc189cda74c5",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "use_case",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "a casual shirt"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "use_case"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          },
+          {
+            "ask_attribute": "material",
+            "display_limit": 2,
+            "exposure_rule_id": "named_information:high_information|ask=material|k=2/10",
+            "override_detected": false,
+            "recommendations": [
+              "B07KQ4PF54",
+              "B07MZ942LH"
+            ],
+            "semantic_state_fingerprint": "2ef1dd1dc2130ce0ddf92f9c78168f3440de981f9c608077cc85defbb6ae0f49",
+            "state_after": {
+              "asked_attributes": [
+                "material",
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "use_case",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "a casual shirt"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "use_case"
+              ],
+              "last_asked_attribute": "material",
+              "last_state_operation": null,
+              "no_preference": [
+                "other"
+              ],
+              "other_exhausted": true,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "negated_material",
+      "messages": [
+        "I need pants and do not want leather."
+      ],
+      "variants": {
+        "E060": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B09VB627B2"
+            ],
+            "semantic_state_fingerprint": "45dc0a1e1338cc2eccda1695d82d4ed61c700dc29ccf3b479f2bbd0a19882472",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "pants and do not want leather"
+                  ]
+                },
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 0.7,
+                  "values": [
+                    "leather"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "material"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P007D": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "wildcard_aware:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B09VB627B2"
+            ],
+            "semantic_state_fingerprint": "45dc0a1e1338cc2eccda1695d82d4ed61c700dc29ccf3b479f2bbd0a19882472",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "pants and do not want leather"
+                  ]
+                },
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 0.7,
+                  "values": [
+                    "leather"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "material"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P008A": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B09VB627B2"
+            ],
+            "semantic_state_fingerprint": "45dc0a1e1338cc2eccda1695d82d4ed61c700dc29ccf3b479f2bbd0a19882472",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "pants and do not want leather"
+                  ]
+                },
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 0.7,
+                  "values": [
+                    "leather"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "material"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "override_reopens",
+      "messages": [
+        "I need a cotton shirt.",
+        "Actually, I need a waterproof jacket instead."
+      ],
+      "variants": {
+        "E060": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B07KQ4PF54"
+            ],
+            "semantic_state_fingerprint": "9040babe8743bdf835163ac4222202fbd23e68e4fa912a4f44154dcf6a2be792",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "a cotton shirt"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "material"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          },
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": true,
+            "recommendations": [
+              "B08L83YQTZ"
+            ],
+            "semantic_state_fingerprint": "eb8ec257cf431ab7c6e497597e74dff632de78a01fccd8daf0da7d3b23e7180b",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "other",
+                  "source_turn": 2,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "a waterproof jacket instead"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 1,
+              "intent_version": 1,
+              "known_attributes": [],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P007D": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "wildcard_aware:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B07KQ4PF54"
+            ],
+            "semantic_state_fingerprint": "9040babe8743bdf835163ac4222202fbd23e68e4fa912a4f44154dcf6a2be792",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "a cotton shirt"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "material"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          },
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "wildcard_aware:wildcard|ask=other|k=1/10",
+            "override_detected": true,
+            "recommendations": [
+              "B08L83YQTZ"
+            ],
+            "semantic_state_fingerprint": "eb8ec257cf431ab7c6e497597e74dff632de78a01fccd8daf0da7d3b23e7180b",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "other",
+                  "source_turn": 2,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "a waterproof jacket instead"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 1,
+              "intent_version": 1,
+              "known_attributes": [],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P008A": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B07KQ4PF54"
+            ],
+            "semantic_state_fingerprint": "9040babe8743bdf835163ac4222202fbd23e68e4fa912a4f44154dcf6a2be792",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "a cotton shirt"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "material"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          },
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": true,
+            "recommendations": [
+              "B08L83YQTZ"
+            ],
+            "semantic_state_fingerprint": "eb8ec257cf431ab7c6e497597e74dff632de78a01fccd8daf0da7d3b23e7180b",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "other",
+                  "source_turn": 2,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "a waterproof jacket instead"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 1,
+              "intent_version": 1,
+              "known_attributes": [],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "repeated_detail",
+      "messages": [
+        "I want travel shoes.",
+        "A key requirement is: lightweight and breathable."
+      ],
+      "variants": {
+        "E060": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B01AAANF2Y"
+            ],
+            "semantic_state_fingerprint": "8d4a116c2790db4f3551ee94adc597af005fc7b92b5e90a2e9f25344ef6961c5",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "use_case",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 0.7,
+                  "values": [
+                    "travel shoes"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "use_case"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          },
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B07JFL14ZD"
+            ],
+            "semantic_state_fingerprint": "b1947102d8a3739c4c24e89082f2ae53b4298119248d428eac35f9cde904ffaf",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "use_case",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 0.7,
+                  "values": [
+                    "travel shoes"
+                  ]
+                },
+                {
+                  "attribute": "other",
+                  "source_turn": 2,
+                  "strength": 1.0,
+                  "values": [
+                    "A key requirement is: lightweight and breathable."
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "other",
+                "use_case"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 2,
+              "other_values": [
+                "a key requirement is lightweight and breathable"
+              ]
+            },
+            "wildcard_constraints_received": [
+              {
+                "attribute": "other",
+                "source_turn": 2,
+                "strength": 1.0,
+                "values": [
+                  "A key requirement is: lightweight and breathable."
+                ]
+              }
+            ]
+          }
+        ],
+        "P007D": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "wildcard_aware:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B09MDBBV5C"
+            ],
+            "semantic_state_fingerprint": "8d4a116c2790db4f3551ee94adc597af005fc7b92b5e90a2e9f25344ef6961c5",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "use_case",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 0.7,
+                  "values": [
+                    "travel shoes"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "use_case"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          },
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "wildcard_aware:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B00JQL1RV0"
+            ],
+            "semantic_state_fingerprint": "b1947102d8a3739c4c24e89082f2ae53b4298119248d428eac35f9cde904ffaf",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "use_case",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 0.7,
+                  "values": [
+                    "travel shoes"
+                  ]
+                },
+                {
+                  "attribute": "other",
+                  "source_turn": 2,
+                  "strength": 1.0,
+                  "values": [
+                    "A key requirement is: lightweight and breathable."
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "other",
+                "use_case"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 2,
+              "other_values": [
+                "a key requirement is lightweight and breathable"
+              ]
+            },
+            "wildcard_constraints_received": [
+              {
+                "attribute": "other",
+                "source_turn": 2,
+                "strength": 1.0,
+                "values": [
+                  "A key requirement is: lightweight and breathable."
+                ]
+              }
+            ]
+          }
+        ],
+        "P008A": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B09MDBBV5C"
+            ],
+            "semantic_state_fingerprint": "8d4a116c2790db4f3551ee94adc597af005fc7b92b5e90a2e9f25344ef6961c5",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "use_case",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 0.7,
+                  "values": [
+                    "travel shoes"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "use_case"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          },
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B00JQL1RV0"
+            ],
+            "semantic_state_fingerprint": "b1947102d8a3739c4c24e89082f2ae53b4298119248d428eac35f9cde904ffaf",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "use_case",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 0.7,
+                  "values": [
+                    "travel shoes"
+                  ]
+                },
+                {
+                  "attribute": "other",
+                  "source_turn": 2,
+                  "strength": 1.0,
+                  "values": [
+                    "A key requirement is: lightweight and breathable."
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "other",
+                "use_case"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 2,
+              "other_values": [
+                "a key requirement is lightweight and breathable"
+              ]
+            },
+            "wildcard_constraints_received": [
+              {
+                "attribute": "other",
+                "source_turn": 2,
+                "strength": 1.0,
+                "values": [
+                  "A key requirement is: lightweight and breathable."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "sparse_phrase",
+      "messages": [
+        "Looking for athletic walking shoes with a roomy toe box."
+      ],
+      "variants": {
+        "E060": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B00IOT39RA"
+            ],
+            "semantic_state_fingerprint": "6b9153d4ae2d4eccc626036df80abaf980c991b7d64fd8be42dcc2af1919d69f",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "other",
+                  "source_turn": 1,
+                  "stable_context": true,
+                  "strength": 0.7,
+                  "values": [
+                    "athletic walking shoes with a roomy toe box"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P007D": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "wildcard_aware:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B00IOT39RA"
+            ],
+            "semantic_state_fingerprint": "6b9153d4ae2d4eccc626036df80abaf980c991b7d64fd8be42dcc2af1919d69f",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "other",
+                  "source_turn": 1,
+                  "stable_context": true,
+                  "strength": 0.7,
+                  "values": [
+                    "athletic walking shoes with a roomy toe box"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P008A": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B00IOT39RA"
+            ],
+            "semantic_state_fingerprint": "6b9153d4ae2d4eccc626036df80abaf980c991b7d64fd8be42dcc2af1919d69f",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "other",
+                  "source_turn": 1,
+                  "stable_context": true,
+                  "strength": 0.7,
+                  "values": [
+                    "athletic walking shoes with a roomy toe box"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "style_and_use",
+      "messages": [
+        "I need a formal black item for work."
+      ],
+      "variants": {
+        "E060": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B07XWDJ7PL"
+            ],
+            "semantic_state_fingerprint": "73cab8280690db7634eb0b7b1a33122639ac667ec8b1ba3a9925406d3e867075",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "other",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "a formal black item for work"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "color",
+                "use_case"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P007D": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "wildcard_aware:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B07D4DTSQ7"
+            ],
+            "semantic_state_fingerprint": "73cab8280690db7634eb0b7b1a33122639ac667ec8b1ba3a9925406d3e867075",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "other",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "a formal black item for work"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "color",
+                "use_case"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P008A": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B07D4DTSQ7"
+            ],
+            "semantic_state_fingerprint": "73cab8280690db7634eb0b7b1a33122639ac667ec8b1ba3a9925406d3e867075",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "other",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 1.0,
+                  "values": [
+                    "a formal black item for work"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "color",
+                "use_case"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "soft_preference",
+      "messages": [
+        "I would like a warm wool hat, but maybe any color is fine."
+      ],
+      "variants": {
+        "E060": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B0BD8CH3S8"
+            ],
+            "semantic_state_fingerprint": "db5ea847421065bc9b40585eda2aaef5924b364ce04ef681e3e2c9f82934d090",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 0.4,
+                  "values": [
+                    "a warm wool hat, but maybe any color is fine"
+                  ]
+                },
+                {
+                  "attribute": "other",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 0.4,
+                  "values": [
+                    "any color is fine"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "material"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P007D": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "wildcard_aware:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B0BD8CH3S8"
+            ],
+            "semantic_state_fingerprint": "db5ea847421065bc9b40585eda2aaef5924b364ce04ef681e3e2c9f82934d090",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 0.4,
+                  "values": [
+                    "a warm wool hat, but maybe any color is fine"
+                  ]
+                },
+                {
+                  "attribute": "other",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 0.4,
+                  "values": [
+                    "any color is fine"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "material"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ],
+        "P008A": [
+          {
+            "ask_attribute": "other",
+            "display_limit": 1,
+            "exposure_rule_id": "named_information:wildcard|ask=other|k=1/10",
+            "override_detected": false,
+            "recommendations": [
+              "B0BD8CH3S8"
+            ],
+            "semantic_state_fingerprint": "db5ea847421065bc9b40585eda2aaef5924b364ce04ef681e3e2c9f82934d090",
+            "state_after": {
+              "asked_attributes": [
+                "other"
+              ],
+              "constraints": [
+                {
+                  "attribute": "material",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 0.4,
+                  "values": [
+                    "a warm wool hat, but maybe any color is fine"
+                  ]
+                },
+                {
+                  "attribute": "other",
+                  "source_turn": 1,
+                  "stable_context": false,
+                  "strength": 0.4,
+                  "values": [
+                    "any color is fine"
+                  ]
+                }
+              ],
+              "inferred_scenario": "UNKNOWN",
+              "intent_start_message_index": 0,
+              "intent_version": 0,
+              "known_attributes": [
+                "material"
+              ],
+              "last_asked_attribute": "other",
+              "last_state_operation": null,
+              "no_preference": [],
+              "other_exhausted": false,
+              "other_questions": 1,
+              "other_values": []
+            },
+            "wildcard_constraints_received": []
+          }
+        ]
+      }
+    }
+  ]
+}

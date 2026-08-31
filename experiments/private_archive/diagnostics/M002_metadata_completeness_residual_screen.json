@@ -1,0 +1,436 @@
+{
+  "composites": {
+    "completeness_score": {
+      "all": {
+        "category_wins": {
+          "bandanas": 1,
+          "briefs": 1,
+          "casual button down shirts": 1,
+          "jeans": 1,
+          "screws": 1,
+          "tanks tops": 1,
+          "tunics": 2,
+          "walking": 1
+        },
+        "losses": 6,
+        "non_tied_accuracy": 0.6842,
+        "ties": 27,
+        "wilson_ci95_high": 0.8464,
+        "wilson_ci95_low": 0.4601,
+        "wins": 13
+      },
+      "both_lower": {
+        "category_wins": {
+          "bandanas": 1,
+          "briefs": 1,
+          "down jackets parkas": 1,
+          "screws": 1,
+          "sports bras": 1,
+          "tanks tops": 1,
+          "tunics": 1
+        },
+        "losses": 1,
+        "non_tied_accuracy": 0.875,
+        "ties": 14,
+        "wilson_ci95_high": 0.9776,
+        "wilson_ci95_low": 0.5291,
+        "wins": 7
+      }
+    },
+    "completeness_score_without_price": {
+      "all": {
+        "category_wins": {
+          "briefs": 1,
+          "casual button down shirts": 1,
+          "down jackets parkas": 1,
+          "jeans": 1,
+          "screws": 1,
+          "tanks tops": 1,
+          "tunics": 2,
+          "walking": 1
+        },
+        "losses": 1,
+        "non_tied_accuracy": 0.9333,
+        "ties": 31,
+        "wilson_ci95_high": 0.9881,
+        "wilson_ci95_low": 0.7018,
+        "wins": 14
+      },
+      "both_lower": {
+        "category_wins": {
+          "briefs": 1,
+          "down jackets parkas": 1,
+          "screws": 1,
+          "sports bras": 1,
+          "tanks tops": 1,
+          "tunics": 1,
+          "work safety": 1
+        },
+        "losses": 0,
+        "non_tied_accuracy": 1.0,
+        "ties": 15,
+        "wilson_ci95_high": 1.0,
+        "wilson_ci95_low": 0.6457,
+        "wins": 7
+      }
+    }
+  },
+  "experiment": "M002_metadata_completeness_residual_screen",
+  "features": {
+    "categories_present": {
+      "all": {
+        "category_wins": {},
+        "losses": 0,
+        "non_tied_accuracy": null,
+        "ties": 46,
+        "wilson_ci95_high": 0.0,
+        "wilson_ci95_low": 0.0,
+        "wins": 0
+      },
+      "both_lower": {
+        "category_wins": {},
+        "losses": 0,
+        "non_tied_accuracy": null,
+        "ties": 22,
+        "wilson_ci95_high": 0.0,
+        "wilson_ci95_low": 0.0,
+        "wins": 0
+      },
+      "price_tied": {
+        "category_wins": {},
+        "losses": 0,
+        "non_tied_accuracy": null,
+        "ties": 38,
+        "wilson_ci95_high": 0.0,
+        "wilson_ci95_low": 0.0,
+        "wins": 0
+      }
+    },
+    "category_depth": {
+      "all": {
+        "category_wins": {
+          "calf socks": 1,
+          "tanks tops": 1
+        },
+        "losses": 4,
+        "non_tied_accuracy": 0.3333,
+        "ties": 40,
+        "wilson_ci95_high": 0.7,
+        "wilson_ci95_low": 0.0968,
+        "wins": 2
+      },
+      "both_lower": {
+        "category_wins": {
+          "calf socks": 1,
+          "tanks tops": 1
+        },
+        "losses": 0,
+        "non_tied_accuracy": 1.0,
+        "ties": 20,
+        "wilson_ci95_high": 1.0,
+        "wilson_ci95_low": 0.3424,
+        "wins": 2
+      },
+      "price_tied": {
+        "category_wins": {
+          "tanks tops": 1
+        },
+        "losses": 3,
+        "non_tied_accuracy": 0.25,
+        "ties": 34,
+        "wilson_ci95_high": 0.6994,
+        "wilson_ci95_low": 0.0456,
+        "wins": 1
+      }
+    },
+    "description_present": {
+      "all": {
+        "category_wins": {
+          "briefs": 1,
+          "casual button down shirts": 1,
+          "down jackets parkas": 1,
+          "jeans": 1,
+          "screws": 1,
+          "tanks tops": 1,
+          "tunics": 2,
+          "walking": 1
+        },
+        "losses": 1,
+        "non_tied_accuracy": 0.9333,
+        "ties": 31,
+        "wilson_ci95_high": 0.9881,
+        "wilson_ci95_low": 0.7018,
+        "wins": 14
+      },
+      "both_lower": {
+        "category_wins": {
+          "briefs": 1,
+          "down jackets parkas": 1,
+          "screws": 1,
+          "sports bras": 1,
+          "tanks tops": 1,
+          "tunics": 1,
+          "work safety": 1
+        },
+        "losses": 0,
+        "non_tied_accuracy": 1.0,
+        "ties": 15,
+        "wilson_ci95_high": 1.0,
+        "wilson_ci95_low": 0.6457,
+        "wins": 7
+      },
+      "price_tied": {
+        "category_wins": {
+          "briefs": 1,
+          "casual button down shirts": 1,
+          "down jackets parkas": 1,
+          "jeans": 1,
+          "screws": 1,
+          "tanks tops": 1,
+          "tunics": 2,
+          "walking": 1
+        },
+        "losses": 1,
+        "non_tied_accuracy": 0.9231,
+        "ties": 25,
+        "wilson_ci95_high": 0.9863,
+        "wilson_ci95_low": 0.6669,
+        "wins": 12
+      }
+    },
+    "details_present": {
+      "all": {
+        "category_wins": {},
+        "losses": 0,
+        "non_tied_accuracy": null,
+        "ties": 46,
+        "wilson_ci95_high": 0.0,
+        "wilson_ci95_low": 0.0,
+        "wins": 0
+      },
+      "both_lower": {
+        "category_wins": {},
+        "losses": 0,
+        "non_tied_accuracy": null,
+        "ties": 22,
+        "wilson_ci95_high": 0.0,
+        "wilson_ci95_low": 0.0,
+        "wins": 0
+      },
+      "price_tied": {
+        "category_wins": {},
+        "losses": 0,
+        "non_tied_accuracy": null,
+        "ties": 38,
+        "wilson_ci95_high": 0.0,
+        "wilson_ci95_low": 0.0,
+        "wins": 0
+      }
+    },
+    "feature_count": {
+      "all": {
+        "category_wins": {
+          "active shorts": 1,
+          "bandanas": 1,
+          "bikinis": 1,
+          "bodysuits": 1,
+          "briefs": 1,
+          "hoodies": 1,
+          "soccer": 1,
+          "work safety": 1
+        },
+        "losses": 21,
+        "non_tied_accuracy": 0.4167,
+        "ties": 10,
+        "wilson_ci95_high": 0.578,
+        "wilson_ci95_low": 0.2714,
+        "wins": 15
+      },
+      "both_lower": {
+        "category_wins": {
+          "bandanas": 1,
+          "bikinis": 1,
+          "briefs": 1,
+          "combat": 1,
+          "hoodies": 1,
+          "sets": 1,
+          "snow cold weather": 1,
+          "work safety": 1
+        },
+        "losses": 8,
+        "non_tied_accuracy": 0.5294,
+        "ties": 5,
+        "wilson_ci95_high": 0.7384,
+        "wilson_ci95_low": 0.3096,
+        "wins": 9
+      },
+      "price_tied": {
+        "category_wins": {
+          "active shorts": 1,
+          "bikinis": 1,
+          "briefs": 1,
+          "combat": 1,
+          "hoodies": 1,
+          "snow cold weather": 1,
+          "soccer": 1,
+          "watch bands": 1
+        },
+        "losses": 17,
+        "non_tied_accuracy": 0.3929,
+        "ties": 10,
+        "wilson_ci95_high": 0.5759,
+        "wilson_ci95_low": 0.2357,
+        "wins": 11
+      }
+    },
+    "features_present": {
+      "all": {
+        "category_wins": {},
+        "losses": 0,
+        "non_tied_accuracy": null,
+        "ties": 46,
+        "wilson_ci95_high": 0.0,
+        "wilson_ci95_low": 0.0,
+        "wins": 0
+      },
+      "both_lower": {
+        "category_wins": {},
+        "losses": 0,
+        "non_tied_accuracy": null,
+        "ties": 22,
+        "wilson_ci95_high": 0.0,
+        "wilson_ci95_low": 0.0,
+        "wins": 0
+      },
+      "price_tied": {
+        "category_wins": {},
+        "losses": 0,
+        "non_tied_accuracy": null,
+        "ties": 38,
+        "wilson_ci95_high": 0.0,
+        "wilson_ci95_low": 0.0,
+        "wins": 0
+      }
+    },
+    "nonempty_field_count": {
+      "all": {
+        "category_wins": {
+          "bandanas": 1,
+          "briefs": 1,
+          "casual button down shirts": 1,
+          "jeans": 1,
+          "screws": 1,
+          "tanks tops": 1,
+          "tunics": 2,
+          "walking": 1
+        },
+        "losses": 6,
+        "non_tied_accuracy": 0.6842,
+        "ties": 27,
+        "wilson_ci95_high": 0.8464,
+        "wilson_ci95_low": 0.4601,
+        "wins": 13
+      },
+      "both_lower": {
+        "category_wins": {
+          "bandanas": 1,
+          "briefs": 1,
+          "down jackets parkas": 1,
+          "screws": 1,
+          "sports bras": 1,
+          "tanks tops": 1,
+          "tunics": 1
+        },
+        "losses": 1,
+        "non_tied_accuracy": 0.875,
+        "ties": 14,
+        "wilson_ci95_high": 0.9776,
+        "wilson_ci95_low": 0.5291,
+        "wins": 7
+      },
+      "price_tied": {
+        "category_wins": {
+          "briefs": 1,
+          "casual button down shirts": 1,
+          "down jackets parkas": 1,
+          "jeans": 1,
+          "screws": 1,
+          "tanks tops": 1,
+          "tunics": 2,
+          "walking": 1
+        },
+        "losses": 1,
+        "non_tied_accuracy": 0.9231,
+        "ties": 25,
+        "wilson_ci95_high": 0.9863,
+        "wilson_ci95_low": 0.6669,
+        "wins": 12
+      }
+    },
+    "price_present": {
+      "all": {
+        "category_wins": {
+          "bandanas": 1
+        },
+        "losses": 7,
+        "non_tied_accuracy": 0.125,
+        "ties": 38,
+        "wilson_ci95_high": 0.4709,
+        "wilson_ci95_low": 0.0224,
+        "wins": 1
+      },
+      "both_lower": {
+        "category_wins": {
+          "bandanas": 1
+        },
+        "losses": 2,
+        "non_tied_accuracy": 0.3333,
+        "ties": 19,
+        "wilson_ci95_high": 0.7923,
+        "wilson_ci95_low": 0.0615,
+        "wins": 1
+      },
+      "price_tied": {
+        "category_wins": {},
+        "losses": 0,
+        "non_tied_accuracy": null,
+        "ties": 38,
+        "wilson_ci95_high": 0.0,
+        "wilson_ci95_low": 0.0,
+        "wins": 0
+      }
+    },
+    "store_present": {
+      "all": {
+        "category_wins": {},
+        "losses": 0,
+        "non_tied_accuracy": null,
+        "ties": 46,
+        "wilson_ci95_high": 0.0,
+        "wilson_ci95_low": 0.0,
+        "wins": 0
+      },
+      "both_lower": {
+        "category_wins": {},
+        "losses": 0,
+        "non_tied_accuracy": null,
+        "ties": 22,
+        "wilson_ci95_high": 0.0,
+        "wilson_ci95_low": 0.0,
+        "wins": 0
+      },
+      "price_tied": {
+        "category_wins": {},
+        "losses": 0,
+        "non_tied_accuracy": null,
+        "ties": 38,
+        "wilson_ci95_high": 0.0,
+        "wilson_ci95_low": 0.0,
+        "wins": 0
+      }
+    }
+  },
+  "pairs_all": 46,
+  "pairs_both_lower": 22,
+  "pairs_price_tied": 38
+}

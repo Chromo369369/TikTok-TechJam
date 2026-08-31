@@ -1,0 +1,33 @@
+{
+  "experiment": "E061_residual_target_prior_audit",
+  "holdout_used": false,
+  "provenance": {
+    "e060_end_to_end_oof_sha256": "7e6c160d3c8bb83cf526139890923bd092771dc25eea4b521a404d17b5f69ff6",
+    "e060_report_sha256": "e7b29209c04447047163449d6553c7e928988033adf23897f38a878a0ec9466f",
+    "fold_model_sha256": {
+      "0": "0864d0f69bc1cf7481277c1d11a347d848a162182e2aa2d5bdd04b53fb776c3f",
+      "1": "062bad4e99a925fa09826c89aaa9ac751610b1036f830532da4f94fcfb3e8998",
+      "2": "b51444c2012a8555b0e92301ffa7222b19881bdcb940a9e9f7fa75743de60554",
+      "3": "a088ba5005716a1619dc054a1f47d617d241c5e32922aa4f64396b3481228f56",
+      "4": "eb92f35b1d7a03f74948a7e161a7db12642105818ec5f7984b951cb2dcb8029f"
+    },
+    "reconstruction_metrics": {
+      "groups": 149,
+      "mrr": 0.786338,
+      "rank1": 103,
+      "top10": 145
+    },
+    "source_missing_sessions": [
+      "public_0035"
+    ],
+    "strict_target_product_disjoint": true
+  },
+  "residual_error_count": 46,
+  "runtime_model_written": false,
+  "selection_permitted": false,
+  "source_interaction_prior": {
+    "available": false,
+    "reason": "no --interactions file supplied"
+  },
+  "split": "development_only"
+}

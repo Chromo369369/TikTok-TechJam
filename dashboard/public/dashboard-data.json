@@ -1,0 +1,3915 @@
+{
+  "generatedAt": "2026-08-31T18:06:55.589Z",
+  "archiveAvailable": true,
+  "experiments": [
+    {
+      "id": "B003A",
+      "description": "old belief old response",
+      "status": "KEEP",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.891833,
+      "mrr": 0.738111,
+      "hr": 0.993333,
+      "mttc": 2.313333,
+      "lesson": "Exact K001C control"
+    },
+    {
+      "id": "B003B",
+      "description": "calibrated belief old response",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.894733,
+      "mrr": 0.736,
+      "hr": 0.96,
+      "mttc": 2.56,
+      "lesson": "Score regressed versus K001C control",
+      "holdout": 0.8696
+    },
+    {
+      "id": "B003C",
+      "description": "calibrated belief empirical spec response",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.8909,
+      "mrr": 0.733667,
+      "hr": 0.993333,
+      "mttc": 2.293333,
+      "lesson": "Empirical event approximation regressed development score"
+    },
+    {
+      "id": "C001",
+      "description": "global popularity cycle",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.168642,
+      "mrr": 0.059474,
+      "hr": 0.24,
+      "mttc": 9.46,
+      "lesson": "Weak control: global popularity cycling ignores user intent"
+    },
+    {
+      "id": "C002",
+      "description": "no questions",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.410032,
+      "mrr": 0.244995,
+      "hr": 0.513333,
+      "mttc": 7.006667,
+      "lesson": "Weak control: E012 retrieval and ranking with clarification disabled"
+    },
+    {
+      "id": "E000",
+      "description": "Official BM25 starter baseline",
+      "status": "KEEP",
+      "family": "baseline",
+      "source": "curated historical milestone",
+      "mrr": 0.068034,
+      "hr": 0.125,
+      "mttc": 9.81,
+      "lesson": "Official weak BM25 control",
+      "dev": 0.10671
+    },
+    {
+      "id": "E001",
+      "description": "cumulative history",
+      "status": "KEEP",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "full": 0.228414,
+      "mrr": 0.151381,
+      "hr": 0.27,
+      "mttc": 8.6,
+      "lesson": "Cumulative session history improved all aggregate metrics"
+    },
+    {
+      "id": "E002",
+      "description": "override aware hard exclusion",
+      "status": "KEEP",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.396368,
+      "mrr": 0.171937,
+      "hr": 0.58,
+      "mttc": 7.12,
+      "lesson": "Holdout confirmation for current best",
+      "full": 0.402072,
+      "holdout": 0.419181
+    },
+    {
+      "id": "E003",
+      "description": "confidence weighted constraints",
+      "status": "KEEP",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.404359,
+      "mrr": 0.178071,
+      "hr": 0.58,
+      "mttc": 6.88,
+      "lesson": "Holdout confirmed development improvement",
+      "full": 0.409724,
+      "holdout": 0.425821
+    },
+    {
+      "id": "E004",
+      "description": "Clarification-driven candidate split",
+      "status": "KEEP",
+      "family": "clarification",
+      "source": "curated historical milestone",
+      "dev": 0.727529,
+      "mrr": 0.501635,
+      "hr": 0.92,
+      "mttc": 4.54,
+      "lesson": "Holdout confirmed V1 split policy",
+      "holdout": 0.739691
+    },
+    {
+      "id": "E005",
+      "description": "unweighted entropy",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.718787,
+      "mrr": 0.501735,
+      "hr": 0.893333,
+      "mttc": 4.92,
+      "lesson": "Regressed against simpler split policy"
+    },
+    {
+      "id": "E006",
+      "description": "probability weighted entropy",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.725229,
+      "mrr": 0.512984,
+      "hr": 0.9,
+      "mttc": 4.933333,
+      "lesson": "Beat E005 but did not beat current-best E004"
+    },
+    {
+      "id": "E007",
+      "description": "expected competition value",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.716158,
+      "mrr": 0.495193,
+      "hr": 0.893333,
+      "mttc": 4.953333,
+      "lesson": "Expected-value proxy regressed against E006 and E004"
+    },
+    {
+      "id": "E008",
+      "description": "probability weighted split",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.722546,
+      "mrr": 0.51382,
+      "hr": 0.893333,
+      "mttc": 4.913333,
+      "lesson": "Weighted split regressed against E004"
+    },
+    {
+      "id": "E009",
+      "description": "expected elimination",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.723082,
+      "mrr": 0.515606,
+      "hr": 0.893333,
+      "mttc": 4.913333,
+      "lesson": "Expected elimination regressed against E004"
+    },
+    {
+      "id": "E010",
+      "description": "Answerability-aware clarification",
+      "status": "KEEP",
+      "family": "clarification",
+      "source": "curated historical milestone",
+      "dev": 0.769408,
+      "mrr": 0.536214,
+      "hr": 0.94,
+      "mttc": 3.26,
+      "lesson": "Holdout confirmed answerability-adjusted split",
+      "holdout": 0.785664
+    },
+    {
+      "id": "E011",
+      "description": "confidence aware question gating",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.674503,
+      "mrr": 0.48523,
+      "hr": 0.826667,
+      "mttc": 5.22,
+      "lesson": "Minimum-score gating retained high-score low-answerability questions"
+    },
+    {
+      "id": "E012",
+      "description": "constraint strength representation",
+      "status": "KEEP",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.776215,
+      "mrr": 0.544468,
+      "hr": 0.94,
+      "mttc": 3.3,
+      "lesson": "Holdout confirmed ranking gain",
+      "full": 0.778996,
+      "holdout": 0.78734
+    },
+    {
+      "id": "E013",
+      "description": "operation aware state",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.776215,
+      "mrr": 0.554939,
+      "hr": 0.92,
+      "mttc": 3.513333,
+      "lesson": "Metric-neutral with many false-looking lexical operations"
+    },
+    {
+      "id": "E014",
+      "description": "selective intent reset",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.776548,
+      "mrr": 0.55605,
+      "hr": 0.92,
+      "mttc": 3.513333,
+      "lesson": "Selective intent-reset development evaluation"
+    },
+    {
+      "id": "E015A",
+      "description": "soft decay gamma 1 0",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.776215,
+      "mrr": 0.554939,
+      "hr": 0.92,
+      "mttc": 3.513333,
+      "lesson": "Soft decay gamma control 1.0"
+    },
+    {
+      "id": "E015B",
+      "description": "soft decay gamma 0 9",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.776215,
+      "mrr": 0.554939,
+      "hr": 0.92,
+      "mttc": 3.513333,
+      "lesson": "Soft decay gamma 0.9"
+    },
+    {
+      "id": "E015C",
+      "description": "soft decay gamma 0 8",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.776215,
+      "mrr": 0.554939,
+      "hr": 0.92,
+      "mttc": 3.513333,
+      "lesson": "Soft decay gamma 0.8"
+    },
+    {
+      "id": "E016",
+      "description": "contradiction aware state",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.776215,
+      "mrr": 0.554939,
+      "hr": 0.92,
+      "mttc": 3.513333,
+      "lesson": "Contradiction-aware state development evaluation"
+    },
+    {
+      "id": "E017",
+      "description": "state semantic ranking",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.775221,
+      "mrr": 0.549402,
+      "hr": 0.92,
+      "mttc": 3.48,
+      "lesson": "State-semantic ranking development evaluation"
+    },
+    {
+      "id": "E018",
+      "description": "always other",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.804084,
+      "mrr": 0.59628,
+      "hr": 0.933333,
+      "mttc": 3.073333,
+      "lesson": "Always-other development evaluation"
+    },
+    {
+      "id": "E019",
+      "description": "other first then e012",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.830475,
+      "mrr": 0.604696,
+      "hr": 0.973333,
+      "mttc": 2.88,
+      "lesson": "Other-first development evaluation"
+    },
+    {
+      "id": "E020",
+      "description": "other until exhausted",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.837037,
+      "mrr": 0.639013,
+      "hr": 0.966667,
+      "mttc": 2.9,
+      "lesson": "Other-until-exhausted development evaluation"
+    },
+    {
+      "id": "E021",
+      "description": "Intent fingerprint retrieval",
+      "status": "KEEP",
+      "family": "retrieval",
+      "source": "curated historical milestone",
+      "dev": 0.792059,
+      "mrr": 0.570111,
+      "hr": 0.96,
+      "mttc": 2.98,
+      "lesson": "Robust promotion: catalog-only challenger confirmed on major-checkpoint holdout",
+      "holdout": 0.811433
+    },
+    {
+      "id": "E022",
+      "description": "Other + fingerprint evaluator track",
+      "status": "KEEP",
+      "family": "clarification",
+      "source": "curated historical milestone",
+      "dev": 0.854294,
+      "mrr": 0.668325,
+      "hr": 0.98,
+      "mttc": 2.74,
+      "lesson": "Evaluator-track major-checkpoint holdout; not a robust-default promotion",
+      "holdout": 0.855697
+    },
+    {
+      "id": "E023",
+      "description": "scenario aware routing",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.759382,
+      "mrr": 0.538828,
+      "hr": 0.9,
+      "mttc": 3.613333,
+      "lesson": "Observable scenario-router development evaluation"
+    },
+    {
+      "id": "E024A",
+      "description": "diversity 10 exploit 0 explore",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.776215,
+      "mrr": 0.554939,
+      "hr": 0.92,
+      "mttc": 3.513333,
+      "lesson": "Diversity control 10 exploit 0 explore"
+    },
+    {
+      "id": "E024B",
+      "description": "diversity 8 exploit 2 explore",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.776248,
+      "mrr": 0.554603,
+      "hr": 0.92,
+      "mttc": 3.506667,
+      "lesson": "Diversity 8 exploit 2 explore"
+    },
+    {
+      "id": "E024C",
+      "description": "diversity 6 exploit 4 explore",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.776331,
+      "mrr": 0.554881,
+      "hr": 0.92,
+      "mttc": 3.506667,
+      "lesson": "Diversity 6 exploit 4 explore"
+    },
+    {
+      "id": "E025A",
+      "description": "phrase baseline",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.794359,
+      "mrr": 0.606085,
+      "hr": 0.92,
+      "mttc": 3.373333,
+      "lesson": "E021 phrase-route reproduction baseline for E025 representation ablation."
+    },
+    {
+      "id": "E025B",
+      "description": "controlled values",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.803768,
+      "mrr": 0.546339,
+      "hr": 0.96,
+      "mttc": 3.006667,
+      "lesson": "Controlled catalog singleton evidence plus E021 phrase evidence."
+    },
+    {
+      "id": "E025C",
+      "description": "structured evidence",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.772846,
+      "mrr": 0.45482,
+      "hr": 0.96,
+      "mttc": 3.18,
+      "lesson": "Structured catalog evidence route, without phrase evidence."
+    },
+    {
+      "id": "E025D",
+      "description": "Field-aware evidence aggregation",
+      "status": "KEEP",
+      "family": "retrieval",
+      "source": "curated historical milestone",
+      "mrr": 0.585079,
+      "hr": 0.98,
+      "mttc": 3.06,
+      "lesson": "Robust promotion: field-aware aggregation improved development and holdout without wildcard-question dependence.",
+      "dev": 0.808106,
+      "holdout": 0.824324
+    },
+    {
+      "id": "E026",
+      "description": "residual recall audit",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.808106,
+      "mrr": 0.541688,
+      "hr": 0.973333,
+      "mttc": 3.053333,
+      "lesson": "Forensic residual-recall audit; no scoring change from E025D."
+    },
+    {
+      "id": "E027",
+      "description": "reranker regression audit",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.808106,
+      "mrr": 0.541688,
+      "hr": 0.973333,
+      "mttc": 3.053333,
+      "lesson": "Stage-by-stage reranker regression audit; no scoring change from E025D."
+    },
+    {
+      "id": "E028",
+      "description": "conservative multiroute fusion",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.803935,
+      "mrr": 0.555339,
+      "hr": 0.96,
+      "mttc": 3.133333,
+      "lesson": "Conservative BM25, structured, and phrase route-consensus fusion regressed E025D technical score."
+    },
+    {
+      "id": "E029",
+      "description": "evidence coverage reranker",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.799086,
+      "mrr": 0.558733,
+      "hr": 0.953333,
+      "mttc": 3.26,
+      "lesson": "Distinct coverage improved conditional ranking but regressed HR@10 and technical score."
+    },
+    {
+      "id": "E031A",
+      "description": "protected control",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.808106,
+      "mrr": 0.541688,
+      "hr": 0.973333,
+      "mttc": 3.053333,
+      "lesson": "Protected membership control."
+    },
+    {
+      "id": "E031B",
+      "description": "protected coverage",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.802234,
+      "mrr": 0.522114,
+      "hr": 0.973333,
+      "mttc": 3.053333,
+      "lesson": "Protected Top-10 coverage-only ordering."
+    },
+    {
+      "id": "E031C",
+      "description": "protected near tie",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.807245,
+      "mrr": 0.538817,
+      "hr": 0.973333,
+      "mttc": 3.053333,
+      "lesson": "Protected Top-10 near-tie coverage tie-break."
+    },
+    {
+      "id": "E031D",
+      "description": "protected interpolation",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.807634,
+      "mrr": 0.540114,
+      "hr": 0.973333,
+      "mttc": 3.053333,
+      "lesson": "Protected Top-10 conservative coverage interpolation."
+    },
+    {
+      "id": "E032A",
+      "description": "structured pool 100",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.793675,
+      "mrr": 0.535807,
+      "hr": 0.953333,
+      "mttc": 3.186667,
+      "lesson": "Structured evidence route capped at 100."
+    },
+    {
+      "id": "E032B",
+      "description": "structured pool 150",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.799856,
+      "mrr": 0.543963,
+      "hr": 0.96,
+      "mttc": 3.166667,
+      "lesson": "Structured evidence route capped at 150."
+    },
+    {
+      "id": "E032C",
+      "description": "structured pool 300",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.80647,
+      "mrr": 0.550899,
+      "hr": 0.966667,
+      "mttc": 3.106667,
+      "lesson": "Structured evidence route expanded to 300."
+    },
+    {
+      "id": "E034",
+      "description": "structured state bm25",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.807482,
+      "mrr": 0.540939,
+      "hr": 0.973333,
+      "mttc": 3.073333,
+      "lesson": "Conservative active structured-state lexical BM25 expansion."
+    },
+    {
+      "id": "E035A",
+      "description": "exhaustion control",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.808106,
+      "mrr": 0.541688,
+      "hr": 0.973333,
+      "mttc": 3.053333,
+      "lesson": "E025D control for exhaustion recovery."
+    },
+    {
+      "id": "E035B",
+      "description": "Exhaustion recovery",
+      "status": "KEEP",
+      "family": "retrieval",
+      "source": "curated historical milestone",
+      "dev": 0.821151,
+      "mrr": 0.601746,
+      "hr": 0.98,
+      "mttc": 3.02,
+      "lesson": "Holdout confirmation for exhaustion recovery development winner.",
+      "holdout": 0.830124
+    },
+    {
+      "id": "E035C",
+      "description": "explicit exhaustion",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.820351,
+      "mrr": 0.557614,
+      "hr": 0.986667,
+      "mttc": 3.013333,
+      "lesson": "Recover only when shopper explicitly requests clarification."
+    },
+    {
+      "id": "E036",
+      "description": "evaluator other terminal",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.826801,
+      "mrr": 0.564003,
+      "hr": 0.993333,
+      "mttc": 2.953333,
+      "lesson": "Six terminal other questions improve E035B but do not approach E022 evaluator-track score; no holdout or evaluator promotion."
+    },
+    {
+      "id": "E043A",
+      "description": "one early other",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.842877,
+      "mrr": 0.604701,
+      "hr": 0.986667,
+      "mttc": 2.593333,
+      "lesson": "E043B was stronger; neither bounded variant reaches E022."
+    },
+    {
+      "id": "E043B",
+      "description": "two early other",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.851499,
+      "mrr": 0.609167,
+      "hr": 0.98,
+      "mttc": 2.7,
+      "lesson": ".838750 holdout below E022 .855697; no evaluator promotion.",
+      "holdout": 0.83875
+    },
+    {
+      "id": "E046",
+      "description": "category conditional specificity",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.834609,
+      "mrr": 0.594222,
+      "hr": 0.98,
+      "mttc": 2.96,
+      "lesson": ".829067 holdout below E035B .830124; no robust promotion.",
+      "holdout": 0.829067
+    },
+    {
+      "id": "E052",
+      "description": "evaluator wildcard field evidence",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.851544,
+      "mrr": 0.617146,
+      "hr": 0.993333,
+      "mttc": 2.513333,
+      "lesson": "Below E022 .854294 development score; no holdout or evaluator promotion."
+    },
+    {
+      "id": "E054",
+      "description": "catalog interaction reranker",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.821075,
+      "mrr": 0.557362,
+      "hr": 0.986667,
+      "mttc": 2.973333,
+      "lesson": "Catalog-only model regresses E035B development score by .000076."
+    },
+    {
+      "id": "E057",
+      "description": "punctuation invariant evidence",
+      "status": "KEEP",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.821151,
+      "mrr": 0.601746,
+      "hr": 0.98,
+      "mttc": 3.02,
+      "lesson": "Development-identical bug hardening; holdout confirmation.",
+      "holdout": 0.830124
+    },
+    {
+      "id": "E058",
+      "description": "Phrase-IDF key correction",
+      "status": "KEEP",
+      "family": "retrieval",
+      "source": "curated historical milestone",
+      "dev": 0.871721,
+      "mrr": 0.669246,
+      "hr": 0.98,
+      "mttc": 2.28,
+      "lesson": "Confirmation-only holdout improved MRR and score with unchanged HR and zero hard violations.",
+      "full": 0.870084,
+      "holdout": 0.865174
+    },
+    {
+      "id": "E060",
+      "family": "target propensity",
+      "status": "KEEP",
+      "dev": 0.9574,
+      "description": "Target-propensity reranker",
+      "source": "curated historical milestone"
+    },
+    {
+      "id": "E060A",
+      "description": "p008 target propensity",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.958533,
+      "mrr": 0.96,
+      "hr": 0.98,
+      "mttc": 2.82,
+      "lesson": "",
+      "holdout": 0.9416
+    },
+    {
+      "id": "E061",
+      "family": "ranking",
+      "status": "KEEP",
+      "dev": 0.958363,
+      "description": "Phrase matching, final score",
+      "source": "curated historical milestone"
+    },
+    {
+      "id": "E065",
+      "family": "category",
+      "status": "REJECT",
+      "dev": 0.9558,
+      "description": "E065",
+      "source": "curated historical milestone"
+    },
+    {
+      "id": "K001",
+      "family": "exposure",
+      "status": "KEEP",
+      "dev": 0.887375,
+      "description": "K001",
+      "source": "curated historical milestone"
+    },
+    {
+      "id": "K003A",
+      "description": "e058 k4 while asking",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.898,
+      "mrr": 0.765778,
+      "hr": 0.993333,
+      "mttc": 2.42,
+      "lesson": "K003 preregistered development sweep; k=4 while asking, 10 otherwise."
+    },
+    {
+      "id": "K003B",
+      "description": "e058 k5 while asking control",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.891833,
+      "mrr": 0.738111,
+      "hr": 0.993333,
+      "mttc": 2.313333,
+      "lesson": "K003 preregistered development control; k=5 while asking, 10 otherwise."
+    },
+    {
+      "id": "K003C",
+      "description": "e058 k6 while asking",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.884633,
+      "mrr": 0.709222,
+      "hr": 0.993333,
+      "mttc": 2.24,
+      "lesson": "K003 preregistered development sweep; k=6 while asking, 10 otherwise."
+    },
+    {
+      "id": "K003D",
+      "description": "e058 k3 while asking",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.899467,
+      "mrr": 0.78,
+      "hr": 0.96,
+      "mttc": 2.72,
+      "lesson": "Single preregistered holdout confirmation for development-selected K003D; no holdout model selection.",
+      "holdout": 0.8796
+    },
+    {
+      "id": "K003E",
+      "description": "e058 k7 while asking",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.876071,
+      "mrr": 0.676238,
+      "hr": 0.993333,
+      "mttc": 2.173333,
+      "lesson": "K003 preregistered development boundary check; k=7 while asking, 10 otherwise."
+    },
+    {
+      "id": "K004",
+      "description": "P006C × conservative exposure",
+      "status": "KEEP",
+      "family": "exposure",
+      "source": "curated historical milestone",
+      "dev": 0.922933,
+      "mrr": 0.813333,
+      "hr": 0.98,
+      "mttc": 2.68,
+      "lesson": "Single frozen P006C x K003D holdout measurement; no tuning or follow-up holdout selection.",
+      "holdout": 0.9004
+    },
+    {
+      "id": "K005A",
+      "description": "e058 k2 while asking",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.908653,
+      "mrr": 0.840397,
+      "hr": 0.986667,
+      "mttc": 2.84,
+      "lesson": "Development-only lower-boundary exposure sweep; k=2 while asking, 10 otherwise; no K005 holdout."
+    },
+    {
+      "id": "K005B",
+      "description": "e058 k1 while asking",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.916233,
+      "mrr": 0.929222,
+      "hr": 0.973333,
+      "mttc": 3.46,
+      "lesson": "Development-only lower-boundary exposure sweep; k=1 while asking, 10 otherwise; no K005 holdout."
+    },
+    {
+      "id": "K005C",
+      "description": "e058 k0 while asking",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.699601,
+      "mrr": 0.699558,
+      "hr": 0.893333,
+      "mttc": 8.846667,
+      "lesson": "Development-only ask-only boundary check; k=0 while asking, 10 otherwise; no K005 holdout."
+    },
+    {
+      "id": "K006A",
+      "description": "early aggressive exposure",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.916386,
+      "mrr": 0.87373,
+      "hr": 0.986667,
+      "mttc": 2.953333,
+      "lesson": "Beaten on development by the predeclared A6 schedule."
+    },
+    {
+      "id": "K006B",
+      "description": "two turn aggressive exposure",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.917467,
+      "mrr": 0.875556,
+      "hr": 0.986667,
+      "mttc": 2.926667,
+      "lesson": "Beaten on development by the predeclared A6 schedule."
+    },
+    {
+      "id": "K006C",
+      "description": "substantive answer exposure",
+      "status": "KEEP",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.918367,
+      "mrr": 0.843333,
+      "hr": 0.96,
+      "mttc": 2.98,
+      "lesson": "One-shot holdout confirmed +.013800 over K3 at unchanged HR.",
+      "holdout": 0.8934
+    },
+    {
+      "id": "K006D",
+      "description": "wildcard aware exposure",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.899467,
+      "mrr": 0.791111,
+      "hr": 0.986667,
+      "mttc": 2.56,
+      "lesson": "Exact K3 reproduction because the non-wildcard track did not activate other questions."
+    },
+    {
+      "id": "K007A",
+      "description": "e058 cumulative early cap",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.915367,
+      "mrr": 0.862778,
+      "hr": 0.986667,
+      "mttc": 2.84,
+      "lesson": "Development-only cumulative cap reduced MRR and score by .003000 versus K006C at identical HR and efficiency."
+    },
+    {
+      "id": "K007B",
+      "description": "e058 rank churn exposure",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.918367,
+      "mrr": 0.872778,
+      "hr": 0.986667,
+      "mttc": 2.84,
+      "lesson": "Development-only rank-churn policy exactly reproduced K006C aggregate behavior; it supplied no independent gain."
+    },
+    {
+      "id": "M002A",
+      "description": "factorized catalog prior",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.916467,
+      "mrr": 0.864667,
+      "hr": 0.986667,
+      "mttc": 2.813333,
+      "lesson": "One pre-registered static catalog-prior challenger; development-only separate gate."
+    },
+    {
+      "id": "P001A",
+      "description": "popularity control",
+      "status": "INCONCLUSIVE",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.821151,
+      "mrr": 0.557614,
+      "hr": 0.986667,
+      "mttc": 2.973333,
+      "lesson": "Explicit E035B control for catalog-popularity ordering family."
+    },
+    {
+      "id": "P001B",
+      "description": "pure popularity order",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.759802,
+      "mrr": 0.431341,
+      "hr": 0.933333,
+      "mttc": 2.813333,
+      "lesson": "Extreme visible rating_number reorder violated constraints and regressed E035B."
+    },
+    {
+      "id": "P001C",
+      "description": "popularity near tie",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.831913,
+      "mrr": 0.573934,
+      "hr": 0.993333,
+      "mttc": 2.846667,
+      "lesson": "Clear improvement but below predeclared P001D RRF; no separate holdout."
+    },
+    {
+      "id": "P001D",
+      "description": "Popularity / rating_number RRF fusion",
+      "status": "KEEP",
+      "family": "popularity",
+      "source": "curated historical milestone",
+      "dev": 0.866824,
+      "mrr": 0.652214,
+      "hr": 0.98,
+      "mttc": 2.34,
+      "lesson": "Holdout confirmed P001D robust promotion: .858864 technical score, no scenario HR regression.",
+      "holdout": 0.858864
+    },
+    {
+      "id": "P002A",
+      "description": "Constraint-safe popularity RRF",
+      "status": "KEEP",
+      "family": "hardening",
+      "source": "curated historical milestone",
+      "dev": 0.866894,
+      "mrr": 0.653325,
+      "hr": 0.98,
+      "mttc": 2.34,
+      "lesson": "Holdout confirmed robust safety promotion with zero confirmed violations.",
+      "holdout": 0.859198
+    },
+    {
+      "id": "P002B",
+      "description": "e022 wildcard popularity rrf",
+      "status": "KEEP",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.891034,
+      "mrr": 0.686405,
+      "hr": 0.98,
+      "mttc": 2.36,
+      "lesson": "Holdout confirmed wildcard-specific released-evaluator champion.",
+      "full": 0.885456,
+      "holdout": 0.868722
+    },
+    {
+      "id": "P002C",
+      "description": "e022 wildcard popularity rrf safe",
+      "status": "KEEP",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.891062,
+      "mrr": 0.686405,
+      "hr": 0.98,
+      "mttc": 2.36,
+      "lesson": "Holdout confirmed evaluator-specific safety extension.",
+      "full": 0.885477,
+      "holdout": 0.868722
+    },
+    {
+      "id": "P006",
+      "description": "atomic wildcard facts",
+      "status": "KEEP",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.898203,
+      "mrr": 0.748233,
+      "hr": 0.993333,
+      "mttc": 2.146667,
+      "lesson": "Evaluator-only: atomize released wildcard reply clauses after development information-flow gate; E058 and P002C remain frozen references."
+    },
+    {
+      "id": "P006B",
+      "description": "wildcard override reset",
+      "status": "KEEP",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.892078,
+      "mrr": 0.727373,
+      "hr": 0.993333,
+      "mttc": 2.14,
+      "lesson": "Evaluator-only independent lifecycle correction: intent override no longer consumes a pending wildcard question or carries wildcard exhaustion into the new intent."
+    },
+    {
+      "id": "P006C",
+      "description": "Wildcard facts and override reset",
+      "status": "KEEP",
+      "family": "wildcard",
+      "source": "curated historical milestone",
+      "dev": 0.89922,
+      "mrr": 0.686484,
+      "hr": 0.98,
+      "mttc": 2.34,
+      "lesson": "Untuned confirmation of the development-locked evaluator-only P006C factorial; no rule changes from holdout.",
+      "holdout": 0.869145
+    },
+    {
+      "id": "P007A",
+      "description": "p006c k2 while asking",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.922417,
+      "mrr": 0.880944,
+      "hr": 0.986667,
+      "mttc": 2.76,
+      "lesson": "Regressed versus the frozen K004 control."
+    },
+    {
+      "id": "P007B",
+      "description": "p006c k1 while asking",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.918872,
+      "mrr": 0.918019,
+      "hr": 0.973333,
+      "mttc": 3.16,
+      "lesson": "Regressed score and lost three development hits versus K004."
+    },
+    {
+      "id": "P007C",
+      "description": "p006c substantive answer exposure",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.924386,
+      "mrr": 0.889286,
+      "hr": 0.986667,
+      "mttc": 2.786667,
+      "lesson": "Gain below the .003 branch threshold and paired interval crossed zero."
+    },
+    {
+      "id": "P007D",
+      "description": "Wildcard-aware exposure",
+      "status": "KEEP",
+      "family": "exposure",
+      "source": "curated historical milestone",
+      "dev": 0.931986,
+      "mrr": 0.92,
+      "hr": 0.98,
+      "mttc": 3.1,
+      "lesson": "",
+      "holdout": 0.924
+    },
+    {
+      "id": "P008A",
+      "description": "Named-information-aware exposure",
+      "status": "KEEP",
+      "family": "exposure",
+      "source": "curated historical milestone",
+      "dev": 0.937169,
+      "mrr": 0.943452,
+      "hr": 0.986667,
+      "mttc": 2.96,
+      "lesson": ""
+    },
+    {
+      "id": "T001A",
+      "description": "taxonomy popularity k006c",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.904933,
+      "mrr": 0.824,
+      "hr": 0.986667,
+      "mttc": 2.78,
+      "lesson": "Taxonomy retrieval-route challenger regressed development score -0.013434 vs K006C (MRR -0.0488)."
+    },
+    {
+      "id": "T001B",
+      "description": "taxonomy popularity p007d",
+      "status": "REJECT",
+      "family": "diagnostic",
+      "source": "artifact: summary.csv",
+      "dev": 0.930589,
+      "mrr": 0.913519,
+      "hr": 0.993333,
+      "mttc": 3.006667,
+      "lesson": "Taxonomy retrieval-route challenger neutral/negative -0.001397 vs P007D; no incremental mechanism evidence."
+    },
+    {
+      "id": "W001A",
+      "family": "exposure",
+      "status": "REJECT",
+      "dev": 0.955933,
+      "description": "W001A",
+      "source": "curated historical milestone"
+    }
+  ],
+  "notes": [
+    {
+      "file": "experiments/BRIEFING.md",
+      "title": "Team briefing — how the shopping agent works, and what changed",
+      "excerpt": "# Team briefing — how the shopping agent works, and what changed > **Superseded by `BRIEFING_v2.md`.** The scores below (`0.921754`) are one round > old; the agent is now at `0.949592`. The architecture description here is still > accurate — read it first, then v2 for the ranking work that came after. **Current public technical score: `0.921754`** (was `0.871126`). Reproduce with `python -m evaluator.local_evaluator`. | | Full (200) | Dev (150) | Holdout (50) | HR@10 | MRR | MTTC | | --- | ---: | ---: | ---: | ---: | ---: | ---: | | Previous agent | 0.871126 | 0.867760 | 0.881224 | 0.995 | 0.651 | 2.08 | | **Current agent** | **0.921754** | 0.917222 | 0.935350 | 0.980 | 0.923 | 3.26 | | `TEC"
+    },
+    {
+      "file": "experiments/BRIEFING_v2.md",
+      "title": "Team briefing v2 — the scoring function is a posterior",
+      "excerpt": "# Team briefing v2 — the scoring function is a posterior > **Superseded by `BRIEFING_v3.md`.** The scores below (`0.949592`) are one > round old; the agent is now at `0.951775`. **Supersedes `BRIEFING.md`.** That document described the agent at `0.921754`; this one describes it at `0.949592`. The architecture description there is still accurate — this adds the ranking work that came after it. **Current public technical score: `0.949592`.** Reproduce with `python -m evaluator.local_evaluator`. | | Full (200) | Dev (150) | Holdout (50) | HR@10 | MRR | MTTC | | --- | ---: | ---: | ---: | ---: | ---: | ---: | | Two rounds ago | 0.871126 | 0.867760 | 0.881224 | 0.995 | 0.651 | 2.08 | | Last round"
+    },
+    {
+      "file": "experiments/BRIEFING_v3.md",
+      "title": "Team briefing v3 — retrieval is solved; ordering is everything",
+      "excerpt": "# Team briefing v3 — retrieval is solved; ordering is everything > **Superseded by `BRIEFING_v4.md`.** The scores below (`0.951775`) are one > round old; the agent is now at `0.958363`. **Supersedes `BRIEFING_v2.md`** (`0.949592`). Read v2 for the architecture, which is unchanged. This adds what we now know about where the remaining points are — and, more usefully, where they are *not*. **Current public technical score: `0.951775`.** Reproduce with `python -m evaluator.local_evaluator`. | | Full (200) | Dev (150) | Holdout (50) | HR@10 | MRR | MTTC | | --- | ---: | ---: | ---: | ---: | ---: | ---: | | Three rounds ago | 0.871126 | 0.867760 | 0.881224 | 0.995 | 0.651 | 2.08 | | E057 publishin"
+    },
+    {
+      "file": "experiments/BRIEFING_v4.md",
+      "title": "Team briefing v4 — words together, not words apart",
+      "excerpt": "# Team briefing v4 — words together, not words apart **Supersedes `BRIEFING_v3.md`** (`0.951775`). The architecture in v2 and the strategic picture in v3 both still hold; this is the round that acted on them. **Current public technical score: `0.958363`.** Reproduce with `python -m evaluator.local_evaluator`. | | Full (200) | Dev (150) | Holdout (50) | HR@10 | MRR | MTTC | | --- | ---: | ---: | ---: | ---: | ---: | ---: | | Four rounds ago | 0.871126 | 0.867760 | 0.881224 | 0.995 | 0.651 | 2.08 | | E057 publishing decision | 0.921754 | 0.917222 | 0.935350 | 0.980 | 0.923 | 3.26 | | E058 score as posterior | 0.949592 | 0.943789 | 0.967000 | 0.995 | 0.960 | 2.79 | | E060 graded match | 0.95177"
+    },
+    {
+      "file": "experiments/E057_publishing_decision.md",
+      "title": "E057 — Publishing as a planner action, with a calibrated belief",
+      "excerpt": "# E057 — Publishing as a planner action, with a calibrated belief ## Status EVALUATED — KEEP; current best. Full public technical score `0.921754`. ## Question The Monte Carlo planner chooses *which attribute to ask about*, then publishes a fixed ten rows. Is the number of rows published also a decision worth planning over, and if so what does the planner need to believe in order to make it well? ## Hypothesis The session ends the instant the target appears in the published list, so the list length selects which rank is scored. Per-session reward is `0.5 + 0.3/rank + 0.2*(11 - turn)/10`, therefore: Converting at rank 1 up to five turns later beats converting at rank 2 now. Publishing ten row"
+    },
+    {
+      "file": "experiments/E058_target_prior_and_category_route.md",
+      "title": "E058 — Reading the ranking score as a log-posterior",
+      "excerpt": "# E058 — Reading the ranking score as a log-posterior ## Status EVALUATED — KEEP; current best. Full public technical score `0.949592`. ## Question A rival team reported `0.9769` and described their method only as \"some sort of probability distribution graph\". Working backwards from the score, that requires MRR near `1.0` at MTTC near `2.1` — the target ranked first, almost always, within about two turns. Is that reachable by tuning the Monte Carlo planner, or is the planner the wrong place to be spending effort? ## Hypothesis The planner is the wrong place, for a reason that can be stated before running anything: the planner only chooses *which of ten questions to ask*, and the spread betwe"
+    },
+    {
+      "file": "experiments/E059_learned_ranker.md",
+      "title": "E059 — Learning the ranking weights from real sessions",
+      "excerpt": "# E059 — Learning the ranking weights from real sessions ## Status EVALUATED — **REJECT**. Shipped configuration unchanged at `0.949592`. The experiment's value is in what it rules out, and in the oracle measurement that motivated it. ## Question The ranking weights are hand constants chosen by grid sweeps on the public 200. Can they instead be *learned* from real sessions — show a model the labelled targets and let it order the pool — rather than tuned by hand? And is ordering even the right place to spend effort? ## Hypothesis Two claims, tested in order. 1. **Ordering is where everything is.** If the target is already in the pool the agent retrieves, then every point between our score and"
+    },
+    {
+      "file": "experiments/E060_graded_lexical_features.md",
+      "title": "E060 — Graded match features, and why fitting them fails",
+      "excerpt": "# E060 — Graded match features, and why fitting them fails ## Status EVALUATED — PARTIAL KEEP. Full public technical score `0.951775`. One of three new features shipped. Every attempt to *fit* the weights was rejected, for a reason this experiment finally isolates. ## Question E059 established that the target is in the working set at turn 1 in 200 of 200 sessions, that the rank oracle scores `0.992200`, and that reweighting the existing features cannot close the gap. Its diagnosis was that the features are coarse set-membership indicators — *does this row belong to the set matching some extracted gazetteer value* — which cannot say how **well** a row matches what the shopper actually wrote. "
+    },
+    {
+      "file": "experiments/E061_phrase_matching.md",
+      "title": "E061 — Matching the shopper's wording, not their vocabulary",
+      "excerpt": "# E061 — Matching the shopper's wording, not their vocabulary ## Status EVALUATED — KEEP; current best. Full public technical score `0.958363`. ## Question E059 and E060 established that retrieval is finished (the target is in the working set at turn 1 in 200 of 200 sessions), that the rank oracle scores `0.992200`, and that the target's median rank when present is **2**. Something separates the target from the row immediately above it, and nothing in the score can see it. E060 added graded BM25 and found `0.002` of the `0.040` available. What is the rest? ## Hypothesis Every feature in the score is a bag of words. `query_terms` is a *set* — it remembers that the shopper said \"machine\" and \""
+    },
+    {
+      "file": "experiments/TEMPLATE.md",
+      "title": "E### — Name",
+      "excerpt": "# E### — Name ## Question ## Hypothesis ## Baseline ## Change ## Everything else Unchanged. ## Expected ## Results - Hit Rate@10: - MRR: - MTTC: - Technical score: - Buying: - Browsing: - Intent override: - Boundary: ## Internal diagnostics - Repeats suppressed: - Unique products shown: - Average candidates considered: - Overrides detected: ## Observations ## Failure cases and taxonomy - RETRIEVAL_MISS: - RERANK_FAILURE: - STATE_ERROR: - OVERRIDE_ERROR: - BAD_QUESTION: - REPEAT_WASTE: - HARD_CONSTRAINT_VIOLATION: - AMBIGUOUS_QUERY: ## Conclusion KEEP / REJECT / RETEST / INCONCLUSIVE ## Next experiment "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/B001_belief_calibration.md",
+      "title": "B001 — Retrieval-score belief calibration",
+      "excerpt": "# B001 — Retrieval-score belief calibration ## Question Do score-softmax retrieval beliefs improve calibrated target probability over a rank-only Zipf belief on product-disjoint released conversation states, and do they predict K001-style withholding benefit? ## Method No runtime change. Fit one softmax temperature on states whose target ASIN is in one deterministic SHA-256 partition; evaluate only the disjoint target-ASIN partition. Both beliefs use each archived top-200 candidate pool and its final planner-visible ranking score. Raw BM25 is absent for some fused evidence candidates, so a BM25-only calibration would discard the relevant states. ## Results The archive contains 471 states; 36"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/B002_actual_spec_disclosure.md",
+      "title": "B002 — Actual spec-disclosure audit",
+      "excerpt": "# B002 — Actual spec-disclosure audit ## Question How often do released trajectory messages contain exact indexable catalog specifications, and are rare or globally unique specifications materially associated with target-rank improvement? ## Method No runtime change. Audit K001C full released messages using the existing exact catalog clue-phrase index. Report initial and follow-up messages separately. ## Results | Population | Responses | Indexable spec | Rare spec | Globally unique spec | |---|---:|---:|---:|---:| | All released messages | 471 | 36.1% | 10.8% | 8.1% | | Follow-up responses only | 271 | 49.8% | 13.7% | 10.0% | For follow-up responses containing an indexable phrase, the obser"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/B003_empirical_clarification_planner.md",
+      "title": "B003 — Empirical model-based clarification planner",
+      "excerpt": "# B003 — Empirical model-based clarification planner ## Question Can an empirically grounded expected-elimination question score improve the frozen E058/K001C policy without changing retrieval, ranking, safety, or slate exposure? ## Scope This first gate is the requested simplified planner, not a natural-language customer simulator. It uses existing candidate products, B001 score-softmax beliefs, and released-trace response-event rates to estimate expected candidate elimination. No target label, scenario label, or generated reply is exposed to runtime selection. ## Variants - B003A: K001C `answerability_split` control. - B003B: score-softmax belief plus the existing answerability response mo"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/C1_C3_dense_gates.md",
+      "title": "C1–C3 — Dense and cross-encoder gates",
+      "excerpt": "# C1–C3 — Dense and cross-encoder gates ## C1 dense signal audit Offline MiniLM embeddings were evaluated on the 5,982 E051 hard target/competitor pairs. Dense pair accuracy was `.566199` against a `.500000` random baseline, with mean target margin `.012700`. Only `.045455` of audited events placed the target in the dense Top 10 among the target and candidates already above it. ## C2 frozen Top-50 rerank Across all 274 development turns where the target was already in E035B's frozen Top 50, base per-turn MRR was `.358919` with `.525547` Top-10 rate. A fixed 0.1 normalized interpolation lowered MRR to `.357554`; its Top-10 rate moved only to `.529197`, with 71 ranks improved, 66 worsened, and"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/C4_naive_bayes_posterior.md",
+      "title": "C4 — Offline Naive Bayes posterior gate",
+      "excerpt": "# C4 — Offline Naive Bayes posterior gate ## Definition This is offline-only and changes no runtime behavior. For every normalized structured field value, fixed likelihoods are MATCH `.90`, UNKNOWN `.50`, and VIOLATION `.10`. Product priors use participant-visible `rating_number` with either `rating_number + 1` mass or a declared log-tempered control. ASIN is only the final tie-break. Candidate membership is frozen to E035B. ## Development results | Scoring rule | E051 strict pair accuracy | Tie-adjusted | Frozen Top-50 MRR | Top-10 rate | |---|---:|---:|---:|---:| | E035B order | — | — | .358919 | .525547 | | Likelihood + uniform prior | .078068 | .538616 | .107236 | .233577 | | Popularity "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/D001_profile_and_message_window_audit.md",
+      "title": "D001/D002 — Profile and Exact Message-Window Audit",
+      "excerpt": "# D001/D002 — Profile and Exact Message-Window Audit Development-only. No holdout execution, champion configuration change, or E060 retraining was performed. ## D001: profile-field audit `user_profile` is passed to `Agent.reset`, where it is retained in session state. The frozen agent does not subsequently read it. This was verified both by source inspection and by three complete P008A development replays: | Profile input | Sessions | Technical Score | Exact trace SHA-256 match to original | | --- | ---: | ---: | --- | | Original evaluator profile | 150 | .937169 | yes | | Blank profile `{}` | 150 | .937169 | yes | | Deterministically hash-rotated profiles | 150 | .937169 | yes | All three p"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E000_baseline.md",
+      "title": "E000 — Weak BM25 baseline",
+      "excerpt": "# E000 — Weak BM25 baseline ## Question What performance does the unchanged starter establish? ## Hypothesis Not applicable; this is the control. ## Baseline None. ## Change None. Search only the latest message and return the top 10 BM25 results. ## Everything else Official public evaluator and frozen catalog. ## Expected Reproduce `docs/baseline_results.json`. ## Results - Hit Rate@10: 0.125 - MRR: 0.068034 - MTTC: 9.81 - Technical score: 0.106710 ## Observations The result exactly reproduces the published control. ## Conclusion KEEP as the fixed reference, not as the deployed system. ## Next experiment E001 cumulative history. "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E001_history.md",
+      "title": "E001 — Cumulative session history",
+      "excerpt": "# E001 — Cumulative session history > Historical note reconstructed after the run. Future hypotheses must be > recorded prospectively using `TEMPLATE.md`. ## Question Does retaining earlier user messages improve retrieval? ## Hypothesis Accumulated terms will improve target recall and ranking because requirements arrive over multiple turns. ## Baseline E000. ## Change Build the BM25 query from all messages in the current session. ## Everything else Tokenization, field weights, candidate count, and response format unchanged. ## Expected Hit Rate@10 and MRR increase; MTTC decreases. ## Results - Hit Rate@10: 0.270 - MRR: 0.151381 - MTTC: 8.60 - Technical score: 0.228414 - Buying HR: 0.350000 -"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E002_hard_exclusion.md",
+      "title": "E002 — Override-aware hard exclusion",
+      "excerpt": "# E002 — Override-aware hard exclusion > Historical note reconstructed after the run. Future hypotheses must be > recorded prospectively using `TEMPLATE.md`. ## Question Can result deduplication increase coverage without hiding products after an explicit intent change? ## Hypothesis Hard exclusion within an intent will increase catalog coverage and Hit Rate@10. Resetting eligibility after override phrases will limit damage to intent-override sessions. ## Baseline E001. ## Change Suppress products already shown under the current intent, retrieve 10 times the requested candidates, and allow prior products again after an override phrase. ## Everything else History, BM25 tokenization and weights"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E003_confidence_constraints.md",
+      "title": "E003 — Confidence-weighted constraints",
+      "excerpt": "# E003 — Confidence-weighted constraints ## Question Does linguistic confidence improve ranking when user constraints match catalog text, while strongly penalizing violations of explicit hard requirements? ## Hypothesis Confidence-weighted matching will improve MRR and Hit Rate@10 by distinguishing requirements from preferences. A strong penalty for unmatched `1.0` constraints should keep explicit violations below viable matches. ## Baseline E002. ## Change Extract `{value, confidence}` constraints using these cues: | Cue | Confidence | | --- | ---: | | must / definitely / require | 1.00 | | want / looking for | 0.80 | | prefer / ideally | 0.50 | | maybe / could | 0.25 | | don't care / no pr"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E004_simple_candidate_split.md",
+      "title": "E004 — Simple candidate-split question selection",
+      "excerpt": "# E004 — Simple candidate-split question selection ## Status EVALUATED — KEEP; current best. ## Question Does adaptively asking the unresolved attribute that most evenly divides the current candidate pool improve Hit Rate@10 and MTTC over E003's no-question policy? ## Hypothesis Balanced, sufficiently covered attributes will elicit answers that reduce the candidate pool faster, particularly in Browsing sessions. ## Baseline E003. ## Change Add `choose_question(state, candidates)` using: Consider `material`, `color`, `size`, `style`, `brand`, `budget`, `feature`, and `use_case`. Continue returning recommendations on every turn. ## Catalog assumptions inspected before implementation - `brand`:"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E005_unweighted_entropy.md",
+      "title": "E005 — Unweighted attribute entropy",
+      "excerpt": "# E005 — Unweighted attribute entropy ## Status EVALUATED — REJECT. ## Question Does ordinary entropy select more useful clarification questions than E004's largest-bucket split heuristic? ## Hypothesis Entropy will account for the entire value distribution and improve question quality when several medium-sized buckets exist. ## Baseline E004. ## Change Change only the question score: All usable candidates receive equal probability. Preserve `split` as a configurable fallback and log the top competing attributes. ## Everything else Candidate pool, attribute extraction, safeguards, retrieval, ranking, and recommendation behavior unchanged from E004. ## Expected Question-score diagnostics chan"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E006_weighted_entropy.md",
+      "title": "E006 — Probability-weighted attribute entropy",
+      "excerpt": "# E006 — Probability-weighted attribute entropy ## Status EVALUATED — REJECT as current policy; useful positive ablation over E005. ## Question Does weighting attribute buckets by candidate likelihood outperform E005's uniform candidate entropy? ## Hypothesis Weighting likely candidates more heavily will avoid questions that split many low-ranked products but provide little information near the top of the ranking. ## Baseline E005. ## Change Change only candidate probabilities in the entropy calculation. Use stable rank-derived log probabilities because raw SQLite BM25 magnitudes are not calibrated probabilities and confidence bonuses alter their scale: ## Everything else E005 attribute extr"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E007_expected_value.md",
+      "title": "E007 — Expected competition-score improvement",
+      "excerpt": "# E007 — Expected competition-score improvement ## Status EVALUATED — REJECT. ## Question Does selecting questions by approximate next-turn Top-10 utility outperform E006 probability-weighted entropy? ## Hypothesis A competition-aligned proxy will trade information gain against turn cost and improve MTTC without reducing Hit Rate@10 or MRR. ## Baseline E006. ## Change For each unresolved attribute and represented answer, simulate adding the answer as a constraint and rerank the same candidates. Estimate: `P(answer)` uses E006 candidate probabilities. The `0.02` question cost makes small expected gains unattractive and is tunable. Runtime logic must never read the hidden target or scenario la"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E008_weighted_split.md",
+      "title": "E008 — Probability-weighted split",
+      "excerpt": "# E008 — Probability-weighted split ## Status EVALUATED — REJECT. ## Question Can rank confidence improve E004 without losing its robust worst-bucket logic? ## Hypothesis Weighting value buckets by candidate probability will prioritize attributes that divide likely targets, improving MRR or MTTC while preserving Hit Rate@10. ## Baseline and change Baseline: E004. Change only the question score: Candidate and answer probabilities use E006's stable rank-derived distribution. Everything else remains E004. ## Expected Technical score and MRR increase; question count remains similar. ## Results and decision Development: Hit Rate@10 0.893333, MRR 0.513820, MTTC 4.913333, technical score 0.722546. "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E009_expected_elimination.md",
+      "title": "E009 — Expected elimination",
+      "excerpt": "# E009 — Expected elimination ## Status EVALUATED — REJECT. ## Question Does optimizing expected candidate elimination outperform E004's worst-bucket split criterion? ## Hypothesis The Gini-style probability score will reward attributes with broadly useful partitions instead of focusing only on the largest bucket. ## Baseline and change Baseline: E004. Change only the question score: Everything else remains E004. ## Expected Candidate turnover and target upward movement increase; official metrics remain stable or improve. ## Results and decision Development: Hit Rate@10 0.893333, MRR 0.515606, MTTC 4.913333, technical score 0.723082. It produced 62 post-question Top-10 entries and 142 upward"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E010_answerability_split.md",
+      "title": "E010 — Answerability-adjusted split",
+      "excerpt": "# E010 — Answerability-adjusted split ## Status EVALUATED — KEEP; current best. ## Question Can observed answerability prevent E004 from selecting catalog-informative attributes that users frequently decline? ## Hypothesis Multiplying E004 score by an attribute's observed useful-answer rate will reduce no-preference replies and improve MTTC. ## Baseline and change Baseline: E004. Change only the question score: Answerability values will be frozen from an E004 development diagnostic before E010 is run. Everything else remains E004. ## Frozen answerability factors Derived from `experiments/diagnostics/E004_question_score_buckets.json`: | Attribute | Answerability | | --- | ---: | | Brand | 0.0"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E011_question_gating.md",
+      "title": "E011 — Confidence-aware question gating",
+      "excerpt": "# E011 — Confidence-aware question gating ## Status EVALUATED — REJECT. ## Question Can E004 avoid low-value questions using a threshold justified by observed score-bucket outcomes? ## Hypothesis Questions below an evidence-supported discrimination score contribute fewer Top-10 entries and upward rank moves while consuming turns. Suppressing them will improve MTTC without materially reducing Hit Rate@10 or MRR. ## Baseline and change Baseline: E004. Keep E004 attribute selection but ask only when the winning score meets a threshold selected from frozen development diagnostics over buckets `[0,.2)`, `[.2,.4)`, `[.4,.6)`, `[.6,.8)`, and `[.8,1]`. For each bucket measure target-move probability"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E012_constraint_strength.md",
+      "title": "E012 — Constraint strength representation",
+      "excerpt": "# E012 — Constraint strength representation ## Question Does representing explicit requirement strength improve ranking compared with E010's legacy `{value, confidence}` constraint records? ## Hypothesis Three conservative levels will reduce over-penalization from weak preferences, improving MRR or target retention without hurting Hit Rate@10 or MTTC. ## Baseline E010, development score `0.769408`. E010 is frozen and explicitly retains legacy state mode. ## Change E012 records constraints as: Strength cues are conservative: - Hard `1.0`: must, definitely, absolutely, require, need, cannot, only. - Soft `0.4`: prefer, ideally, maybe, would like, nice to have. - Normal `0.7`: want, looking for"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E013_operation_aware.md",
+      "title": "E013 — Operation-aware state updates",
+      "excerpt": "# E013 — Operation-aware state updates ## Question and hypothesis Does conservative SET/ADD/REPLACE/NEGATE/RELAX/NO_PREFERENCE state mutation improve correctness beyond E012? Explicit modification should prevent obsolete same-attribute values from accumulating, especially after replacements. ## Baseline E012 (`0.776215` development score). ## Change Classify conservative phrases, store operation/source metadata, remove replaced same-attribute values, relax explicit weak preferences, and clear an attribute on no-preference. Ranking weights otherwise remain E012. ## Everything else E012 retrieval, ranking, question policy, answerability, repeat handling, and override reset remain frozen. ## Re"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E014_selective_intent_reset.md",
+      "title": "E014 — Selective intent reset",
+      "excerpt": "# E014 — Selective intent reset ## Question and hypothesis Can explicit intent versions preserve stable category context while preventing stale preferences from contaminating override sessions? Selective reset should improve Intent Override ranking over E012's full constraint reset. ## Baseline and change Baseline E012. On strong override, increment the existing intent version, preserve only constraints extracted from broad “looking for” context, deactivate all other prior constraints, and parse restated requirements into the new intent. E012 is the clean full-reset-except-none control. ## Everything else E012 ranking, strength levels, retrieval, questions, answerability, and repeats remain "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E015_soft_decay.md",
+      "title": "E015 — Recency decay for soft preferences",
+      "excerpt": "# E015 — Recency decay for soft preferences ## Question and hypothesis Should old soft preferences lose influence as later evidence arrives? Decay may improve long, browsing, and override sessions without affecting hard evidence. ## Baseline and change Baseline E012. For strength `0.4` only, use `effective_strength = 0.4 * gamma^(turn-source_turn)`. Predetermined development grid: `gamma=1.0,0.9,0.8`. Hard and normal constraints do not decay. ## Everything else E012 is frozen; E013 and E014 are excluded. ## Results and conclusion All three development runs (`gamma=1.0,0.9,0.8`) exactly matched E012: HR@10 `0.920000`, MRR `0.554939`, MTTC `3.513333`, score `0.776215`. Although one soft constr"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E016_contradiction_resolution.md",
+      "title": "E016 — Contradiction-aware state resolution",
+      "excerpt": "# E016 — Contradiction-aware state resolution ## Question and hypothesis Can explicit positive/forbidden state and conservative precedence rules prevent inconsistent constraints? It should improve target survival when genuine negation or replacement occurs without inventing contradictions from prose. ## Baseline and change Baseline E012. Add polarity metadata and resolve only explicit “anything except” or leading “avoid”, explicit replacement, hard-over-soft conflicts, and no-preference. Forbidden constraints remain state-only in E016; E017 tests their downstream ranking contribution. ## Everything else E012 behavior is frozen; rejected E013–E015 changes are excluded. ## Results and conclusi"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E017_state_semantic_ranking.md",
+      "title": "E017 — Propagate state confidence into ranking",
+      "excerpt": "# E017 — Propagate state confidence into ranking ## Question and hypothesis Does deliberately using richer state strength and polarity downstream improve ranking beyond E012's linear `strength * 4` contribution? Stronger hard evidence and explicit forbidden penalties should improve MRR and hard compliance. ## Baseline and change Baseline E012. Positive match weights: hard `6`, normal `3`, soft `1.5`. Forbidden-match penalties: hard `12`, normal `8`, soft `3`. Inactive constraints are ignored. Existing explicit hard color/material violation penalty remains. ## Everything else E012 retrieval, questions, answerability, repeat and override behavior are frozen. No parameter sweep is performed. ##"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E025_field_aware_retrieval.md",
+      "title": "E025 — Field-aware retrieval ablation",
+      "excerpt": "# E025 — Field-aware retrieval ablation ## Question Do catalog-derived controlled values and product-level evidence aggregation restore candidate recall lost by the E021 multiword-only phrase index? ## Hypothesis The remaining candidate-recall errors are caused primarily by lossy, field-agnostic phrase representation. A field-aware product evidence index using normalized category/material/color/style/brand values, combined with existing exact phrase evidence, will increase target Recall@20–200 and reduce large equal-score candidate collisions without modifying dialogue policy. ## Baseline E021 catalog-only multiword phrase fusion. ## Change E025A preserves the E021 phrase route. E025B adds c"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E026_E030_ranking_roadmap.md",
+      "title": "E026–E030 — Residual recall and ranking roadmap",
+      "excerpt": "# E026–E030 — Residual recall and ranking roadmap ## E026 — Residual Recall Audit E026 retained E025D scoring and added catalog-route stage diagnostics. The offline forensic is `experiments/diagnostics/E026_residual_recall_audit.md`. For `public_0028`, the target reaches structured rank 99 after black is revealed, but has only structured-route support while candidates above it have BM25 plus structured support. This is a candidate-pool/support problem, not a missing color canonicalization problem. ## E027 — Reranker Regression Audit The stage audit records BM25, phrase, structured, union, and post-rerank target ranks. On development, the existing state reranker improved target rank 128 times"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E031_E032_protected_pool.md",
+      "title": "E031/E032 — Protected ordering and structured pool expansion",
+      "excerpt": "# E031/E032 — Protected ordering and structured pool expansion ## E031 All variants preserved E025D Top-10 membership at every development turn. | Variant | HR@10 | MRR | MTTC | Score | |---|---:|---:|---:|---:| | E031A control | .973333 | .541688 | 3.053333 | .808106 | | E031B coverage | .973333 | .522114 | 3.053333 | .802234 | | E031C near tie | .973333 | .538817 | 3.053333 | .807245 | | E031D interpolation | .973333 | .540114 | 3.053333 | .807634 | Rejected. Coverage does not improve ordering even when membership is protected. ## E032 Tests the E025D evidence-route quota at 100, 150, and 300 against the existing 200-candidate control. Promotion requires an E025D development improvement. "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E032_E034_admission_and_lexical.md",
+      "title": "E032–E034 — Candidate admission and lexical support",
+      "excerpt": "# E032–E034 — Candidate admission and lexical support ## E032 — Structured candidate-pool expansion | Quota | HR@10 | MRR | MTTC | Score | |---:|---:|---:|---:|---:| | 100 | .953333 | .535807 | 3.186667 | .793675 | | 150 | .960000 | .543963 | 3.166667 | .799856 | | 300 | .966667 | .550899 | 3.106667 | .806470 | Rejected. At quota 300, `public_0028` is admitted (structured rank 99) but remains post-rerank rank 132. Wider admission does not rescue it and remains below E025D's .808106 development score. ## E033 — Regression guardrail audit The E027 stage audit establishes 16 target regressions against 128 improvements. The residual forensic shows no dominant penalty mechanism; `public_0028` is "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E035_exhaustion_recovery.md",
+      "title": "E035 — Clarification exhaustion recovery",
+      "excerpt": "# E035 — Clarification exhaustion recovery | Variant | Split | HR@10 | MRR | MTTC | Score | |---|---|---:|---:|---:|---:| | E035A control | development | .973333 | .541688 | 3.053333 | .808106 | | E035B ungated fallback | development | .986667 | .557614 | 2.973333 | .821151 | | E035C explicit-only | development | .986667 | .557614 | 3.013333 | .820351 | | E035B ungated fallback | holdout | .980000 | .601746 | 3.020000 | .830124 | E035B is promoted. It changes no ordinary question selection: only when the existing policy returns no question does it reuse the highest existing-scored, remaining attribute. The holdout improvement over E025D (.824324) confirms the direction without wildcard behav"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E036_evaluator_terminal_other.md",
+      "title": "E036 — Evaluator-only terminal `other`",
+      "excerpt": "# E036 — Evaluator-only terminal `other` E036 tests a limited wildcard-dependence middle point. It leaves E035B intact: the ordinary E025D question policy is used first, and if that returns no question, E035B still asks the highest scored remaining named attribute. Only when no viable named candidate remains does it admit `other`. As with the existing wildcard semantics, it can repeat only when its prior response added new evidence; the development run used two terminal `other` questions in each of three sessions. | Variant | Split | HR@10 | MRR | MTTC | Score | `other` questions | |---|---|---:|---:|---:|---:|---:| | E035B | development | .986667 | .557614 | 2.973333 | .821151 | 0 | | E036 "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E037_E043_residual_and_wildcard.md",
+      "title": "E037–E043 — Residual headroom and bounded wildcard audit",
+      "excerpt": "# E037–E043 — Residual headroom and bounded wildcard audit All target joins in this note are offline-only. The reproducible source is `experiments/audit_e035_headroom.py`, with output in `experiments/diagnostics/E037_E043_audit.json`. ## E037 — Robust residual misses | Split | Session | Classification | Allowed material rank-improving question left? | |---|---|---|---| | development | `public_0028` | retrieval-limited | no | | development | `public_0161` | retrieval-limited | no | | holdout | `public_0180` | retrieval-limited | no | `public_0028` reaches structured rank 99 and candidate-union rank 110–118, then remains far outside Top-10. The other two misses never enter the recorded candida"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E044_E046_ceiling_and_specificity.md",
+      "title": "E044–E046 — Ranking ceiling, high-ambiguity question oracle, and conditional specificity",
+      "excerpt": "# E044–E046 — Ranking ceiling, high-ambiguity question oracle, and conditional specificity All target-aware measurements below are offline-only diagnostics. Runtime code continues to consume catalog and visible dialogue state only. ## E044 — Rank-oracle ceiling For every archived E035B development turn, the oracle assigns rank 1 whenever the target is already in the candidate union. | Population | Actual MRR | Oracle MRR | Actual MTTC | Oracle MTTC | Actual score | Oracle score | |---|---:|---:|---:|---:|---:|---:| | All development | .557614 | .993333 | 2.973333 | 1.520000 | .821151 | .984267 | | Low ambiguity (tie=1) | .563178 | .993243 | 2.979730 | 1.527027 | .822602 | .984054 | | Medium "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E047_E050_ambiguity_gates.md",
+      "title": "E047–E050 — Ambiguity-trigger and learnability gates",
+      "excerpt": "# E047–E050 — Ambiguity-trigger and learnability gates ## E047 — Ambiguity-triggered clarification No separate E047 A/B/C run was performed because the specified intervention is already implemented by E035B. After ordinary question selection returns none, E035B's `exhaustion_recovery: always` asks the highest existing-scored, remaining named attribute with positive candidate coverage. E047B/C add the same action only in an ambiguity subset, so they are behaviorally redundant; running them would produce a no-op comparison rather than an ablation. ## E048 — Can the oracle's question be predicted? The E045 oracle labels show genuine selection regret, but they are simulator-aware and are used on"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E051_E054_observational_equivalence.md",
+      "title": "E051–E054 — Observational equivalence and collision work",
+      "excerpt": "# E051–E054 — Observational equivalence and collision work ## E051 — Exact observational equivalence The high-ambiguity target/competitor audit refines E050's field bitmap into increasingly complete runtime-observable representations. | Equivalence definition | Indistinguishable pairs | |---|---:| | Same matched field bitmap | 93.6810% | | Same matched normalized values | 84.8880% | | Same full structured signature | 84.8880% | | Same exact revealed phrase overlap | 80.5583% | | Same lexical decomposition | 51.9893% | | Same complete runtime feature vector | 44.8011% | There is remaining value-level separability, so a catalog-only interaction experiment was justified. Most pairwise ambiguity"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E052_evaluator_field_evidence.md",
+      "title": "E052 — Evaluator wildcard × field-aware evidence",
+      "excerpt": "# E052 — Evaluator wildcard × field-aware evidence This is the clean evaluator-specific factorial requested after E025D: preserve E022's `other_until_exhausted` question policy and all its dialogue settings, then replace only the E021-era phrase fingerprint route with E025D aggregate field-aware evidence. | Variant | Split | HR@10 | MRR | MTTC | Score | |---|---|---:|---:|---:|---:| | E022 repeated wildcard + phrase fingerprint | development | .973333 | .673868 | 2.726667 | .854294 | | E052 repeated wildcard + field evidence | development | .993333 | .617146 | 2.513333 | .851544 | E052 improves hit rate and conversion speed, but loses .056722 MRR and .002750 technical score. It does not meet"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E056_champion_validation.md",
+      "title": "E056 — Champion validation and final ablation ladder",
+      "excerpt": "# E056 — Champion validation and final ablation ladder E055 is intentionally skipped: E052 already ran the identical E022 repeated wildcard × E025D field-evidence factorial and was rejected (.851544 < .854294 development). E022 remains the evaluator-specific champion. ## E035B development stress suite All figures below are the fixed 150-session development split. Perturbations are deterministic and target-independent. An earlier full-public-set output is explicitly invalid for decisions; only `experiments/diagnostics/E056_champion_stress_development.json` is used here. | Perturbation | HR@10 | MRR | Score | Δscore | |---|---:|---:|---:|---:| | E035B control | .986667 | .557614 | .821151 | — "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E057_punctuation_invariance.md",
+      "title": "E057 — Punctuation-invariant evidence",
+      "excerpt": "# E057 — Punctuation-invariant evidence ## Question Can exact phrase and category evidence treat punctuation-only variants equivalently without changing the E035B architecture? ## Hypothesis Removing the non-semantic connector `and` after punctuation tokenization will close the observed `&`/`and` category mismatch. Percentage and hyphen variants already normalize identically. ## Baseline E035B (`configs/best_robust.json`). ## Change Only phrase/category canonicalization: punctuation is tokenized uniformly and the connector `and` is omitted. Dialogue, candidates, weights, ranking, and fallback remain frozen. ## Expected Identical normalized evidence for the declared material and category vari"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E058_phrase_idf_key_correction.md",
+      "title": "E058 — Exact-phrase IDF key correction",
+      "excerpt": "# E058 — Exact-phrase IDF key correction ## Question Does restoring the intended catalog IDF for exact phrase evidence improve P002A without changing dialogue, candidate limits, popularity fusion, or safety? ## Hypothesis Phrase document frequency is stored under `(\"phrase\", phrase)`, but aggregate evidence reads `(\"feature\", phrase)` and therefore falls back to `1.0` for every exact phrase. Reading the stored phrase key should reward rarer direct catalog/dialogue agreement and improve rank quality. ## Baseline P002A (`.866894` development): E035B aggregate field evidence plus fixed popularity RRF (`k=60`) and the final confirmed-hard-constraint safety partition. ## Change One dictionary-key"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E060_attribution_controls.md",
+      "title": "E060 — Label-Permutation and Feature-Attribution Controls",
+      "excerpt": "# E060 — Label-Permutation and Feature-Attribution Controls These are offline development-only diagnostics over the frozen E060 candidate manifest. They do not run the evaluator, write a runtime model, select an ablation, touch holdout, or modify the E060 challenger. ## Label-permutation falsification For each of 100 controls, every training group retains exactly one positive, but its location is replaced by a deterministic hash-selected random candidate. The real target label is retained only when scoring the strict held-out fold. Candidate groups, target-product-disjoint folds, scaling, regularization, sample weights, and tie-breaking remain identical to E060. | Training labels | OOF MRR d"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E060_early_union_target_posterior.md",
+      "title": "E060 — Early-Union Target-Propensity Posterior",
+      "excerpt": "# E060 — Early-Union Target-Propensity Posterior E060 is a development-only challenger built on P008A/P006C. No public holdout session was executed, and no champion configuration was changed. ## Why this branch was opened On P008A's archived development trajectories, the hidden-label rank-1 oracle over the naturally occurring candidate union scores `.975867`, compared with P008A's `.937169`. The target is naturally present in the frozen early Top-200 pool for 149 of 150 sessions. This localizes the remaining large headroom to ordering already-retrieved products, rather than retrieval, question choice, or recommendation-count tuning. ## Frozen protocol - Take the first post-override developme"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E061_residual_error_audit.md",
+      "title": "E060 Strict-OOF Residual Error Audit (E061 gate)",
+      "excerpt": "# E060 Strict-OOF Residual Error Audit (E061 gate) Development-only diagnostic. No holdout run. No champion config changed. No new prior integrated. E060 artifacts are frozen (SHA256 manifest: `experiments/diagnostics/E060_freeze_manifest.json`). ## Purpose Before reconstructing any leave-last-out (LLO) interaction prior, measure where E060's remaining strict-OOF errors actually come from. The hidden-label first-union rank oracle is `.975867`; E060 strict OOF is `.957400`; the residual theoretical gap is `.018467`. This audit classifies the residual and estimates how much of it any new prior could plausibly recover. ## External-data legality gate (blocked) - The competition package is derive"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E062_final_gates.md",
+      "title": "E062 Residual Relevance Closure — Final Gate Results",
+      "excerpt": "# E062 Residual Relevance Closure — Final Gate Results Development-only. No holdout. No champion change. E060 frozen throughout (SHA256 manifest `E060_freeze_manifest.json`). ## Gate summary | Experiment | Gate | Result | |---|---|---| | E062R — generic shortlist recovery | no rank dilution; generic; recover public_0035 | **REJECT** (dilution) | | E062G — relevance/propensity disagreement gate | >= +.003 Technical Score over E060 | **REJECT** (net negative) | | E062X — new-signal screen (22 both-lower pairs) | >= 16/22 target wins | **CLOSED** (nothing passes) | | E062V — value-ranked residual analysis | quantify distance to .9769 | done (below) | ## E062R — generic shortlist recovery (REJEC"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E062_stage1_diagnostics.md",
+      "title": "E062 Stage-1 Diagnostics — Residual Relevance Closure (zero-code-changing)",
+      "excerpt": "# E062 Stage-1 Diagnostics — Residual Relevance Closure (zero-code-changing) Development-only. No benchmark rerun, no model changed, no holdout. E060 frozen (see `E060_freeze_manifest.json`). ## 1. End-to-end Technical Score oracle by residual class Counterfactual: forcing a target to rank 1 at its first eligible candidate-union turn reproduces the known hidden-target first-union oracle **exactly** (`Fix A+B` = HR .993333 / MRR .993333 / MTTC 1.94 / score **.975867**). | Oracle | Score | Δ over E060 OOF (.957400) | |---|---:|---:| | E060 strict OOF | .957400 | — | | Fix relevance (A, 29) only | .966267 | **+.008867** | | Fix propensity (B, 17) only | .967000 | **+.009600** | | Fix shortlist "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E063_shadow_category_rescue.md",
+      "title": "E063 — Shadow-Category Rescue",
+      "excerpt": "# E063 — Shadow-Category Rescue Development-only, strict five-fold target-product-disjoint evaluation. No holdout was run and the frozen E060 model, ordinary Top-200 membership, hard safety partition, and all non-E063 ranking behavior were unchanged. ## Rule For the single longest exact category path in the opening message with 201–500 catalog products, E063 searched a shadow pool of that path's products. It considered only products excluded from E060's normal eligible Top-200, evaluated them with the frozen fold-specific E060 model at conservative baseline ranks beginning at 201, and admitted at most one hard-safe product only when its frozen E060 score was strictly greater than E060's exis"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E064_unfused_representation.md",
+      "title": "E064 — Unfused Relevance/Popularity Representation",
+      "excerpt": "# E064 — Unfused Relevance/Popularity Representation One pre-registered representation replaced E060's fused baseline-rank feature with raw relevance rank and within-candidate popularity rank. Candidate membership, safety, question policy, and exposure were frozen. Strict OOF: HR `.993333`, MRR `.971111`, MTTC `2.406667`, score `.959867`. Paired score delta is `+.002467`, CI `[-.002867, .008467]`, with 13 improved, 15 worsened, and zero hard violations. **Decision: reject.** It misses both the `+.003` effect-size and positive-CI requirements. "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E065_broad_category_representation.md",
+      "title": "E065 — Broad Exact-Category Metadata",
+      "excerpt": "# E065 — Broad Exact-Category Metadata E065 exposed exact multi-component category membership, pool information, and within-category popularity rank to E060 for existing Top-200 candidates only. No category candidate was admitted. Forty-four of 149 grouped training states had a category pool above the former 200-posting cap. Strict OOF: HR `.993333`, MRR `.961111`, MTTC `2.460000`, score `.955800`; paired delta `-.001600`, CI `[-.005600, .001867]`, 3 improved/6 worsened, zero hard violations. **Decision: reject.** The broad category representation regresses. "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E066_grouped_conditional_softmax.md",
+      "title": "E066 — Grouped Conditional-Softmax Objective",
+      "excerpt": "# E066 — Grouped Conditional-Softmax Objective E060 uses row-wise binary logistic regression, so E066 ran the one permitted same-feature, same-fold conditional-softmax alternative with one target per session and no added capacity. Strict OOF: HR `.993333`, MRR `.973333`, MTTC `2.406667`, score `.960533`. The paired score delta is `+.003133`, but its bootstrap CI is `[-.002467, .009067]`; 11 sessions improve, 8 worsen, and hard violations stay zero. **Decision: reject.** The positive lower-confidence-bound gate fails. "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/E067_E064C_price_final.md",
+      "title": "Final Remaining-Sequence Diagnostics — E067 / E064C / price_present",
+      "excerpt": "# Final Remaining-Sequence Diagnostics — E067 / E064C / price_present Development-only, read-only. No holdout, no champion change. E060 frozen (.957400). Reproductions verified byte-identical (full E060 rank-level OOF MRR .786338, rank1 103). ## E067 — state-conditioned propensity (CLOSE) Read-only diagnostic: E060-vs-P008A reciprocal-rank delta at the first eligible union state, stratified by state. | Stratum | n | mean delta | mean rank P008A→E060 | |---|---:|---:|---:| | turn 1 | 62 | **+.2336** | 10.6 → 3.2 | | turn 2 | 54 | +.0900 | 2.6 → 1.5 | | turn 3 | 22 | +.0511 | 4.5 → 1.9 | | turn 4+ | 11 | **−.0075** | 4.5 → 2.0 | | constraints 1 / 2 / 3+ | 46/38/65 | +.124 / **+.222** / +.097 |"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/final_code_policy_red_team.md",
+      "title": "Final code/policy red-team",
+      "excerpt": "# Final code/policy red-team The audit covered runtime target leakage, candidate membership, repeat timing, exposure accounting, wildcard lifecycle, safety ordering, deterministic ties, phrase IDF, popularity RRF, default submission configuration, local paths, experiment dependencies, and metric recomputation. No correctness bug was demonstrated in the active E058/K006C/P007D paths. Accordingly, no speculative runtime fix was made. The only runtime addition in this campaign is the explicit, config-gated `recommendation_schedule`; absence of that key retains frozen champion behavior and focused tests cover all four schedule modes. P007D dispatch was audited from its development trace: 353 `ot"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/FINAL_MAXIMUM_SCORE_CAMPAIGN.md",
+      "title": "Final maximum-score optimization campaign",
+      "excerpt": "# Final maximum-score optimization campaign ## Outcome The campaign found two meaningful winners without changing frozen E058, K3, P006C, or K004 configurations: - Score-optimized non-wildcard: **K006C substantive-answer exposure**. - Released-evaluator wildcard: **P007D wildcard-aware exposure**. Track C failed its smallest feasibility gate and Track D found no correctness bug in active runtime paths. Recommendation: **STOP this architecture search**. ## Track A — development matrix | Variant | Policy while asking | HR@10 | MRR | MTTC | Technical score | Δ vs K3 | |---|---|---:|---:|---:|---:|---:| | A1 | K3 | .986667 | .791111 | 2.560000 | .899467 | — | | A2 | K2 | .986667 | .840397 | 2.84"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/FINAL_REPRESENTATION_LINEAGE_CAMPAIGN.md",
+      "title": "Final Representation/Lineage Campaign",
+      "excerpt": "# Final Representation/Lineage Campaign All work was development-only against frozen E060. No holdout, champion config, or frozen E060 artifact was modified. | Branch | Result | Decision | | --- | ---: | --- | | O001/O002 override intent scoping | O1/O3 sharply reduced retrieval; O2 also regressed; no positive rank evidence | Reject before OOF | | E064 unfused relevance/popularity | Score `.959867`, delta `+.002467`, CI crosses zero | Reject | | E065 broad category metadata | Score `.955800`, delta `-.001600` | Reject | | W001 P007D exposure restoration | Score `.955933`, delta `-.001467` | Reject | | Q001 recency-safe query terms | 15/442 states truncate a newer term; no retrieval gain and "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/K001_recommendation_budget.md",
+      "title": "K001 — Sequential recommendation budget",
+      "excerpt": "# K001 — Sequential recommendation budget ## Question Does E058 expose too many rank-6–10 candidates while it is still asking questions, when preserving those candidates for the next clarification could improve sequential rank quality? ## Hypothesis Fixed k=5 may lose immediate hits, but k=5 while asking and k=10 while committing may preserve hit rate while improving MRR or MTTC under hard repeat suppression. ## Baseline K001A is E058 with an explicit recommendation limit of 10. ## Change - K001B: return at most 5 recommendations on every turn. - K001C: return at most 5 when asking a clarification and at most 10 otherwise. ## Everything else Question policy, retrieval depth, aggregate eviden"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/K002_reserve_release.md",
+      "title": "K002 — Reserve release policy",
+      "excerpt": "# K002 — Reserve release policy ## Question Can E058/K001C improve the sequential slate policy by releasing its held-back ranks 6–10 when future information cannot improve their value, or when the previous question produced no information? ## Predeclared policies - K002A releases the full Top-10 on turn 10, the final actionable opportunity. - K002B includes K002A and releases the full Top-10 while asking when the immediately previous asked question produced no genuine constraint. - K002C (reserve queue) is only implemented if a held-back target repeatedly falls below rank 10 after a no-preference answer. ## Everything else K001C question policy, retrieval, popularity RRF, phrase-IDF correcti"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/K003_exposure_budget_sweep.md",
+      "title": "K003 — Development-selected exposure budget",
+      "excerpt": "# K003 — Development-selected exposure budget K003 changes only `recommendation_limit_while_asking`; all other settings are byte-for-byte equivalent to K001C. The non-questioning recommendation budget remains the default 10. ## Development selection, frozen before holdout | Budget while asking | HR@10 | MRR | MTTC | Technical score | |---:|---:|---:|---:|---:| | 3 (K003D) | .986667 | .791111 | 2.560000 | .899467 | | 4 (K003A) | .993333 | .765778 | 2.420000 | .898000 | | 5 (K003B control) | .993333 | .738111 | 2.313333 | .891833 | | 6 (K003C) | .993333 | .709222 | 2.240000 | .884633 | | 7 (K003E) | .993333 | .676238 | 2.173333 | .876071 | K003D is selected solely by the development technical "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/K005_lower_exposure_boundary.md",
+      "title": "K005 — Lower exposure boundary, development only",
+      "excerpt": "# K005 — Lower exposure boundary, development only K005 extends the frozen K003 sweep only to K=2, K=1, and the evaluator-legal K=0 ask-only boundary. It makes no further holdout measurements. | Budget while asking | HR@10 | MRR | MTTC | Technical score | Δ vs K3 | |---:|---:|---:|---:|---:|---:| | 3 (K003D reference) | .986667 | .791111 | 2.560000 | .899467 | — | | 2 (K005A) | .986667 | .840397 | 2.840000 | .908653 | +.009186 | | 1 (K005B) | .973333 | .929222 | 3.460000 | .916233 | +.016767 | | 0 (K005C) | .893333 | .699558 | 8.846667 | .699601 | -.199866 | Paired 5,000-draw session bootstraps against K3 are recorded in `experiments/diagnostics/K005_development_paired_bootstrap.json`: - K2:"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/K006_final_exposure_schedules.md",
+      "title": "K006 — Final exposure schedule campaign",
+      "excerpt": "# K006 — Final exposure schedule campaign Track A was selected on development only. Frozen E058, K3, P006C, and K004 configs were not changed. | Variant | Policy while asking | HR@10 | MRR | MTTC | Score | Δ vs K3 | Paired 95% CI | |---|---|---:|---:|---:|---:|---:|---:| | A1 | K3 control | .986667 | .791111 | 2.560000 | .899467 | — | — | | A2 | K2 | .986667 | .840397 | 2.840000 | .908653 | +.009186 | [-.000748, .019467] | | A3 | K1 | .973333 | .929222 | 3.460000 | .916233 | +.016767 | [-.003400, .035267] | | A4 | turn 1 K1, later K2 | .986667 | .873730 | 2.953333 | .916386 | +.016919 | [.005905, .027938] | | A5 | turns 1–2 K1, later K3 | .986667 | .875556 | 2.926667 | .917467 | +.018000 | ["
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/K007_cumulative_churn_followup.md",
+      "title": "K007 — Cumulative Exposure and Rank-Churn Follow-up",
+      "excerpt": "# K007 — Cumulative Exposure and Rank-Churn Follow-up Development-only follow-up to the frozen K006C/P007D campaign. No holdout was run and neither champion configuration was changed. ## Pre-registered policies - **K007A:** Preserve K006C's substantive-answer schedule, but across the first two question-asking turns show at most four unique products total. This binds only when K006C would otherwise show three products on both turns. - **K007B:** Show three products while asking by default. After a substantive response, show one only if the current repeat-eligible top-three membership differs from the preceding state. The first state and no-information responses remain at three. The signal is "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/M001_COLLISION_BREAKER_SHOOTOUT.md",
+      "title": "M001 — Collision-Breaker Shootout",
+      "excerpt": "# M001 — Collision-Breaker Shootout Status: **CLOSED — no M001 method passed; algorithmic research stopped** ## Scope and frozen protocol M001 tests whether a mechanism can resolve catalog candidates which the archived E058 ranking assigned the same score even though the target was ranked below a competitor. It does not alter retrieval, fusion, questions, exposure schedules, or either champion. It does not execute an evaluator run or read a holdout input. The frozen input contains 21 pairs, selected from the existing E059 development-only archive: one pair for every state with a target and a higher-ranked exact-score collision. The competitor is the closest higher-ranked collision. Model inp"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/M002_metadata_completeness_screen.md",
+      "title": "M002 — Metadata Completeness Residual Screen",
+      "excerpt": "# M002 — Metadata Completeness Residual Screen Read-only. Frozen E060 strict-OOF residual set (46 target-vs-top1 pairs; 22 \"both-lower\" hard pairs). Catalog-visible completeness features only. ## Results (W = target wins, L = competitor wins, T = ties) | Feature | ALL (46) | both-lower (22) | price-tied (38) | |---|---:|---:|---:| | price_present | 1/7/38 (acc .125) | 1/2/19 (.333) | — | | description_present | **14/1/31 (acc .933)** | **7/0/15 (1.000)** | **12/1 (acc .923)** | | store_present | 0/0/46 (constant) | 0/0/22 | 0/0/38 | | details_present | 0/0/46 (constant) | 0/0/22 | 0/0/38 | | features_present | 0/0/46 (constant) | 0/0/22 | 0/0/38 | | categories_present | 0/0/46 (constant) | 0"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/O001O002_override_intent_scope.md",
+      "title": "O001/O002 — Override Intent Scope",
+      "excerpt": "# O001/O002 — Override Intent Scope Development-only read-only audit on 22 archived override sessions, using frozen fold-specific E060 models. O1 (current-intent query) and O3 (both query and anchor) reduced mean post-override retrieval reciprocal rank by `.571312`; O2 (current-intent category anchor) reduced recommendation reciprocal rank by `.030303`. No variant improved a session. **Decision: reject before end-to-end OOF.** Historical context is beneficial in this evaluator distribution; no intent-scoping runtime flag is promoted. "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/P001_catalog_popularity_prior.md",
+      "title": "P001 — Catalog popularity prior",
+      "excerpt": "# P001 — Catalog popularity prior ## Question Does the participant-visible `rating_number` signal retain value once it changes actual recommendations, repeat exclusion, and session dynamics? ## Baseline E035B with E057 normalization hardening. Dialogue state, question policy, candidate membership, candidate limits, retrieval, and base ranking are frozen. ## Fixed family - P001A: E035B control, explicit `popularity_order: none`. - P001B: rank the existing E035B candidate set by descending `rating_number`. - P001C: retain E035B order except inside score blocks spanning at most `.25` final-score points; use descending `rating_number` within each block. - P001D: reciprocal-rank fusion of E035B c"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/P002_constraint_safety_and_wildcard_factorial.md",
+      "title": "P002 — Constraint safety and wildcard/popularity factorial",
+      "excerpt": "# P002 — Constraint safety and wildcard/popularity factorial ## P002A — Constraint-safe P001D P001D is frozen except after its fixed RRF order. A candidate with an explicit, strength-1.0 material or color conflict is placed behind every non-conflicting candidate. Missing catalog values are UNKNOWN and remain eligible. No score or penalty weight changes are introduced. ## P002B — E022 × popularity RRF E022's repeated `other` dialogue, retrieval, candidate limits, and ranker are frozen. P001D's fixed `rating_number` RRF (`k=60`) is applied only to final recommendation order. This is evaluator-specific and separate from P002A. ## Acceptance Evaluate both on development. Confirm any clear improv"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/P003_popularity_robustness.md",
+      "title": "P003 — Popularity-prior robustness curve",
+      "excerpt": "# P003 — Popularity-prior robustness curve ## Question How much of P002A depends on the exact released relationship between visible `rating_number` and target selection? ## Method No runtime configuration changes. The evaluator receives original target and intent metadata; only the agent-visible `rating_number` is transformed in a temporary catalog. All transforms are deterministic and target-independent. - Normal: unchanged catalog popularity. - Category-half shuffle: rotate ratings among a hash-selected half of products within each leaf category. - Global shuffle: rotate all ratings across the catalog. - Coarse quantile-5: retain only five global popularity buckets. ## Results | Variant | "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/P004_submission_performance.md",
+      "title": "P004 — Submission performance profile",
+      "excerpt": "# P004 — Submission performance profile Profiled on macOS arm64, Python 3.13.7, using the locked E058 default and the longest archived public session (10 turns, `public_0161`). Values are local machine measurements, not organizer hardware guarantees. | Measure | Result | |---|---:| | Clean cold-start wall time, median of 3 | 8.379 s | | Index initialization | 8.121–8.264 s | | Peak RSS at cold initialization | about 772 MiB | | Peak RSS through 10-turn session | about 1,108 MiB | | Mean per-turn latency | 0.147 s | | Maximum per-turn latency | 0.173 s | | Worst observed 10-turn session compute | 1.473 s | | Clean-environment reproduction | passed | An init-only subprocess passes a 10-second "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/P005_orthogonal_signal_audit.md",
+      "title": "P005 — orthogonal participant-visible signal audit",
+      "excerpt": "# P005 — orthogonal participant-visible signal audit ## Scope This is an offline diagnostic, not a challenger. It freezes P002A and performs no runtime/configuration changes, no feature combinations, and no fitted coefficients. Each signal is evaluated alone on the existing E051 hard-pair definition: at a high-ambiguity event (`target_tie_group_size >= 11`), compare the archived target against every candidate that ranked above it. Target joins are used only after the archived evaluation. All input signals are participant-visible catalog metadata. Product age is derived solely from `details[\"Date First Available\"]`, not hidden purchase/session timestamps. ## Results Tie-adjusted target-vs-fal"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/P006_wildcard_information_flow.md",
+      "title": "P006 — Released-wildcard information-flow audit",
+      "excerpt": "# P006 — Released-wildcard information-flow audit ## Scope and frozen references This is an evaluator-specific all-in pass under one explicit assumption: private evaluation reproduces the released simulator's repeated `other` disclosures, fixed response wrapper, semicolon formatting, and exhaustion behavior. E058 is untouched as the robust champion. P002C remains the frozen wildcard reference; P006C is exposed separately in `configs/best_evaluator_all_in.json`. The audit did not revisit wildcard call-count sweeps, E058 factorials, RRF parameters, dense ranking, candidate-pool width, conditional IDF, or ranking-derived question selection. ## Information-flow audit The P002C development trace "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/P007_wildcard_exposure_factorials.md",
+      "title": "P007 — Wildcard × exposure factorials",
+      "excerpt": "# P007 — Wildcard × exposure factorials Selection used development only. K004 (P006C × K3) remained frozen as B1. | Variant | HR@10 | MRR | MTTC | Score | Δ vs B1 | Paired 95% CI | |---|---:|---:|---:|---:|---:|---:| | B1 P006C × K3 | .993333 | .860000 | 2.586667 | .922933 | — | — | | B2 P006C × K2 | .986667 | .880944 | 2.760000 | .922417 | -.000517 | [-.012967, .009917] | | B3 P006C × K1 | .973333 | .918019 | 3.160000 | .918872 | -.004061 | [-.024456, .013222] | | B4 P006C × A6 | .986667 | .889286 | 2.786667 | .924386 | +.001452 | [-.011614, .011986] | | B5 wildcard K1 / named K3 | .986667 | .922619 | 2.906667 | .931986 | +.009052 | [-.005162, .021667] | B5/P007D is frozen as the single Tra"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/P008_named_information_and_variant_audit.md",
+      "title": "P008 — Named-Information Exposure and Variant-Slot Audit",
+      "excerpt": "# P008 — Named-Information Exposure and Variant-Slot Audit This follow-up is development-only. P007D remains the holdout-confirmed evaluator-track configuration; no P008 holdout execution was performed. ## Pre-registered named-information policy Starting from P007D/P006C, use: | Question state | Display limit | | --- | ---: | | wildcard (`other`) | 1 | | `feature` or `material` | 2 | | other named attribute | 3 | | no question | 10 | The split is fixed from the existing answerability evidence, not from a per-attribute score search. It dispatched on 353 wildcard states, 29 feature/material states, 49 other named states, and 11 no-question states. ## Development result | Variant | HR@10 | MRR "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/PhaseA_consolidated_diagnostics.md",
+      "title": "Phase A — Consolidated Diagnostics",
+      "excerpt": "# Phase A — Consolidated Diagnostics Development-only diagnostic bundle; no holdout or challenger was run. ## Immediate gates - Train/serve parity: PASS (0 failing of 149). - O003 override evidence: FAIL. - W001 exposure restoration remains rejected; no further wildcard-exposure variant is justified. ## Result Use the JSON artifact for the complete strata, replay parity rows, existing audit provenance, and next-step decision tree. "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/POLICY_LEARNING_FINAL_DECISION.md",
+      "title": "Policy Learning — Final Decision",
+      "excerpt": "--- Status: CLOSED / REJECTED Branch: Counterfactual exposure-policy learning Decision: Do not train or evaluate a simulator-derived exposure policy Date: 2026-08-29 --- # Policy Learning — Final Decision ## Reason Synthetic counterfactual policy learning requires sufficiently deployment-like target and transition distributions. That prerequisite was not met. Simulator-derived action values or labels would therefore encode source shift that cannot be trusted as deployment-oriented policy supervision. ## Evidence ### R101 — severe static distribution mismatch R100's synthetic targets were unlike released development. Mean target popularity percentile was `.502573` synthetic versus `.957580` r"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/PROJECT_SUBMISSION_METHODOLOGY.md",
+      "title": "Project Submission Methodology and Research Record",
+      "excerpt": "# Project Submission Methodology and Research Record ## Document purpose This document is the end-to-end methodological record for the conversational product-search project. It explains the task, scoring, runtime pipeline, experimental design, mathematical models, validation controls, successful mechanisms, rejected mechanisms, deployment choices, and limitations. It is deliberately not a claim that every experimental branch improved the system. A central part of the project was identifying which apparently plausible ideas did **not** generalize or did not meet a predeclared safety/effect gate. The runtime configuration, experiment configuration, diagnostic artifact, and notes cited in this "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/Q001_S001_information_loss.md",
+      "title": "Q001/S001 — Information-Loss Audits",
+      "excerpt": "# Q001/S001 — Information-Loss Audits Q001 found 15 of 442 archived states where first-40 query terms omit a newer term. The recency-safe ordering changed final reciprocal rank by `-.000014` on average, with no retrieval improvement. **Reject; no query ordering change.** S001 removed only deterministic evaluator boilerplate from named answers. It applied to 5 of 57 named-answer states; target-versus-hard-negative discrimination improved three times and never worsened, but mean margin gain `.018713` did not meet the material gate. All 79 semantic no-preference replies were already recognized. **Reject; no canonicalization/no-preference change.** "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/R100_counterfactual_validation.md",
+      "title": "R100 — Counterfactual Dataset Validation and Synthetic Shadow Baselines",
+      "excerpt": "# R100 — Counterfactual Dataset Validation and Synthetic Shadow Baselines This report validates the R100 `K006C` (R branch) counterfactual dataset before any policy fitting. It remains synthetic, product-disjoint from the public development and holdout targets, and does not select or alter a public-track configuration. ## Phase 1 — Replay validity The corpus-wide incumbent check rebuilt each normal episode and then forced the recorded incumbent display limit at every collected state. Evaluator-generated session UUIDs were excluded from the exact trace comparison because they are episode identifiers rather than simulator state. | Check | Result | | --- | ---: | | Targets tested | 100 | | Deci"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/R101_R102_calibration.md",
+      "title": "R101/R102 — Simulator Calibration Gate for Exposure Policy Learning",
+      "excerpt": "# R101/R102 — Simulator Calibration Gate for Exposure Policy Learning Policy learning is stopped. This report uses only archived released-development data and synthetic corpora; public holdout was not read or executed. ## R101 mismatch audit R100's one-state `k10 - K006C` value averaged `+.062948` across 709 states. The advantage was concentrated late in a synthetic dialogue (`+.011394` on turn 1; `+.229518` on turn 10) and was positive both after substantive evidence (`+.055393`) and after no-preference/no-information (`+.068750`). The released-development target popularity percentile was `.957580` on average (median `.994110`), compared with R100 `.502573` (median `.471379`). Released deve"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/R102D_residual_calibration.md",
+      "title": "R102D — Residual Simulator-Calibration Decomposition",
+      "excerpt": "# R102D — Residual Simulator-Calibration Decomposition R102 remains frozen. The analyzer used only the frozen 500-session R102 artifacts, archived released-development K006C run/state traces, and the catalog. It did not run an evaluator, generate dialogue, collect counterfactuals, fit a policy, start R103, run R104, or accept a holdout artifact as input. **Protocol exception:** during preliminary repository inspection, before the analyzer was implemented, an operator command inadvertently streamed `data/public_set.jsonl` and parsed four boundary records, including two holdout records. No holdout record was evaluated or used in any feature, model, weight, table, or decision below. Nevertheles"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/R10_oracle_headroom.md",
+      "title": "R10 — Counterfactual Exposure Oracle Pilot",
+      "excerpt": "# R10 — Counterfactual Exposure Oracle Pilot Replay validation passed with zero unexplained mismatches before this pilot. This is a ten-target, product-disjoint synthetic R-only feasibility result; no policy was fitted and no public evaluation targets were used. ## Action-value signal 67 decision states were evaluated under direct simulator continuations for `k ∈ {1,2,3,5,10}`. Action values differed in 76.12% of states; mean spread was `.078495` and median spread `.040000`. ## Oracle headroom versus K006C - Incumbent action already optimal: 44.78% of states. - Alternative advantage at least `.005` / `.010` / `.020`: 55.22% / 53.73% / 49.25%. - Mean oracle advantage: `.062473`. - Conditional"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/stress-test-simple.md",
+      "title": "First: the basic vocabulary",
+      "excerpt": "Absolutely. This appendix is essentially answering one big question: > **“How do we know the system’s good score is real, and not caused by cheating, fragile wording, accidental leakage, a lucky dataset pattern, a bug, or an unrealistic simulator?”** The project tries to attack its own result from many directions. Below I’ll unpack every section in much simpler language, including what was tested, why it matters, what the numbers mean, and what conclusions you can actually draw. --- # First: the basic vocabulary Before going section by section, these terms appear repeatedly. ### Candidate A product the system is considering recommending. If there are 10,000 products in the catalog, the syste"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/STRESS_TESTING_AND_ASSURANCE_APPENDIX.md",
+      "title": "Stress Testing, Assurance, and Red-Team Appendix",
+      "excerpt": "# Stress Testing, Assurance, and Red-Team Appendix ## Scope This appendix details how the project challenged its own claims. It separates robustness to language/catalog perturbations, distribution-shift sensitivity, runtime correctness, statistical validity, and operational fitness. Historical stress artifacts do not all use the same frozen configuration. E056 is an E035B-era robust-suite artifact and P003 is a P002A popularity-prior artifact. They establish mechanism dependencies and failure modes; they are not presented as an E058/E060 private-test simulation. Later E058/K006C/P007D red-team, Phase A parity, and end-to-end reproductions are the direct assurance evidence for current lineage"
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/TAXONOMY_ROUTE_CHALLENGER.md",
+      "title": "Taxonomy Retrieval Route — Development-Only Challenger (T001)",
+      "excerpt": "# Taxonomy Retrieval Route — Development-Only Challenger (T001) Status: **REJECT** (development-only; no holdout run; no champion replacement) Date: development campaign run against working tree at commit fdffef2 (uncommitted route changes) Scope: retrieval/ranking challenger only. Not a champion candidate. --- ## 1. Hypothesis A catalog-taxonomy retrieval route — matching **normalized contiguous taxonomy phrases** against participant-visible dialogue, scoring candidates by the **information content (IC)** of matched taxonomy nodes (summed over a product's own category path), with `rating_number` as the only tie-breaker — would add a genuinely different, participant-visible retrieval signal "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/TEMPLATE.md",
+      "title": "E### — Name",
+      "excerpt": "# E### — Name ## Question ## Hypothesis ## Baseline ## Change ## Everything else Unchanged. ## Expected ## Results - Hit Rate@10: - MRR: - MTTC: - Technical score: - Buying: - Browsing: - Intent override: - Boundary: ## Internal diagnostics - Repeats suppressed: - Unique products shown: - Average candidates considered: - Overrides detected: ## Observations ## Failure cases and taxonomy - RETRIEVAL_MISS: - RERANK_FAILURE: - STATE_ERROR: - OVERRIDE_ERROR: - BAD_QUESTION: - REPEAT_WASTE: - HARD_CONSTRAINT_VIOLATION: - AMBIGUOUS_QUERY: ## Conclusion KEEP / REJECT / RETEST / INCONCLUSIVE ## Next experiment "
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/notes/W001_p007d_lineage_preservation.md",
+      "title": "W001 — P007D Lineage-Preservation Audit",
+      "excerpt": "# W001 — P007D Lineage-Preservation Audit Development-only audit. P007D, P008A, and E060 config bytes were frozen in `W001_lineage_manifest.json`; no configuration was changed, no holdout ran, and no model was trained. ## Instrumentation and micro-tests Every new state update now records a target-independent `semantic_state_fingerprint` (constraints, intent version, asked/known/no- preference sets, and pending question only) and an `exposure_rule_id` describing the display-limit decision. The fingerprint intentionally excludes the shown and repeat inventories so an exposure difference cannot masquerade as semantic state drift. Ten deterministic, input-only wildcard micro-tests cover atomic f"
+    }
+  ],
+  "diagnostics": [
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/B001_retrieval_score_belief_calibration.json",
+      "keys": [
+        "definition",
+        "fitted_temperature",
+        "calibration_target_states",
+        "evaluation_target_states",
+        "evaluation",
+        "withholding_benefit_prediction"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/B002_actual_spec_disclosure.json",
+      "keys": [
+        "definition",
+        "all_released_messages",
+        "follow_up_responses_only",
+        "planned_synthetic_channel_comparison",
+        "phrase_frequency",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/B003A_old_belief_old_response_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/B003B_calibrated_belief_old_response_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/B003B_calibrated_belief_old_response_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/B003C_calibrated_belief_empirical_spec_response_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/B003_empirical_response_model.json",
+      "keys": [
+        "source_run",
+        "events",
+        "rare_document_frequency_max",
+        "smoothing_pseudocount",
+        "raw_counts",
+        "model"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/C001_global_popularity_cycle_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/C002_no_questions_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/C1_dense_signal.json",
+      "keys": [
+        "model",
+        "events",
+        "pairs",
+        "dense_pair_accuracy",
+        "random_baseline",
+        "mean_target_margin",
+        "events_target_dense_top10",
+        "C2_top50",
+        "rows"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/C4_naive_bayes_posterior.json",
+      "keys": [
+        "definition",
+        "events_with_structured_values",
+        "mean_observed_values",
+        "max_observed_values",
+        "mean_observed_values_by_field",
+        "E051_hard_pair_accuracy",
+        "frozen_top50"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/C4_naive_bayes_posterior_holdout.json",
+      "keys": [
+        "definition",
+        "events_with_structured_values",
+        "mean_observed_values",
+        "max_observed_values",
+        "mean_observed_values_by_field",
+        "E051_hard_pair_accuracy",
+        "frozen_top50"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/D001_profile_phrase_windows.json",
+      "keys": [
+        "audit",
+        "phrase_windows",
+        "profile",
+        "scope"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/D002A_p008_message_window_route_development_state_updates.json",
+      "keys": [
+        "events",
+        "experiment_id",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E004_question_score_buckets.json",
+      "keys": [
+        "source_run",
+        "experiment_id",
+        "split",
+        "rank_missing_value",
+        "score_buckets",
+        "attributes"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E010_answerability_adjusted_split_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E012_constraint_strength_representation_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E012_constraint_strength_representation_full_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E012_constraint_strength_representation_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E013_operation_aware_state_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E014_selective_intent_reset_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E015A_soft_decay_gamma_1_0_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E015B_soft_decay_gamma_0_9_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E015C_soft_decay_gamma_0_8_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E016_contradiction_aware_state_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E017_state_semantic_ranking_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E018_always_other_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E019_other_first_then_e012_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E020_other_until_exhausted_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E021_intent_fingerprint_retrieval_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E021_intent_fingerprint_retrieval_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E022_other_plus_fingerprint_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E022_other_plus_fingerprint_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E023_scenario_aware_routing_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E024A_diversity_10_exploit_0_explore_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E024B_diversity_8_exploit_2_explore_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E024C_diversity_6_exploit_4_explore_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E025A_phrase_baseline_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E025B_controlled_values_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E025C_structured_evidence_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E025D_aggregated_evidence_debug-public_0001_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E025D_aggregated_evidence_debug-public_0028_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E025D_aggregated_evidence_debug-public_0069_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E025D_aggregated_evidence_debug-public_0161_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E025D_aggregated_evidence_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E025D_aggregated_evidence_full_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E025D_aggregated_evidence_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E026_residual_recall_audit_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E027_reranker_regression_audit_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E028_conservative_multiroute_fusion_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E029_evidence_coverage_reranker_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E031A_protected_control_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E031B_protected_coverage_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E031C_protected_near_tie_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E031D_protected_interpolation_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E032A_structured_pool_100_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E032B_structured_pool_150_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E032C_structured_pool_300_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E034_structured_state_bm25_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E035A_exhaustion_control_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E035B_ungated_exhaustion_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E035B_ungated_exhaustion_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E035C_explicit_exhaustion_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E036_evaluator_other_terminal_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E037_E043_audit.json",
+      "keys": [
+        "source_runs",
+        "E037_residual_misses",
+        "E038_fallback_actionability",
+        "E040_headroom",
+        "E041_ambiguity",
+        "E043_wildcard_marginal_value"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E043A_one_early_other_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E043B_two_early_other_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E043B_two_early_other_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E044_E046_robustness.json",
+      "keys": [
+        "E044",
+        "E046_conditional_specificity_probe",
+        "robustness_cv_E035B_vs_E025D"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E045_high_ambiguity_question_oracle.json",
+      "keys": [
+        "E045_high_ambiguity_question_oracle"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E046_category_conditional_specificity_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E046_category_conditional_specificity_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E046_cross_validation.json",
+      "keys": [
+        "E044",
+        "E046_conditional_specificity_probe",
+        "robustness_cv_E035B_vs_E025D"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E048_E050_audit.json",
+      "keys": [
+        "E048_oracle_question_agreement",
+        "E049_conditional_idf_slices",
+        "E050_pairwise_observability"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E051_collision_proxy.json",
+      "keys": [
+        "E051_exact_observational_equivalence",
+        "collision_proxy_vs_oracle"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E052_evaluator_wildcard_field_evidence_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E054_catalog_interaction_reranker_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E056_champion_stress.json",
+      "keys": [
+        "baseline",
+        "message_variants",
+        "catalog_variants"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E056_champion_stress_development.json",
+      "keys": [
+        "baseline",
+        "message_variants",
+        "catalog_variants"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E057_normalization_audit.json",
+      "keys": [
+        "material_variants",
+        "category_variants",
+        "closure_variants",
+        "invariance",
+        "category_variant_hits",
+        "category_backoff",
+        "feature_missing"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E057_punctuation_invariant_evidence_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E057_punctuation_invariant_evidence_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E058_phrase_idf_key_correction_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E058_phrase_idf_key_correction_full_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E058_phrase_idf_key_correction_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E060A_p008_target_propensity_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E060A_p008_target_propensity_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E060A_runtime_profile.json",
+      "keys": [
+        "config",
+        "sample",
+        "catalog_rows",
+        "cold_start_plus_session_seconds",
+        "peak_working_set_mib",
+        "session_turns"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E060_attribution_controls.json",
+      "keys": [
+        "ablations",
+        "archived_baseline",
+        "experiment",
+        "feature_family_definitions",
+        "holdout_used",
+        "label_permutation_control",
+        "protocol",
+        "runtime_model_written",
+        "selection_permitted",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E060_early_union_posterior.json",
+      "keys": [
+        "baseline",
+        "candidate_protocol",
+        "excluded_heldout_target_rows",
+        "experiment",
+        "feature_names",
+        "fold_coefficients",
+        "fold_models",
+        "fold_sizes",
+        "gate",
+        "groups",
+        "groups_manifest",
+        "holdout_used",
+        "methods",
+        "missing_sessions",
+        "runtime_model",
+        "source",
+        "split",
+        "strict_target_product_disjoint"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E060_end_to_end_oof_development.json",
+      "keys": [
+        "experiment",
+        "folds",
+        "holdout_used",
+        "metrics",
+        "protocol",
+        "sessions",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E060_end_to_end_oof_development_parity_corrected.json",
+      "keys": [
+        "experiment",
+        "folds",
+        "holdout_used",
+        "metrics",
+        "protocol",
+        "sessions",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E060_end_to_end_oof_paired.json",
+      "keys": [
+        "baseline_technical_score",
+        "bootstrap",
+        "comparison",
+        "counts",
+        "experiment",
+        "holdout_used",
+        "largest_improvements",
+        "mean_paired_delta",
+        "oof_technical_score",
+        "regressions",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E060_freeze_manifest.json",
+      "keys": [
+        "artifacts",
+        "git_head",
+        "purpose"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E060_residual_error_taxonomy.json",
+      "keys": [
+        "class_oracle",
+        "classification_counts",
+        "e060_oof_candidate_group_mrr",
+        "e060_oof_rank1",
+        "experiment",
+        "headroom_flags",
+        "holdout_used",
+        "missing_sessions",
+        "n_groups",
+        "n_missing_shortlist",
+        "n_residual_non_rank1",
+        "residual_rows",
+        "split",
+        "target_used"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E060_residual_question_oracle.json",
+      "keys": [
+        "E045_high_ambiguity_question_oracle"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E061_residual_manifest.json",
+      "keys": [
+        "candidate_membership_changed",
+        "error_type_counts",
+        "experiment",
+        "feature_names",
+        "holdout_used",
+        "provenance",
+        "residual_error_count",
+        "residual_mechanism_counts",
+        "residuals",
+        "runtime_model_written",
+        "split",
+        "unavailable_error_types"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E061_residual_target_prior_audit.json",
+      "keys": [
+        "experiment",
+        "holdout_used",
+        "provenance",
+        "residual_error_count",
+        "runtime_model_written",
+        "selection_permitted",
+        "source_interaction_prior",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E062_catalog_schema_audit.json",
+      "keys": [
+        "catalog_rows",
+        "catalog_wide_estimation_audit",
+        "details_fields",
+        "experiment",
+        "holdout_used",
+        "runtime_model_written",
+        "split",
+        "top_level_fields",
+        "zero_shot_unused_field_gate"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E063_end_to_end_oof_development.json",
+      "keys": [
+        "experiment",
+        "folds",
+        "holdout_used",
+        "metrics",
+        "protocol",
+        "sessions",
+        "shadow_category_rescue",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E063_public_0035_rescue_check.json",
+      "keys": [
+        "admitted",
+        "experiment",
+        "fold",
+        "holdout_used",
+        "required_rescue_passed",
+        "sample_id",
+        "shadow_states",
+        "split",
+        "terminal"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E064_end_to_end_oof_development.json",
+      "keys": [
+        "experiment",
+        "folds",
+        "holdout_used",
+        "metrics",
+        "protocol",
+        "sessions",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E064_unfused_representation.json",
+      "keys": [
+        "candidate_membership",
+        "experiment",
+        "feature_names",
+        "fold_coefficients",
+        "fold_models",
+        "groups",
+        "holdout_used",
+        "oof_group_rank",
+        "representation",
+        "split",
+        "strict_target_product_disjoint"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E065_broad_category_representation.json",
+      "keys": [
+        "broad_path_groups",
+        "candidate_membership",
+        "experiment",
+        "feature_names",
+        "fold_models",
+        "groups",
+        "holdout_used",
+        "oof_group_rank",
+        "representation",
+        "split",
+        "strict_target_product_disjoint"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E065_end_to_end_oof_development.json",
+      "keys": [
+        "experiment",
+        "folds",
+        "holdout_used",
+        "metrics",
+        "protocol",
+        "sessions",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E066_end_to_end_oof_development.json",
+      "keys": [
+        "experiment",
+        "folds",
+        "holdout_used",
+        "metrics",
+        "protocol",
+        "sessions",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E066_grouped_softmax.json",
+      "keys": [
+        "applicability",
+        "experiment",
+        "features",
+        "fit_diagnostics",
+        "fold_models",
+        "groups",
+        "holdout_used",
+        "oof_group_rank",
+        "split",
+        "strict_target_product_disjoint"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/final_rank_artifact_audit.json",
+      "keys": [
+        "experiment",
+        "pre_e060_training_sources",
+        "review_required",
+        "rows",
+        "terminal_rank_source"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/final_representation_lineage_campaign.json",
+      "keys": [
+        "E064",
+        "E065",
+        "E066",
+        "O001O002",
+        "Q001",
+        "S001",
+        "W001",
+        "baseline",
+        "combined_challenger_authorized",
+        "experiment",
+        "final_decision",
+        "holdout_used",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/final_track_a_exposure_matrix.json",
+      "keys": [
+        "baseline",
+        "bootstrap_draws",
+        "bootstrap_seed",
+        "split",
+        "variants"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/final_track_b_wildcard_factorials.json",
+      "keys": [
+        "baseline",
+        "bootstrap_draws",
+        "bootstrap_seed",
+        "split",
+        "variants"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K001A_e058_k10_control_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K001A_e058_k10_control_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K001B_e058_k5_fixed_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K001B_e058_k5_fixed_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K001C_e058_k5_while_asking_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K001C_e058_k5_while_asking_full_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K001C_e058_k5_while_asking_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K002A_final_turn_release_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K002B_information_gain_release_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K002_held_back_transitions.json",
+      "keys": [
+        "source",
+        "summary",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K003A_e058_k4_while_asking_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K003B_e058_k5_while_asking_control_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K003C_e058_k6_while_asking_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K003D_e058_k3_while_asking_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K003D_e058_k3_while_asking_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K003E_e058_k7_while_asking_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K003_development_exposure_diagnostic.json",
+      "keys": [
+        "split",
+        "source",
+        "by_initial_rank",
+        "candidate_budgets",
+        "transitions"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K004_p006c_k3_while_asking_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K004_p006c_k3_while_asking_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K005A_e058_k2_while_asking_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K005B_e058_k1_while_asking_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K005C_e058_k0_while_asking_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K005_development_paired_bootstrap.json",
+      "keys": [
+        "split",
+        "baseline",
+        "draws",
+        "seed",
+        "variants"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K006A_early_aggressive_exposure_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K006B_two_turn_aggressive_exposure_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K006C_runtime_profile.json",
+      "keys": [
+        "config",
+        "sample",
+        "catalog_rows",
+        "cold_start_plus_session_seconds",
+        "peak_working_set_mib",
+        "session_turns"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K006C_substantive_answer_exposure_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K006C_substantive_answer_exposure_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K006D_wildcard_aware_exposure_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K007A_e058_cumulative_early_cap_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/K007B_e058_rank_churn_exposure_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/M002A_factorized_catalog_prior_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/M002_catalog_prior_audit_development.json",
+      "keys": [
+        "catalog_prevalence",
+        "conditional_residual_signal_beyond_rating_number",
+        "derived_weights",
+        "development_target_prevalence",
+        "diagnostic_discrimination_not_a_runtime_model",
+        "existing_popularity_control",
+        "experiment",
+        "next_action",
+        "no_holdout",
+        "pre_registered_challenger_rule",
+        "residual_signal_gate_passed",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/M002_factorized_catalog_prior_challenger_development.json",
+      "keys": [
+        "baseline",
+        "candidate_membership_unchanged_by_design",
+        "experiment",
+        "metrics",
+        "no_holdout",
+        "paired",
+        "separate_gate",
+        "split",
+        "verdict"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/M002_metadata_completeness_residual_screen.json",
+      "keys": [
+        "composites",
+        "experiment",
+        "features",
+        "pairs_all",
+        "pairs_both_lower",
+        "pairs_price_tied"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/M003_mttc_latency_audit_development.json",
+      "keys": [
+        "baseline",
+        "cases",
+        "classification_counts",
+        "evidence_or_rank_improved_classification_counts",
+        "evidence_or_rank_improved_one_turn_before_conversion_cases",
+        "experiment",
+        "important_limit",
+        "one_turn_before_conversion_cases",
+        "sessions",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/M004_extractor_recall_development.json",
+      "keys": [
+        "baseline",
+        "by_kind_and_turn",
+        "definition",
+        "events",
+        "experiment",
+        "failure_examples",
+        "overall",
+        "prerequisite_verdict",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/M005_hardened_category_diagnostic_development.json",
+      "keys": [
+        "baseline",
+        "broad_path_rejected_sessions",
+        "examples",
+        "experiment",
+        "gate",
+        "incremental_target_recall_rate_all_sessions",
+        "incremental_target_recall_sessions",
+        "method",
+        "posting_count",
+        "route_fired_sessions",
+        "route_is_eligible_for_future_ranking_experiment",
+        "rows",
+        "sessions",
+        "split",
+        "target_recall_in_path_pool"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/O001O002_override_rank_audit.json",
+      "keys": [
+        "archive",
+        "experiment",
+        "holdout_used",
+        "override_samples",
+        "predeclared_rank_evidence_gate",
+        "protocol",
+        "qualifying_variants",
+        "reports",
+        "split",
+        "variant_definitions"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P001A_popularity_control_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P001B_pure_popularity_order_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P001C_popularity_near_tie_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P001D_popularity_rrf_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P001D_popularity_rrf_full_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P001D_popularity_rrf_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P002A_constraint_safe_popularity_rrf_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P002A_constraint_safe_popularity_rrf_full_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P002A_constraint_safe_popularity_rrf_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P002B_e022_wildcard_popularity_rrf_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P002B_e022_wildcard_popularity_rrf_full_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P002B_e022_wildcard_popularity_rrf_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P002C_e022_wildcard_popularity_rrf_safe_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P002C_e022_wildcard_popularity_rrf_safe_full_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P002C_e022_wildcard_popularity_rrf_safe_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P003_popularity_robustness.json",
+      "keys": [
+        "config",
+        "variants",
+        "definition"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P004_submission_performance.json",
+      "keys": [
+        "environment",
+        "cold_start",
+        "warm_session",
+        "clean_environment_reproduction"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P005_orthogonal_signal_audit.json",
+      "keys": [
+        "definition",
+        "development",
+        "holdout"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P006B_wildcard_override_reset_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P006C_atomic_wildcard_facts_override_reset_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P006C_atomic_wildcard_facts_override_reset_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P006_atomic_wildcard_facts_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P007A_p006c_k2_while_asking_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P007B_p006c_k1_while_asking_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P007C_p006c_substantive_answer_exposure_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P007D_p006c_wildcard_aware_exposure_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P007D_p006c_wildcard_aware_exposure_holdout_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P007D_runtime_profile.json",
+      "keys": [
+        "config",
+        "sample",
+        "catalog_rows",
+        "cold_start_plus_session_seconds",
+        "peak_working_set_mib",
+        "session_turns"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P008A_p006c_named_information_aware_exposure_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P008_named_information_aware_analysis.json",
+      "keys": [
+        "baseline",
+        "baseline_metrics",
+        "bootstrap_draws",
+        "bootstrap_probability_improves",
+        "bootstrap_seed",
+        "mrr_session_wins_losses_ties",
+        "split",
+        "technical_delta",
+        "technical_delta_ci95",
+        "variant",
+        "variant_metrics"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/P008_variant_slot_audit.json",
+      "keys": [
+        "affected_question_counts",
+        "catalog_duplicate_family_count",
+        "catalog_products",
+        "catalog_products_in_duplicate_families",
+        "display_events",
+        "duplicate_slots_consumed",
+        "events_with_duplicate_displayed_family",
+        "examples",
+        "family_definition",
+        "scope"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/PhaseA_consolidated_diagnostics.json",
+      "keys": [
+        "decision_tree",
+        "e060_effect_by_turn_constraint_count",
+        "e060_training_objective",
+        "e065_delta_by_scenario_and_broad_path",
+        "experiment",
+        "holdout_used",
+        "named_response_no_preference",
+        "override_detector_precision",
+        "override_retrieval_category_inconsistency",
+        "parity_correction",
+        "price_presence_attribution",
+        "query_truncation",
+        "scope",
+        "split",
+        "submission_runtime_hardening",
+        "train_serve_feature_parity",
+        "training_feature_redundancy",
+        "wildcard_lineage"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/Q001_query_truncation_audit.json",
+      "keys": [
+        "definition",
+        "experiment",
+        "holdout_used",
+        "report",
+        "rows",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/S001_named_answer_canonicalization_audit.json",
+      "keys": [
+        "experiment",
+        "holdout_used",
+        "named_rows",
+        "no_preference_rows",
+        "protocol",
+        "report",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/submission_hardening_audit.json",
+      "keys": [
+        "config_sha256",
+        "experiment",
+        "foreign_working_directory",
+        "fresh_process",
+        "model_sha256",
+        "organizer_harness_observation",
+        "passed",
+        "returncode",
+        "stderr",
+        "stdout"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/T001A_taxonomy_popularity_k006c_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/T001B_taxonomy_popularity_p007d_development_state_updates.json",
+      "keys": [
+        "experiment_id",
+        "name",
+        "split",
+        "events"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/T001_taxonomy_route_challenger_development.json",
+      "keys": [
+        "comparisons",
+        "experiment",
+        "no_champion_replacement",
+        "no_holdout_run",
+        "retrieval_change_only",
+        "score_formula",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/W001A_end_to_end_oof_development.json",
+      "keys": [
+        "experiment",
+        "folds",
+        "holdout_used",
+        "metrics",
+        "protocol",
+        "sessions",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/W001_lineage_divergence.json",
+      "keys": [
+        "archive",
+        "comparison_definition",
+        "comparisons",
+        "control_divergence",
+        "experiment",
+        "exposure_lineage",
+        "holdout_used",
+        "split",
+        "summary",
+        "wildcard_definition"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/W001_lineage_manifest.json",
+      "keys": [
+        "experiment",
+        "exposure_projection",
+        "frozen_configs",
+        "holdout_used",
+        "semantic_projection",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/W001_wildcard_microtests.json",
+      "keys": [
+        "deterministic_input_only",
+        "experiment",
+        "holdout_used",
+        "split",
+        "test_count",
+        "tests"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/C0_final_top10_semantic_probe/cross_encoder_results.json",
+      "keys": [
+        "baseline",
+        "candidate_pool",
+        "delta",
+        "improved",
+        "method",
+        "model",
+        "mrr_delta_ci95",
+        "passes_c0_gate",
+        "product_pairs",
+        "states",
+        "truncated_product_pairs",
+        "truncation_rate",
+        "unchanged",
+        "worsened"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/C0_final_top10_semantic_probe/selection_rule.json",
+      "keys": [
+        "candidate_pool",
+        "experiment",
+        "model_inputs_exclude",
+        "rule",
+        "split",
+        "states"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E059_semantic_headroom/cross_encoder_results.json",
+      "keys": [
+        "by_kind",
+        "max_length",
+        "model",
+        "product_pairs",
+        "summary",
+        "truncated_product_pairs",
+        "truncation_policy",
+        "truncation_rate"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E059_semantic_headroom/selection_rule.json",
+      "keys": [
+        "control_rule",
+        "experiment",
+        "hard_rule",
+        "model_inputs_exclude",
+        "pool",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/E059_semantic_headroom/semantic_headroom_verdict.json",
+      "keys": [
+        "decision",
+        "experiment",
+        "llm_status",
+        "methods",
+        "next_action"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/M001_collision_breaker/m001_status.json",
+      "keys": [
+        "decision",
+        "experiment",
+        "methods",
+        "next_action",
+        "probe",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/M001_collision_breaker/selection_rule.json",
+      "keys": [
+        "experiment",
+        "model_inputs_exclude",
+        "pairs",
+        "pass_gate",
+        "probe_sha256",
+        "selection_rule",
+        "source",
+        "split"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/M001_collision_breaker/structured_llm_results.json",
+      "keys": [
+        "method",
+        "pairs",
+        "passes_m001_gate",
+        "target_preference_rate",
+        "target_preferences",
+        "ties_or_non_preferences",
+        "wilson_lower_95"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/policy_learning/R100_baseline_profile.json",
+      "keys": [
+        "sample_id",
+        "catalog_index_seconds",
+        "agent_construction_seconds",
+        "baseline_episode_seconds",
+        "forced_action_seconds",
+        "forced_action_mean_seconds",
+        "peak_tracemalloc_bytes",
+        "catalog_constructions",
+        "agent_constructions",
+        "actions",
+        "cprofile_top30"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/policy_learning/R100_clustered_oracle_stats.json",
+      "keys": [
+        "bootstrap_draws",
+        "method",
+        "metrics",
+        "seed",
+        "states",
+        "statistical_unit",
+        "targets"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/policy_learning/R100_incumbent_replay_validation.json",
+      "keys": [
+        "elapsed_seconds",
+        "exact_continuation_match_count",
+        "exact_continuation_match_percentage",
+        "exact_terminal_reward_match_count",
+        "exact_terminal_reward_match_percentage",
+        "mismatches",
+        "protocol",
+        "states_tested",
+        "targets_tested"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/policy_learning/R100_oracle_headroom.json",
+      "keys": [
+        "action_value_spread",
+        "alternative_better_at_least",
+        "fixed_k_regret",
+        "fixed_policy",
+        "incumbent_best_percentage",
+        "incumbent_to_oracle",
+        "mean_oracle_gain",
+        "median_gain_when_incumbent_suboptimal",
+        "oracle_action_by_observable_state",
+        "oracle_action_margin",
+        "oracle_best_k_distribution",
+        "per_target",
+        "states",
+        "winning_alternative_mechanisms"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/policy_learning/R100_shadow_fixed_k.json",
+      "keys": [
+        "policies",
+        "protocol",
+        "results",
+        "targets"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/policy_learning/R100_top_gain_traces.json",
+      "keys": [
+        "selection",
+        "traces"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/policy_learning/R101_mismatch_report.json",
+      "keys": [
+        "distribution_comparison",
+        "distribution_deltas",
+        "experiment",
+        "k10_minus_K006C_one_step_delta",
+        "released_vs_synthetic_discriminator",
+        "scope"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/policy_learning/R101_synthetic_sessions.json",
+      "keys": [
+        "array",
+        "length:100"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/policy_learning/R102D_residual_calibration.json",
+      "keys": [
+        "artifact_inventory",
+        "continuous_popularity_tail",
+        "decision_rule",
+        "diagnostic_reweighting",
+        "experiment",
+        "freeze",
+        "initial_target_rank",
+        "joint_support_audit",
+        "paired_fixed_policy_uncertainty",
+        "response_information_audit",
+        "scope",
+        "scope_provenance",
+        "session_level_discriminator",
+        "session_survival_success_hazard"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/policy_learning/R102_calibration_report.json",
+      "keys": [
+        "K006C_equal_target_weighted_bootstrap",
+        "experiment",
+        "fixed_policy_bootstrap_note",
+        "fixed_policy_matrix",
+        "joint_category_x_popularity",
+        "read_only",
+        "runtime_state_released_vs_R102_discriminator",
+        "sampling_manifest",
+        "target_rank_dynamics"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/policy_learning/R102_fixed_policy_matrix.json",
+      "keys": [
+        "K006C_session_diagnostics",
+        "experiment",
+        "protocol",
+        "results",
+        "targets"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/policy_learning/R102_sampling_manifest.json",
+      "keys": [
+        "allocated_category",
+        "allocated_joint_bins",
+        "allocated_popularity",
+        "category_level",
+        "experiment",
+        "joint_note",
+        "public_target_count_excluded",
+        "public_targets_excluded",
+        "selected",
+        "selection",
+        "source_category",
+        "source_development_targets",
+        "source_popularity",
+        "targets"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/policy_learning/R10_oracle_headroom.json",
+      "keys": [
+        "action_value_spread",
+        "alternative_better_at_least",
+        "incumbent_best_percentage",
+        "incumbent_to_oracle",
+        "mean_oracle_gain",
+        "median_gain_when_incumbent_suboptimal",
+        "oracle_best_k_distribution",
+        "states",
+        "winning_alternative_mechanisms"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/policy_learning/replay_validation.json",
+      "keys": [
+        "checks",
+        "mismatches",
+        "status",
+        "timing_seconds",
+        "zero_unexplained_mismatches"
+      ]
+    },
+    {
+      "file": "../techjam-conversational-search-private/experiments/diagnostics/policy_learning/rng_failure_diagnostic.json",
+      "keys": [
+        "failures"
+      ]
+    }
+  ],
+  "sourcePaths": {
+    "local": "experiments/",
+    "private": "C:/Users/ian/Documents/Projects/techjam-conversational-search-private/experiments"
+  }
+}

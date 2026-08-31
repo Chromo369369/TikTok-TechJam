@@ -16,3 +16,8 @@ docs/participant_release_checklist.md
 tests/test_5core_builder.py
 tests/test_organizer_pipeline.py
 *.log
+
+# Local dashboard dependencies and generated production bundle.
+dashboard/node_modules/
+dashboard/dist/
+dashboard/*.tsbuildinfo

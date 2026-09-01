@@ -46,6 +46,31 @@ The command writes per-session results and aggregate metrics to `results.json`.
 The included weak BM25 starter scores Hit Rate@10 `0.125`, MRR `0.068034`, and
 MTTC `9.81` on the released public set. See `docs/baseline_results.json`.
 
+## Demo Tracer and Dashboard
+
+Two optional layers sit on top of the agent. Neither is imported by the evaluator and neither changes scoring.
+
+`demo/trace_session.py` replays one session through the same `Agent` class and the same simulated customer the evaluator uses, and prints what the agent was thinking between turns — extracted clues, how far the evidence narrows the catalogue, the top of the ranking, the #1-to-#2 confidence gap, and what each question and list length was worth in simulation.
+
+```bash
+python demo/trace_session.py --session public_0089    # trace one session
+python demo/trace_session.py --find                   # pick sessions to record
+```
+
+It needs `data/catalog.jsonl`; set `TECHJAM_CATALOG` or pass `--catalog` if the file lives elsewhere. Construction takes about 80 seconds. See `demo/README.md`.
+
+`dashboard/` is a static React reporting layer: the experiment history, the final architecture, and a **Session trace** page that presents the tracer's output turn by turn. It needs Node 20+.
+
+```bash
+cd dashboard
+npm install       # once
+npm run data      # experiment snapshot  -> public/dashboard-data.json
+npm run trace     # session traces (~3 min, needs the catalogue)
+npm run dev       # http://localhost:5173
+```
+
+Full instructions, including where the catalogue has to be, are in `dashboard/README.md`.
+
 ## Agent Interface
 
 ```python
@@ -95,6 +120,8 @@ docs/evaluation_config.json       scoring configuration
 docs/baseline_results.json        reproducible weak-starter reference score
 starter/agent.py                  editable weak starter
 evaluator/local_evaluator.py      public-set simulator and scorer
+demo/trace_session.py             observational tracer; does not affect scoring
+dashboard/                        static React reporting layer (Node 20+)
 ```
 
 ## Judging and Submission Policy

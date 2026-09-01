@@ -27,7 +27,23 @@ python demo/trace_session.py --session public_0089    # trace one session
 python demo/trace_session.py --find                   # pick sessions to record
 ```
 
-Construction takes about 80 seconds. Output is wrapped to 96 columns.
+Add `--export PATH` to write the same trace as JSON instead of text. Several
+sessions can be traced in one pass:
+
+```bash
+python demo/trace_session.py --session public_0068,public_0089 \
+    --export dashboard/public/trace-data.json
+```
+
+That file is what the dashboard's **Session trace** page reads
+(`dashboard/src/Trace.tsx`, or `npm.cmd run trace` from `dashboard/`). It carries
+every field the text output prints — clues, phrases, narrowing, the top of the
+ranking, the confidence gap, and each option's simulated value.
+
+Python 3.10+ and the standard library only — nothing to install. The catalogue is
+read from `data/catalog.jsonl`; if it lives elsewhere, set `TECHJAM_CATALOG` or
+pass `--catalog <path>`. Construction takes about 80 seconds. Output is wrapped
+to 96 columns.
 
 ### Why `--session` replays earlier sessions first
 

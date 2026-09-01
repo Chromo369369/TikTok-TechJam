@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "data": "node scripts/build-dashboard-data.mjs",
+    "trace": "python ../demo/trace_session.py --session public_0068,public_0089 --export public/trace-data.json",
     "dev": "vite",
     "build": "npm run data && tsc -b && vite build",
     "typecheck": "tsc -b"

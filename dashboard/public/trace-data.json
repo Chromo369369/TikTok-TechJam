@@ -1,0 +1,850 @@
+{
+  "generatedAt": "2026-09-01T09:50:07.784170+08:00",
+  "dataset": "public_set.jsonl",
+  "catalogSize": 50000,
+  "rolloutDepth": 4,
+  "sessions": [
+    {
+      "sample_id": "public_0068",
+      "opening": "I'm looking for Athletic Walking. Lightweight and responsive Ultra Go midsole cushioning",
+      "turn1_shown": 10,
+      "turn1_gap": 12.97811118485254,
+      "hit_turn": 3,
+      "hit_rank": 1,
+      "scenario_type": "intent_override",
+      "difficulty": "hard",
+      "target": "B08SH8GF6K",
+      "target_title": "Skechers Women's Go Walk 6-Big Splash Sneaker",
+      "turns": [
+        {
+          "turn": 1,
+          "shopper": "I'm looking for Athletic Walking. Lightweight and responsive Ultra Go midsole cushioning",
+          "clues": [
+            "use_case=athletic",
+            "feature=lightweight",
+            "category=athletic walking",
+            "brand=ultra"
+          ],
+          "phrases": [
+            "athletic walking lightweight responsive",
+            "walking lightweight responsive ultra",
+            "lightweight responsive ultra go",
+            "responsive ultra go midsole"
+          ],
+          "narrowing": {
+            "steps": [
+              {
+                "label": "catalogue",
+                "count": 50000
+              },
+              {
+                "label": "category",
+                "count": 342
+              },
+              {
+                "label": "1 requirement",
+                "count": 342
+              },
+              {
+                "label": "2 requirements",
+                "count": 170
+              },
+              {
+                "label": "3 requirements",
+                "count": 170
+              }
+            ],
+            "text": "50,000 -> 342 (category) -> 342 (1 requirement) -> 170 (2 requirements) -> 170 (3 requirements)",
+            "empty": false
+          },
+          "candidates": [
+            {
+              "rank": 1,
+              "asin": "B08SH8GF6K",
+              "title": "Skechers Women's Go Walk 6-Big Splash Sneaker",
+              "score": 28.6925,
+              "target": true
+            },
+            {
+              "rank": 2,
+              "asin": "B0BN6CCHB7",
+              "title": "Skechers Men's Go Max-Athletic Air Mesh Slip on Walking Shoe Sneaker",
+              "score": 15.7144,
+              "target": false
+            },
+            {
+              "rank": 3,
+              "asin": "B08GGXMPNP",
+              "title": "Skechers Women's Go Walk Smart Deco Lace Slip on Sneaker",
+              "score": 14.4609,
+              "target": false
+            }
+          ],
+          "gap": 12.9781,
+          "confidence": "confident (gaps this wide were right 100% of the time)",
+          "rollouts": {
+            "questions": [
+              {
+                "attribute": "material",
+                "value": 0.7377
+              },
+              {
+                "attribute": "feature",
+                "value": 0.734
+              },
+              {
+                "attribute": "color",
+                "value": 0.7172
+              },
+              {
+                "attribute": "use_case",
+                "value": 0.7111
+              },
+              {
+                "attribute": "category",
+                "value": 0.7081
+              },
+              {
+                "attribute": "brand",
+                "value": 0.6844
+              },
+              {
+                "attribute": "size",
+                "value": 0.6737
+              },
+              {
+                "attribute": "style",
+                "value": 0.6724
+              },
+              {
+                "attribute": "budget",
+                "value": 0.6693
+              },
+              {
+                "attribute": "other",
+                "value": 0.6598
+              }
+            ],
+            "shows": [
+              {
+                "k": 1,
+                "value": 0.9686
+              },
+              {
+                "k": 10,
+                "value": 0.9736
+              }
+            ],
+            "particles": 27,
+            "depth": 4,
+            "chosen_question": "material",
+            "chosen_show": 10
+          },
+          "decision": {
+            "show": 10,
+            "ask": "material"
+          },
+          "published": [
+            {
+              "asin": "B08SH8GF6K",
+              "title": "Skechers Women's Go Walk 6-Big Splash Sneaker"
+            },
+            {
+              "asin": "B0BN6CCHB7",
+              "title": "Skechers Men's Go Max-Athletic Air Mesh Slip on Walking Shoe Sneaker"
+            },
+            {
+              "asin": "B08GGXMPNP",
+              "title": "Skechers Women's Go Walk Smart Deco Lace Slip on Sneaker"
+            },
+            {
+              "asin": "B07N143H1Z",
+              "title": "Skechers Women's Go Run Mojo 2.0 Sneaker"
+            },
+            {
+              "asin": "B07N15QTKC",
+              "title": "Skechers Women's Go Walk 5-Lucky Sneaker"
+            },
+            {
+              "asin": "B08134XNNB",
+              "title": "Women's Walking Shoes Sock Sneakers - Mesh Slip On Air Cushion Lady Girls Modern Jazz Dance Easy Shoes Platform Loafers"
+            },
+            {
+              "asin": "B0B4GGT4KC",
+              "title": "Under Armour Men's Surge 3 Running Shoe"
+            },
+            {
+              "asin": "B0BZJG18G6",
+              "title": "L LOUBIT Women Wedge Shoes Breathable Mesh Sneakers Slip On Comfort Walking Shoes"
+            },
+            {
+              "asin": "B07C2MK6QX",
+              "title": "Dreamcity Women's Water Shoes Athletic Sport Lightweight Walking Shoes"
+            },
+            {
+              "asin": "B07C2QCD89",
+              "title": "Dreamcity Women's Water Shoes Athletic Sport Lightweight Walking Shoes"
+            }
+          ],
+          "warning": null
+        },
+        {
+          "turn": 2,
+          "shopper": "I don't have an additional preference for material.",
+          "clues": [],
+          "phrases": [
+            "athletic walking lightweight responsive",
+            "walking lightweight responsive ultra",
+            "have additional preference material",
+            "lightweight responsive ultra go"
+          ],
+          "narrowing": {
+            "steps": [
+              {
+                "label": "catalogue",
+                "count": 50000
+              },
+              {
+                "label": "category",
+                "count": 342
+              },
+              {
+                "label": "1 requirement",
+                "count": 342
+              },
+              {
+                "label": "2 requirements",
+                "count": 170
+              },
+              {
+                "label": "3 requirements",
+                "count": 170
+              }
+            ],
+            "text": "50,000 -> 342 (category) -> 342 (1 requirement) -> 170 (2 requirements) -> 170 (3 requirements)",
+            "empty": false
+          },
+          "candidates": [
+            {
+              "rank": 1,
+              "asin": "B0B4YZ2PGL",
+              "title": "Skechers Men's Max Fairway 3 Arch Fit Spikeless Golf Shoe Sneaker",
+              "score": 12.1703,
+              "target": false
+            },
+            {
+              "rank": 2,
+              "asin": "B07WMVBHLC",
+              "title": "Skechers Men's GO Evolution Ultra-Splinter Performance Walking Shoe Sneaker",
+              "score": 11.9514,
+              "target": false
+            },
+            {
+              "rank": 3,
+              "asin": "B0BGM1R72N",
+              "title": "Ryka Women's Balance Oxford",
+              "score": 11.6118,
+              "target": false
+            }
+          ],
+          "gap": 0.2189,
+          "confidence": "unsure (gaps under 1 were right 12% of the time)",
+          "rollouts": {
+            "questions": [
+              {
+                "attribute": "budget",
+                "value": 0.7919
+              },
+              {
+                "attribute": "color",
+                "value": 0.7889
+              },
+              {
+                "attribute": "feature",
+                "value": 0.7867
+              },
+              {
+                "attribute": "use_case",
+                "value": 0.7804
+              },
+              {
+                "attribute": "brand",
+                "value": 0.7706
+              },
+              {
+                "attribute": "style",
+                "value": 0.758
+              },
+              {
+                "attribute": "other",
+                "value": 0.7547
+              },
+              {
+                "attribute": "size",
+                "value": 0.7492
+              },
+              {
+                "attribute": "category",
+                "value": 0.7389
+              }
+            ],
+            "shows": [
+              {
+                "k": 1,
+                "value": 0.8618
+              },
+              {
+                "k": 10,
+                "value": 0.8146
+              }
+            ],
+            "particles": 17,
+            "depth": 4,
+            "chosen_question": "budget",
+            "chosen_show": 1
+          },
+          "decision": {
+            "show": 1,
+            "ask": "budget"
+          },
+          "published": [
+            {
+              "asin": "B0B4YZ2PGL",
+              "title": "Skechers Men's Max Fairway 3 Arch Fit Spikeless Golf Shoe Sneaker"
+            }
+          ],
+          "warning": null
+        },
+        {
+          "turn": 3,
+          "shopper": "Actually, ignore my earlier preference. What I need is: Imported.",
+          "clues": [
+            "brand=need"
+          ],
+          "phrases": [
+            "athletic walking lightweight responsive",
+            "walking lightweight responsive ultra",
+            "have additional preference material",
+            "actually ignore earlier preference"
+          ],
+          "narrowing": {
+            "steps": [
+              {
+                "label": "catalogue",
+                "count": 50000
+              },
+              {
+                "label": "category",
+                "count": 342
+              },
+              {
+                "label": "1 requirement",
+                "count": 0
+              }
+            ],
+            "text": "50,000 -> 342 (category) -> 0 (1 requirement)   [nothing satisfies all of them - which is why we score, never filter]",
+            "empty": true
+          },
+          "candidates": [
+            {
+              "rank": 1,
+              "asin": "B08SH8GF6K",
+              "title": "Skechers Women's Go Walk 6-Big Splash Sneaker",
+              "score": 11.8393,
+              "target": true
+            },
+            {
+              "rank": 2,
+              "asin": "B0BN6CCHB7",
+              "title": "Skechers Men's Go Max-Athletic Air Mesh Slip on Walking Shoe Sneaker",
+              "score": 9.2541,
+              "target": false
+            },
+            {
+              "rank": 3,
+              "asin": "B08GGXMPNP",
+              "title": "Skechers Women's Go Walk Smart Deco Lace Slip on Sneaker",
+              "score": 8.4471,
+              "target": false
+            }
+          ],
+          "gap": 2.5852,
+          "confidence": "likely (60%)",
+          "rollouts": {
+            "questions": [
+              {
+                "attribute": "material",
+                "value": 0.7896
+              },
+              {
+                "attribute": "feature",
+                "value": 0.7741
+              },
+              {
+                "attribute": "use_case",
+                "value": 0.7544
+              },
+              {
+                "attribute": "category",
+                "value": 0.7511
+              },
+              {
+                "attribute": "color",
+                "value": 0.7376
+              },
+              {
+                "attribute": "brand",
+                "value": 0.7171
+              },
+              {
+                "attribute": "other",
+                "value": 0.7168
+              },
+              {
+                "attribute": "style",
+                "value": 0.7123
+              },
+              {
+                "attribute": "size",
+                "value": 0.7083
+              },
+              {
+                "attribute": "budget",
+                "value": 0.662
+              }
+            ],
+            "shows": [
+              {
+                "k": 1,
+                "value": 0.9312
+              },
+              {
+                "k": 10,
+                "value": 0.9254
+              }
+            ],
+            "particles": 18,
+            "depth": 4,
+            "chosen_question": "material",
+            "chosen_show": 1
+          },
+          "decision": {
+            "show": 1,
+            "ask": "material"
+          },
+          "published": [
+            {
+              "asin": "B08SH8GF6K",
+              "title": "Skechers Women's Go Walk 6-Big Splash Sneaker"
+            }
+          ],
+          "warning": null,
+          "hit_rank": 1
+        }
+      ]
+    },
+    {
+      "sample_id": "public_0089",
+      "opening": "I'm looking for Panties Briefs. Elastic closure",
+      "turn1_shown": 1,
+      "turn1_gap": 0.6712487919968737,
+      "hit_turn": 3,
+      "hit_rank": 1,
+      "scenario_type": "intent_override",
+      "difficulty": "hard",
+      "target": "B0BXMCZLZV",
+      "target_title": "Vanity Fair Women's Perfectly Yours High Waisted Brief Panties",
+      "turns": [
+        {
+          "turn": 1,
+          "shopper": "I'm looking for Panties Briefs. Elastic closure",
+          "clues": [
+            "category=panties briefs"
+          ],
+          "phrases": [
+            "panties briefs elastic closure",
+            "panties briefs elastic",
+            "briefs elastic closure",
+            "elastic closure"
+          ],
+          "narrowing": {
+            "steps": [
+              {
+                "label": "catalogue",
+                "count": 50000
+              },
+              {
+                "label": "category",
+                "count": 44
+              },
+              {
+                "label": "1 requirement",
+                "count": 44
+              }
+            ],
+            "text": "50,000 -> 44 (category) -> 44 (1 requirement)",
+            "empty": false
+          },
+          "candidates": [
+            {
+              "rank": 1,
+              "asin": "B07X9V6HZX",
+              "title": "POKARLA Women's High Waisted Cotton Underwear Soft Breathable Panties Stretch Briefs Regular & Plus Size 5-Pack",
+              "score": 16.7705,
+              "target": false
+            },
+            {
+              "rank": 2,
+              "asin": "B0BXMCZLZV",
+              "title": "Vanity Fair Women's Perfectly Yours High Waisted Brief Panties",
+              "score": 16.0993,
+              "target": true
+            },
+            {
+              "rank": 3,
+              "asin": "B07PYB8F1G",
+              "title": "Hanes Women's Signature Breathe Cotton Brief Underwear 6-Pack",
+              "score": 14.3128,
+              "target": false
+            }
+          ],
+          "gap": 0.6712,
+          "confidence": "unsure (gaps under 1 were right 12% of the time)",
+          "rollouts": {
+            "questions": [
+              {
+                "attribute": "material",
+                "value": 0.9219
+              },
+              {
+                "attribute": "feature",
+                "value": 0.9183
+              },
+              {
+                "attribute": "brand",
+                "value": 0.8991
+              },
+              {
+                "attribute": "style",
+                "value": 0.8872
+              },
+              {
+                "attribute": "use_case",
+                "value": 0.8856
+              },
+              {
+                "attribute": "budget",
+                "value": 0.8818
+              },
+              {
+                "attribute": "category",
+                "value": 0.8769
+              },
+              {
+                "attribute": "color",
+                "value": 0.8755
+              },
+              {
+                "attribute": "size",
+                "value": 0.8722
+              },
+              {
+                "attribute": "other",
+                "value": 0.8602
+              }
+            ],
+            "shows": [
+              {
+                "k": 1,
+                "value": 0.9745
+              },
+              {
+                "k": 10,
+                "value": 0.9256
+              }
+            ],
+            "particles": 6,
+            "depth": 4,
+            "chosen_question": "material",
+            "chosen_show": 1
+          },
+          "decision": {
+            "show": 1,
+            "ask": "material"
+          },
+          "published": [
+            {
+              "asin": "B07X9V6HZX",
+              "title": "POKARLA Women's High Waisted Cotton Underwear Soft Breathable Panties Stretch Briefs Regular & Plus Size 5-Pack"
+            }
+          ],
+          "warning": null
+        },
+        {
+          "turn": 2,
+          "shopper": "For that, what matters is: nylon; 100% Nylon.",
+          "clues": [
+            "material=nylon"
+          ],
+          "phrases": [
+            "panties briefs elastic closure",
+            "matters nylon 100 nylon",
+            "what matters nylon 100",
+            "panties briefs elastic"
+          ],
+          "narrowing": {
+            "steps": [
+              {
+                "label": "catalogue",
+                "count": 50000
+              },
+              {
+                "label": "category",
+                "count": 44
+              },
+              {
+                "label": "1 requirement",
+                "count": 44
+              },
+              {
+                "label": "2 requirements",
+                "count": 10
+              },
+              {
+                "label": "3 requirements",
+                "count": 0
+              }
+            ],
+            "text": "50,000 -> 44 (category) -> 44 (1 requirement) -> 10 (2 requirements) -> 0 (3 requirements)   [nothing satisfies all of them - which is why we score, never filter]",
+            "empty": true
+          },
+          "candidates": [
+            {
+              "rank": 1,
+              "asin": "B0BXMCZLZV",
+              "title": "Vanity Fair Women's Perfectly Yours High Waisted Brief Panties",
+              "score": 19.204,
+              "target": true
+            },
+            {
+              "rank": 2,
+              "asin": "B07PYB8F1G",
+              "title": "Hanes Women's Signature Breathe Cotton Brief Underwear 6-Pack",
+              "score": 13.6732,
+              "target": false
+            },
+            {
+              "rank": 3,
+              "asin": "B008V1XNSG",
+              "title": "Anigan StainFree Brief Leakproof Protection Menstrual Period Panty",
+              "score": 13.4297,
+              "target": false
+            }
+          ],
+          "gap": 5.5308,
+          "confidence": "confident (gaps this wide were right 100% of the time)",
+          "rollouts": {
+            "questions": [
+              {
+                "attribute": "material",
+                "value": 0.8116
+              },
+              {
+                "attribute": "category",
+                "value": 0.7546
+              },
+              {
+                "attribute": "color",
+                "value": 0.7384
+              },
+              {
+                "attribute": "feature",
+                "value": 0.7299
+              },
+              {
+                "attribute": "use_case",
+                "value": 0.7117
+              },
+              {
+                "attribute": "style",
+                "value": 0.7083
+              },
+              {
+                "attribute": "brand",
+                "value": 0.6384
+              },
+              {
+                "attribute": "budget",
+                "value": 0.6383
+              },
+              {
+                "attribute": "other",
+                "value": 0.6165
+              },
+              {
+                "attribute": "size",
+                "value": 0.5966
+              }
+            ],
+            "shows": [
+              {
+                "k": 1,
+                "value": 0.9623
+              },
+              {
+                "k": 10,
+                "value": 0.9578
+              }
+            ],
+            "particles": 25,
+            "depth": 4,
+            "chosen_question": "material",
+            "chosen_show": 1
+          },
+          "decision": {
+            "show": 1,
+            "ask": "material"
+          },
+          "published": [
+            {
+              "asin": "B0BXMCZLZV",
+              "title": "Vanity Fair Women's Perfectly Yours High Waisted Brief Panties"
+            }
+          ],
+          "warning": null
+        },
+        {
+          "turn": 3,
+          "shopper": "Actually, ignore my earlier preference. What I need is: nylon.",
+          "clues": [
+            "material=nylon",
+            "brand=need"
+          ],
+          "phrases": [
+            "actually ignore earlier preference",
+            "panties briefs elastic closure",
+            "ignore earlier preference what",
+            "earlier preference what need"
+          ],
+          "narrowing": {
+            "steps": [
+              {
+                "label": "catalogue",
+                "count": 50000
+              },
+              {
+                "label": "category",
+                "count": 44
+              },
+              {
+                "label": "1 requirement",
+                "count": 10
+              },
+              {
+                "label": "2 requirements",
+                "count": 0
+              }
+            ],
+            "text": "50,000 -> 44 (category) -> 10 (1 requirement) -> 0 (2 requirements)   [nothing satisfies all of them - which is why we score, never filter]",
+            "empty": true
+          },
+          "candidates": [
+            {
+              "rank": 1,
+              "asin": "B0BXMCZLZV",
+              "title": "Vanity Fair Women's Perfectly Yours High Waisted Brief Panties",
+              "score": 16.4923,
+              "target": true
+            },
+            {
+              "rank": 2,
+              "asin": "B07X9V6HZX",
+              "title": "POKARLA Women's High Waisted Cotton Underwear Soft Breathable Panties Stretch Briefs Regular & Plus Size 5-Pack",
+              "score": 13.0133,
+              "target": false
+            },
+            {
+              "rank": 3,
+              "asin": "B008V1XNSG",
+              "title": "Anigan StainFree Brief Leakproof Protection Menstrual Period Panty",
+              "score": 12.4595,
+              "target": false
+            }
+          ],
+          "gap": 3.479,
+          "confidence": "likely (52%)",
+          "rollouts": {
+            "questions": [
+              {
+                "attribute": "use_case",
+                "value": 0.7225
+              },
+              {
+                "attribute": "material",
+                "value": 0.7155
+              },
+              {
+                "attribute": "feature",
+                "value": 0.7018
+              },
+              {
+                "attribute": "color",
+                "value": 0.6988
+              },
+              {
+                "attribute": "category",
+                "value": 0.6875
+              },
+              {
+                "attribute": "style",
+                "value": 0.6827
+              },
+              {
+                "attribute": "brand",
+                "value": 0.6807
+              },
+              {
+                "attribute": "other",
+                "value": 0.6581
+              },
+              {
+                "attribute": "size",
+                "value": 0.6213
+              },
+              {
+                "attribute": "budget",
+                "value": 0.5763
+              }
+            ],
+            "shows": [
+              {
+                "k": 1,
+                "value": 0.9301
+              },
+              {
+                "k": 10,
+                "value": 0.9296
+              }
+            ],
+            "particles": 27,
+            "depth": 4,
+            "chosen_question": "use_case",
+            "chosen_show": 1
+          },
+          "decision": {
+            "show": 1,
+            "ask": "use_case"
+          },
+          "published": [
+            {
+              "asin": "B0BXMCZLZV",
+              "title": "Vanity Fair Women's Perfectly Yours High Waisted Brief Panties"
+            }
+          ],
+          "warning": null,
+          "hit_rank": 1
+        }
+      ]
+    }
+  ]
+}

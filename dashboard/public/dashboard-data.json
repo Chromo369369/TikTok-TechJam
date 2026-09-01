@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T18:14:55.183Z",
+  "generatedAt": "2026-09-01T02:21:09.184Z",
   "archiveAvailable": false,
   "experiments": [
     {
@@ -218,6 +218,116 @@
       "file": "experiments/TEMPLATE.md",
       "title": "E### — Name",
       "excerpt": "# E### — Name ## Question ## Hypothesis ## Baseline ## Change ## Everything else Unchanged. ## Expected ## Results - Hit Rate@10: - MRR: - MTTC: - Technical score: - Buying: - Browsing: - Intent override: - Boundary: ## Internal diagnostics - Repeats suppressed: - Unique products shown: - Average candidates considered: - Overrides detected: ## Observations ## Failure cases and taxonomy - RETRIEVAL_MISS: - RERANK_FAILURE: - STATE_ERROR: - OVERRIDE_ERROR: - BAD_QUESTION: - REPEAT_WASTE: - HARD_CONSTRAINT_VIOLATION: - AMBIGUOUS_QUERY: ## Conclusion KEEP / REJECT / RETEST / INCONCLUSIVE ## Next experiment "
+    },
+    {
+      "file": "experiments/haoen_experiments/00-INDEX.md",
+      "title": "TechJam Experiment Record — Index",
+      "excerpt": "# TechJam Experiment Record — Index > This note explains how to build an agent that jointly maximizes Hit Rate@10, MRR, and MTTC/Efficiency (and, as a bonus, drives reported token usage to zero) for the TechJam Conversational E-Commerce Search Challenge. It also documents a reference implementation, `starter/agent.py`, and the measured effect of each design decision against the shipped baseline. Every experiment trialled on this agent, split from `REPORT.md` into one file each. Ordered chronologically; the score column is the end-to-end Technical Score on the 200-session public set after that change was deployed. | # | Experiment | Score | Delta | Decision | |---|---|---:|---:|---| | 01 | [T"
+    },
+    {
+      "file": "experiments/haoen_experiments/01-scoring-function-strategy.md",
+      "title": "The scoring function determines the strategy",
+      "excerpt": "--- experiment: \"01\" title: \"The scoring function determines the strategy\" type: context technical_score: n/a delta: n/a decision: \"Reference\" summary: \"Why all three metric terms reward the same behaviour\" source: \"REPORT.md\" --- # The scoring function determines the strategy Every one of these terms rewards the same underlying behavior at different resolutions. Hit Rate@10 only cares whether the target ever lands in a top-10 list across the ten turns, so it is maximized by casting as wide a net as possible over the session. MRR additionally rewards ranking the target near the top of the list the turn it is found, so precision matters once recall is likely. MTTC rewards finding it in as few"
+    },
+    {
+      "file": "experiments/haoen_experiments/02-evaluator-as-specification.md",
+      "title": "The evaluator's rules are public — read them as a specification, not just a test harness",
+      "excerpt": "--- experiment: \"02\" title: \"The evaluator's rules are public — read them as a specification, not just a test harness\" type: context technical_score: n/a delta: n/a decision: \"Reference\" summary: \"Four exploitable facts in the public evaluator source\" source: \"REPORT.md\" --- # The evaluator's rules are public — read them as a specification, not just a test harness `evaluator/local_evaluator.py` is not a black box; it is the exact deterministic policy that plays the simulated customer, and the organizer states final judging reuses \"the deterministic local evaluator\" against a private 800-session split. Three details in that file change the optimal strategy substantially: **`ask_attribute=\"oth"
+    },
+    {
+      "file": "experiments/haoen_experiments/03-reference-architecture.md",
+      "title": "Reference architecture (`starter/agent.py`)",
+      "excerpt": "--- experiment: \"03\" title: \"Reference architecture (`starter/agent.py`)\" type: architecture technical_score: 0.813 delta: +0.71 vs baseline decision: \"Adopted\" summary: \"Cumulative constraint state replacing per-turn amnesia\" source: \"REPORT.md\" --- # Reference architecture (`starter/agent.py`) The reference implementation keeps the baseline's zero-dependency approach — pure Python standard library, an in-memory SQLite FTS5 index over the catalog, no network calls — and adds two structural layers on top of it: a cumulative constraint state (fixing the baseline's state amnesia), and a **reverse phrase index** that white-box-models the customer simulator itself. The shipped baseline's core bu"
+    },
+    {
+      "file": "experiments/haoen_experiments/04-reverse-phrase-index.md",
+      "title": "The reverse phrase index",
+      "excerpt": "--- experiment: \"04\" title: \"The reverse phrase index\" type: experiment technical_score: 0.878 delta: +0.065 decision: \"Adopted\" summary: \"Invert intent_card() over all 50k products; exact reverse lookup\" source: \"REPORT.md\" --- # The reverse phrase index `data/public_set.jsonl` ships no `intent_card`/`behavior` fields at all — `materialize_hidden_fields` always derives them from `intent_card(ground_truth_product)` / `behavior_for(...)`, even for local dev sessions. Combined with the organizer's stated reuse of this same evaluator for the private 800-session split, that means the customer's utterances are not natural language to be parsed fuzzily — they are **verbatim substrings of the targe"
+    },
+    {
+      "file": "experiments/haoen_experiments/05-confidence-guard-gambling-strategy.md",
+      "title": "The rank-quality confidence guard",
+      "excerpt": "--- experiment: \"05\" title: \"The rank-quality confidence guard\" type: experiment technical_score: 0.929 delta: +0.051 decision: \"Adopted\" summary: \"THE OPTIMISED GAMBLING STRATEGY: withhold a weak-rank guess, spend a turn for a better rank\" source: \"REPORT.md\" --- # The rank-quality confidence guard A session ends the instant the target first appears in the returned top-10, at whatever rank it was given. Empirically, this created a bad trade on early turns: the very first disclosed constraint is disproportionately likely to be one of those common material/colour words, so a target *could* already be recoverable via BM25 + weak priors (category, rating) on turn 1 — but only at a mediocre rank"
+    },
+    {
+      "file": "experiments/haoen_experiments/06-measured-effect-progression.md",
+      "title": "Measured effect",
+      "excerpt": "--- experiment: \"06\" title: \"Measured effect\" type: results technical_score: n/a delta: n/a decision: \"Reference\" summary: \"Full baseline-to-current score progression table\" source: \"REPORT.md\" --- # Measured effect Measured against the real 50,000-product catalog (`data/catalog.jsonl`) and the real 200-session public set, via the unmodified `evaluator/local_evaluator.py`. | Metric | Shipped baseline (weak BM25) | Constraint-state + BM25 | + Reverse phrase index | + Confidence guard | + Learned re-ranker (v1) | + Multi-phrase evidence + determinism fix (v2) | + TF-IDF cosine \"vector similarity\" (v3) | + L2 re-tune (v4) | + Override-gating harvest fix (v5) | + Listwise objective (stabilized, "
+    },
+    {
+      "file": "experiments/haoen_experiments/07-learned-reranker-v1.md",
+      "title": "The learned re-ranker",
+      "excerpt": "--- experiment: \"07\" title: \"The learned re-ranker\" type: experiment technical_score: 0.940 delta: +0.011 decision: \"Adopted\" summary: \"20-feature logistic reranker, target-disjoint 5-fold OOF\" source: \"REPORT.md\" --- # The learned re-ranker `Agent._score` was a hand-tuned linear formula (fixed weights like \"+3.0 for a material match, +2.5 for a colour match\"). Once Hit Rate@10 hit 1.000, the only headroom left was in *ordering* the candidates already being retrieved -- confirmed directly by an isolated ranking-only diagnostic: sorting each session's already-harvested candidate pool by the old hand-tuned formula put the true target at rank 1 in only 43/200 sessions and in the top 10 in 100/2"
+    },
+    {
+      "file": "experiments/haoen_experiments/08-multi-phrase-evidence-determinism-fix.md",
+      "title": "Multi-phrase evidence, and a determinism bug fixed along the way",
+      "excerpt": "--- experiment: \"08\" title: \"Multi-phrase evidence, and a determinism bug fixed along the way\" type: experiment technical_score: 0.942 delta: +0.002 decision: \"Adopted\" summary: \"Joint phrase evidence; fixed PYTHONHASHSEED nondeterminism\" source: \"REPORT.md\" --- # Multi-phrase evidence, and a determinism bug fixed along the way The `public_0092` regression above pointed at a real architectural gap. `exact_scores` dampens a revealed phrase's weight by its own fanout (`_EXACT_HIT_WEIGHT / len(hits)`) so a single common phrase can't dominate the ranking -- correct in isolation, but it also throws away *joint* evidence: a candidate that genuinely matches several independently common phrases at o"
+    },
+    {
+      "file": "experiments/haoen_experiments/09-tfidf-cosine-vector-similarity.md",
+      "title": "TF-IDF cosine similarity: closing the \"vector similarity\" gap",
+      "excerpt": "--- experiment: \"09\" title: \"TF-IDF cosine similarity: closing the \"vector similarity\" gap\" type: experiment technical_score: 0.945456 delta: +0.0035 decision: \"Adopted\" summary: \"Pure-stdlib TF-IDF cosine closing the vector-similarity gap\" source: \"REPORT.md\" --- # TF-IDF cosine similarity: closing the \"vector similarity\" gap `problem.md` (the underlying hackathon brief) specifies a hybrid retrieval pipeline combining \"keyword, category, and vector similarity\" -- the agent had the first two (BM25, the category index) but nothing resembling the third; retrieval and ranking were entirely lexical/exact-match. Embeddings and a real vector index are out of scope by the brief's own constraints (\""
+    },
+    {
+      "file": "experiments/haoen_experiments/10-problem-md-pillar-coverage.md",
+      "title": "Addressing `problem.md`'s other pillars",
+      "excerpt": "--- experiment: \"10\" title: \"Addressing `problem.md`'s other pillars\" type: analysis technical_score: n/a delta: n/a decision: \"Documented\" summary: \"Honest non-coverage of dual-track routing and long-term profiles\" source: \"REPORT.md\" --- # Addressing `problem.md`'s other pillars Beyond the vector-similarity gap closed above, `problem.md` names three other things worth flagging honestly rather than silently claiming coverage. **Dual-track Buying/Browsing routing** (Pillar I) is deliberately *not* implemented as a hard pipeline switch: the evaluator's own `initial_message` uses an identical vague template for Browsing and Intent Override sessions, so a classifier can't reliably tell them apa"
+    },
+    {
+      "file": "experiments/haoen_experiments/11-over-generality-structured-clarification.md",
+      "title": "Over-Generality detection and structured clarification",
+      "excerpt": "--- experiment: \"11\" title: \"Over-Generality detection and structured clarification\" type: experiment technical_score: 0.945456 delta: 0.000 decision: \"Partially adopted\" summary: \"Pool-size gate was a no-op; confident_count is the real signal\" source: \"REPORT.md\" --- # Over-Generality detection and structured clarification Pillar II asks to \"trigger an immediate retrieval cutoff when facing Over-Generality (candidate pool overload) to actively generate structured, proactive clarification prompts.\" The first attempt at this gated the existing confidence guard on raw candidate-pool size (`len(Agent._ranked(state))`), on the theory that a small pool means guessing isn't a wild stab. Measuring "
+    },
+    {
+      "file": "experiments/haoen_experiments/12-l2-regularization-retune.md",
+      "title": "Re-tuning `SCORE_WEIGHTS`'s regularization strength",
+      "excerpt": "--- experiment: \"12\" title: \"Re-tuning `SCORE_WEIGHTS`'s regularization strength\" type: experiment technical_score: 0.945854 delta: +0.0004 decision: \"Adopted\" summary: \"L2 3.0 to 50 after feature count grew to 22\" source: \"REPORT.md\" --- # Re-tuning `SCORE_WEIGHTS`'s regularization strength Every prior fit used `L2_LAMBDA = 3.0`, chosen when the model had 20 features and the sweep across it looked flat. With 22 features now (`distinct_phrase_match_count` and `tfidf_cosine` added since), there's more redundancy between features that a fixed L2 doesn't account for (`exact_score` vs `has_exact_evidence`, `category_hit` vs `category_specificity`) -- worth re-sweeping rather than assuming the ol"
+    },
+    {
+      "file": "experiments/haoen_experiments/13-feature-audit-override-gating-bug.md",
+      "title": "Feature audit: a real training bug, and a structurally dead feature",
+      "excerpt": "--- experiment: \"13\" title: \"Feature audit: a real training bug, and a structurally dead feature\" type: experiment technical_score: 0.948464 delta: +0.0026 decision: \"Adopted\" summary: \"Found override_hit untrainable: harvest missed the override gate\" source: \"REPORT.md\" --- # Feature audit: a real training bug, and a structurally dead feature Asked directly whether the reorder algorithm was \"fully optimized,\" the honest answer was no -- among other gaps, several `SCORE_WEIGHTS` entries sat at exactly 0.0 (`substring_hit`, `budget_score`, `has_budget_context`, `override_hit`), worth auditing rather than assuming they're either fine or wasted. Measured each feature's activation rate across th"
+    },
+    {
+      "file": "experiments/haoen_experiments/14-listwise-ranking-objective.md",
+      "title": "Listwise ranking objective",
+      "excerpt": "--- experiment: \"14\" title: \"Listwise ranking objective\" type: experiment technical_score: 0.951089 delta: +0.0026 decision: \"Adopted\" summary: \"Pointwise to ListNet/Plackett-Luce softmax cross-entropy\" source: \"REPORT.md\" --- # Listwise ranking objective The other open question from the \"fully optimized?\" audit was the training objective itself: `fit_logistic` is *pointwise* -- every (candidate, session) row is scored as an independent binary classification, a proxy for what actually matters (the target's rank within its own session), not the thing itself. Since every session here has exactly one relevant candidate, the natural listwise alternative collapses to a clean, tractable special ca"
+    },
+    {
+      "file": "experiments/haoen_experiments/15-bm25-field-weights-and-stability.md",
+      "title": "BM25 field weights, and a numerical-stability bug caught in the process",
+      "excerpt": "--- experiment: \"15\" title: \"BM25 field weights, and a numerical-stability bug caught in the process\" type: experiment technical_score: 0.951339 delta: +0.0003 decision: \"Rejected + stability fix\" summary: \"Reweighting is noise; found L2=2.0 instability cliff\" source: \"REPORT.md\" --- # BM25 field weights, and a numerical-stability bug caught in the process The `bm25(products, 0.0, 6.0, 4.0, 2.5, 2.5, 1.5, 1.0)` per-column weights in `_candidate_pool` (title/categories/features/details/store/description) were the original hand-picked baseline values, never revisited despite every downstream layer (the re-ranker, its regularization, its objective) going through multiple tuning rounds. Extracte"
+    },
+    {
+      "file": "experiments/haoen_experiments/16-fold-assignment-robustness-check.md",
+      "title": "Fold-assignment robustness check",
+      "excerpt": "--- experiment: \"16\" title: \"Fold-assignment robustness check\" type: validation technical_score: 0.950725 delta: n/a decision: \"Validated\" summary: \"Six seeds; tuning seed sits mid-range, no split overfit\" source: \"REPORT.md\" --- # Fold-assignment robustness check Every OOF validation in this report -- across the L2 sweeps, the listwise objective, the override-gating fix, the BM25 comparison -- used the same 5-fold target-product-disjoint split (`RNG_SEED = 20260829`). Individually each round validated correctly against genuinely held-out folds, but after this many cumulative tuning decisions against one fixed split, there's a real risk the whole pipeline quietly overfit to that split's part"
+    },
+    {
+      "file": "experiments/haoen_experiments/17-ask-order-dead-attribute.md",
+      "title": "A dead attribute removed from the clarification fallback",
+      "excerpt": "--- experiment: \"17\" title: \"A dead attribute removed from the clarification fallback\" type: experiment technical_score: 0.951339 delta: 0.000 decision: \"Adopted (defensive)\" summary: \"Removed budget from fallback cycle; simulator can never disclose it\" source: \"REPORT.md\" --- # A dead attribute removed from the clarification fallback `ASK_ORDER`, the specific-attribute cycle `_choose_attribute` falls back to if generic `\"other\"` probing stalls for three turns straight, still listed `\"budget\"` -- the exact attribute the feature audit already proved the simulator can never disclose on this catalog (`_sim_intent_card` always appends the budget phrase last among a product's candidate list, so i"
+    },
+    {
+      "file": "experiments/haoen_experiments/18-constant-sweeps-category-pool-cap.md",
+      "title": "Sweeping the hand-picked constants",
+      "excerpt": "--- experiment: \"18\" title: \"Sweeping the hand-picked constants\" type: experiment technical_score: 0.956250 delta: +0.0049 decision: \"Adopted\" summary: \"BIGGEST LEVER: _CATEGORY_POOL_CAP 300 to 5\" source: \"REPORT.md\" --- # Sweeping the hand-picked constants Every remaining magic number in the file that had never been revisited since introduction got extracted into a named constant and swept: `_BM25_POOL_LIMIT` (150, `_candidate_pool`'s recall cap), `_CATEGORY_POOL_CAP` (300, category-index candidates unioned into the pool), `_EXACT_HIT_MAX_FANOUT` (300, the exact-phrase weighted-tier cutoff), `_TFIDF_TOP_K` (40, per-vector term cap), and the stagnant-turn rotation's `_ROTATION_STABLE_COUNT`/"
+    },
+    {
+      "file": "experiments/haoen_experiments/19-feature-interaction-terms.md",
+      "title": "Feature-interaction terms",
+      "excerpt": "--- experiment: \"19\" title: \"Feature-interaction terms\" type: experiment technical_score: 0.956500 delta: +0.00025 decision: \"Adopted\" summary: \"Six pairwise interactions; hypothesis on sign was wrong\" source: \"REPORT.md\" --- # Feature-interaction terms The model is a linear (listwise softmax) classifier, so it can only combine `_extract_features`'s 22 signals additively -- it can't natively express \"category correctness matters more when combined with strong exact-phrase evidence\" without that product being handed to it as its own column. Added six hand-picked pairwise interaction terms rather than an exhaustive combinatorial sweep (with only ~200 positive training examples, `21*20/2 = 210`"
+    },
+    {
+      "file": "experiments/haoen_experiments/20-subphrase-indexing-reverted.md",
+      "title": "Sub-phrase indexing: tried, measured, reverted",
+      "excerpt": "--- experiment: \"20\" title: \"Sub-phrase indexing: tried, measured, reverted\" type: experiment technical_score: 0.956500 delta: 0.000 decision: \"Reverted\" summary: \"Real signal, 11x lift on positives, never changed an outcome\" source: \"REPORT.md\" --- # Sub-phrase indexing: tried, measured, reverted The last untried candidate from the original \"fully optimized?\" audit. The initial concern going in was whether decomposing a revealed phrase into shorter windows could even help: for a short compositional string like `\"95% Polyester, 5% Spandex\"`, a sub-window is generally *more* common than the whole phrase, not less (e.g. \"95% Polyester\" alone matches far more products than the full three-ingred"
+    },
+    {
+      "file": "experiments/haoen_experiments/21-ceiling-analysis-098-target.md",
+      "title": "Where this leaves the 0.98 target",
+      "excerpt": "--- experiment: \"21\" title: \"Where this leaves the 0.98 target\" type: analysis technical_score: 0.956500 delta: n/a decision: \"Conclusion\" summary: \"Why 0.98 is structurally out of reach: MTTC floor ~1.9\" source: \"REPORT.md\" --- # Where this leaves the 0.98 target 0.9565 is a real, validated gain over the 0.929 hand-tuned baseline -- the closest this project has come to the 0.98 target -- but reaching 0.98 itself still requires getting very close to this scenario mix's actual ceiling, not just improving on the margin. At Hit Rate@10 = MRR = 1.0, hitting a technical score of 0.98 requires MTTC ≈ 2.16; at HR = 0.99, it requires MTTC below 2.0. Structural floors push the other way: Intent Overr"
     }
   ],
   "diagnostics": [],

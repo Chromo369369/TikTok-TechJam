@@ -32,6 +32,9 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import datetime
+import json
+import os
 import random
 import sys
 import textwrap
@@ -212,20 +215,30 @@ def clues_in(agent: Agent, message: str) -> list[str]:
     return found
 
 
-def narrowing(agent: Agent, state: dict) -> str:
-    """How far the evidence held so far cuts the catalogue down."""
-    total = len(agent._all_ids)
-    parts = [f"{total:,}"]
+def narrowing_steps(agent: Agent, state: dict) -> list[dict]:
+    """How far the evidence held so far cuts the catalogue down, step by step."""
+    steps = [{"label": "catalogue", "count": len(agent._all_ids)}]
     pool = None
     if state["category_rows"]:
         pool = set(state["category_rows"])
-        parts.append(f"{len(pool):,} (category)")
+        steps.append({"label": "category", "count": len(pool)})
     for index, (_attr, asins) in enumerate(state["constraints"][:3], start=1):
         pool = set(asins) if pool is None else (pool & set(asins))
         noun = "requirement" if index == 1 else "requirements"
-        parts.append(f"{len(pool):,} ({index} {noun})")
+        steps.append({"label": f"{index} {noun}", "count": len(pool)})
+    return steps
+
+
+def narrowing_empty(steps: list[dict]) -> bool:
+    return len(steps) > 1 and steps[-1]["count"] == 0
+
+
+def narrowing(agent: Agent, state: dict) -> str:
+    steps = narrowing_steps(agent, state)
+    parts = [f"{steps[0]['count']:,}"]
+    parts += [f"{s['count']:,} ({s['label']})" for s in steps[1:]]
     line = " -> ".join(parts)
-    if pool is not None and not pool:
+    if narrowing_empty(steps):
         line += "   [nothing satisfies all of them - which is why we score, never filter]"
     return line
 
@@ -237,10 +250,12 @@ def narrowing(agent: Agent, state: dict) -> str:
 class Tracer:
     """Runs one session, capturing the planner's inputs before it decides."""
 
-    def __init__(self, agent: Agent, products: dict, catalog_ids: set):
+    def __init__(self, agent: Agent, products: dict, catalog_ids: set,
+                 rollouts: bool = True):
         self.agent = agent
         self.products = products
         self.catalog_ids = catalog_ids
+        self.rollouts = rollouts        # replaying the rollouts roughly doubles planning time
         self.captured = None
         self._real_plan = agent._plan
         agent._plan = self._plan
@@ -250,7 +265,8 @@ class Tracer:
         # but `_recommend` has not yet marked anything shown and `asked` has not
         # yet been incremented.
         self.captured = {
-            "replica": replicate_plan(self.agent, state, context, pool, turn, top_k),
+            "replica": (replicate_plan(self.agent, state, context, pool, turn, top_k)
+                        if self.rollouts else None),
             "ranked": self.agent._ranked_ids(state, AG.WORKING_SET),
             "constraints": list(state["constraints"]),
             "category_rows": state["category_rows"],
@@ -262,9 +278,13 @@ class Tracer:
         self.agent._plan = self._real_plan
 
     def title(self, asin: str) -> str:
-        return short(self.products.get(asin, {}).get("title", asin))
+        return short(self.full_title(asin))
 
-    def run(self, sample: dict, categories: dict, verbose: bool = True) -> dict:
+    def full_title(self, asin: str) -> str:
+        return " ".join(str(self.products.get(asin, {}).get("title", asin)).split())
+
+    def run(self, sample: dict, categories: dict, verbose: bool = True,
+            collect: bool = False) -> dict:
         agent = self.agent
         session_id = f"trace_{sample['sample_id']}"
         agent.reset(session_id, sample["user_profile"])
@@ -282,6 +302,14 @@ class Tracer:
         record = {"sample_id": sample["sample_id"], "opening": message,
                   "turn1_shown": None, "turn1_gap": None,
                   "hit_turn": None, "hit_rank": None}
+        if collect:
+            record.update({
+                "scenario_type": sample["scenario_type"],
+                "difficulty": sample.get("difficulty_bucket"),
+                "target": target,
+                "target_title": self.full_title(target),
+                "turns": [],
+            })
 
         if verbose:
             print("=" * WIDTH)
@@ -302,12 +330,19 @@ class Tracer:
                 if len(scores) > 1:
                     record["turn1_gap"] = scores[0] - scores[1]
 
+            turn_data = None
+            if verbose or collect:
+                turn_data = self.turn_data(turn, message, response, ranked, target)
             if verbose:
-                self.report(turn, message, response, ranked, target)
+                self.report(turn, message, response, ranked, target, turn_data)
+            if collect:
+                record["turns"].append(turn_data)
 
             if override_applied and target in ranked:
                 record["hit_turn"] = turn
                 record["hit_rank"] = ranked.index(target) + 1
+                if collect:
+                    turn_data["hit_rank"] = record["hit_rank"]
                 if verbose:
                     print(f"            -> HIT at rank {record['hit_rank']}\n")
                 break
@@ -333,61 +368,106 @@ class Tracer:
             print("            -> MISS\n")
         return record
 
-    def report(self, turn, message, response, ranked, target):
-        cap = self.captured
-        print(f"=== TURN {turn} ===")
-        print(field("SHOPPER", " ".join(str(message).split())))
-
-        clues = clues_in(self.agent, message)
-        print(field("clues", ", ".join(clues) if clues else "(none extracted)"))
-
-        phrases = (cap or {}).get("phrases") or []
-        if phrases:
-            longest = sorted(phrases, key=lambda p: (-len(p.split()), -len(p)))[:4]
-            print(field("phrases", ", ".join(f'"{p}"' for p in longest)))
+    def turn_data(self, turn, message, response, ranked, target) -> dict:
+        """Everything `report` prints, as data. One dict per turn."""
+        cap = self.captured or {}
+        phrases = cap.get("phrases") or []
+        ask = response.get("ask_attribute")
+        data = {
+            "turn": turn,
+            "shopper": " ".join(str(message).split()),
+            "clues": clues_in(self.agent, message),
+            "phrases": sorted(phrases, key=lambda p: (-len(p.split()), -len(p)))[:4],
+            "narrowing": None,
+            "candidates": [],
+            "gap": None,
+            "confidence": None,
+            "rollouts": None,
+            "decision": {"show": len(ranked), "ask": ask},
+            "published": [{"asin": a, "title": self.full_title(a)} for a in ranked],
+            "warning": None,
+        }
 
         if cap:
             state_view = {"category_rows": cap["category_rows"],
                           "constraints": cap["constraints"]}
-            print(field("narrowed", narrowing(self.agent, state_view)))
-
+            steps = narrowing_steps(self.agent, state_view)
+            data["narrowing"] = {"steps": steps,
+                                 "text": narrowing(self.agent, state_view),
+                                 "empty": narrowing_empty(steps)}
             ids, scores = cap["ranked"]
-            for i, (asin, score) in enumerate(zip(ids[:3], scores[:3]), start=1):
-                mark = "*" if asin == target else " "
-                print(f"  #{i}{mark} {score:7.2f}  {self.title(asin)}")
+            data["candidates"] = [
+                {"rank": i, "asin": asin, "title": self.full_title(asin),
+                 "score": round(score, 4), "target": asin == target}
+                for i, (asin, score) in enumerate(zip(ids[:3], scores[:3]), start=1)
+            ]
             if len(scores) >= 2:
                 gap = scores[0] - scores[1]
-                print(field("gap #1-#2", f"{gap:.2f}  -> {confidence(gap)}"))
+                data["gap"] = round(gap, 4)
+                data["confidence"] = confidence(gap)
 
-        replica = (cap or {}).get("replica")
+        replica = cap.get("replica")
         if replica:
-            best = sorted(replica["questions"].items(), key=lambda kv: -kv[1])[:3]
-            qs = " | ".join(f"ask {AG.ACTIONS[a]} {v:.3f}" for a, v in best)
-            ss = " | ".join(f"show {k} {v:.3f}" for k, v in sorted(replica["shows"].items()))
-            print(field("rollouts", f"{qs}"))
-            print(field("", ss))
-            print(field("", f"({replica['particles']} hypotheses simulated, "
-                            f"{AG.ROLLOUT_DEPTH} turns deep)"))
+            expected_ask = None if replica["action"] is None else AG.ACTIONS[replica["action"]]
+            data["rollouts"] = {
+                "questions": [{"attribute": AG.ACTIONS[a], "value": round(v, 4)}
+                              for a, v in sorted(replica["questions"].items(),
+                                                 key=lambda kv: -kv[1])],
+                "shows": [{"k": k, "value": round(v, 4)}
+                          for k, v in sorted(replica["shows"].items())],
+                "particles": replica["particles"],
+                "depth": AG.ROLLOUT_DEPTH,
+                "chosen_question": expected_ask,
+                "chosen_show": replica["show"],
+            }
+            # Cross-check: the replay reproduced the planner's own inputs, so it
+            # must reach the planner's own decision. If it does not, these
+            # numbers are not the ones the agent acted on.
+            if expected_ask != ask or replica["show"] != len(ranked):
+                data["warning"] = (f"replay disagrees with the agent "
+                                   f"(replay: show {replica['show']}, ask {expected_ask}). "
+                                   f"The rollout numbers above may not be what it used.")
+        return data
 
-        ask = response.get("ask_attribute")
-        decision = (f"show {len(ranked)} product{'s' if len(ranked) != 1 else ''}, "
+    def report(self, turn, message, response, ranked, target, data=None):
+        data = data or self.turn_data(turn, message, response, ranked, target)
+        print(f"=== TURN {turn} ===")
+        print(field("SHOPPER", data["shopper"]))
+        print(field("clues", ", ".join(data["clues"]) if data["clues"] else "(none extracted)"))
+        if data["phrases"]:
+            print(field("phrases", ", ".join(f'"{p}"' for p in data["phrases"])))
+
+        if data["narrowing"]:
+            print(field("narrowed", data["narrowing"]["text"]))
+            for c in data["candidates"]:
+                mark = "*" if c["target"] else " "
+                print(f"  #{c['rank']}{mark} {c['score']:7.2f}  {short(c['title'])}")
+            if data["gap"] is not None:
+                print(field("gap #1-#2", f"{data['gap']:.2f}  -> {data['confidence']}"))
+
+        rollouts = data["rollouts"]
+        if rollouts:
+            qs = " | ".join(f"ask {q['attribute']} {q['value']:.3f}"
+                            for q in rollouts["questions"][:3])
+            ss = " | ".join(f"show {s['k']} {s['value']:.3f}" for s in rollouts["shows"])
+            print(field("rollouts", qs))
+            print(field("", ss))
+            print(field("", f"({rollouts['particles']} hypotheses simulated, "
+                            f"{rollouts['depth']} turns deep)"))
+
+        ask = data["decision"]["ask"]
+        shown = data["decision"]["show"]
+        decision = (f"show {shown} product{'s' if shown != 1 else ''}, "
                     + (f'ask "{ask}"' if ask else "ask nothing"))
         print(field("DECISION", decision))
 
-        if replica is not None:
-            # Cross-check: the replay above reproduced the planner's own inputs,
-            # so it must reach the planner's own decision. If it does not, the
-            # numbers printed above are not the ones the agent acted on.
-            expected_ask = None if replica["action"] is None else AG.ACTIONS[replica["action"]]
-            if expected_ask != ask or replica["show"] != len(ranked):
-                print(field("!! WARNING",
-                            f"replay disagrees with the agent "
-                            f"(replay: show {replica['show']}, ask {expected_ask}). "
-                            f"The rollout numbers above may not be what it used."))
+        if data["warning"]:
+            print(field("!! WARNING", data["warning"]))
 
-        if ranked:
-            print(field("published", "; ".join(self.title(a) for a in ranked[:2])
-                        + ("; ..." if len(ranked) > 2 else "")))
+        if data["published"]:
+            print(field("published",
+                        "; ".join(short(p["title"]) for p in data["published"][:2])
+                        + ("; ..." if len(data["published"]) > 2 else "")))
 
 
 # --------------------------------------------------------------------------- #
@@ -455,12 +535,24 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Observational tracer for the shopping agent (does not affect scoring)."
     )
-    parser.add_argument("--session", help="sample_id to trace, e.g. public_0007")
+    parser.add_argument("--session",
+                        help="sample_id(s) to trace, comma-separated, e.g. public_0007")
     parser.add_argument("--find", action="store_true",
                         help="scan all sessions and suggest which to record")
-    parser.add_argument("--catalog", default=str(ROOT / "data" / "catalog.jsonl"))
+    parser.add_argument("--export", metavar="PATH",
+                        help="write the traced sessions to PATH as JSON instead of text "
+                             "(this is what the dashboard reads)")
+    parser.add_argument("--catalog",
+                        default=os.environ.get("TECHJAM_CATALOG")
+                        or str(ROOT / "data" / "catalog.jsonl"),
+                        help="catalogue path; defaults to $TECHJAM_CATALOG, "
+                             "else data/catalog.jsonl")
     parser.add_argument("--dataset", default=str(ROOT / "data" / "public_set.jsonl"))
     args = parser.parse_args()
+
+    if not Path(args.catalog).exists():
+        parser.error(f"no catalogue at {args.catalog}. Download catalog.jsonl.gz from the "
+                     f"GitHub Release into data/, or set TECHJAM_CATALOG / pass --catalog.")
 
     if not args.session and not args.find:
         parser.error("give --session SAMPLE_ID or --find")
@@ -474,9 +566,12 @@ def main() -> None:
         find_sessions(agent, samples, catalog_ids, categories, products)
         return
 
-    wanted = [s["sample_id"] for s in samples]
-    if args.session not in wanted:
-        parser.error(f"no session {args.session!r} in {args.dataset}")
+    available = {s["sample_id"] for s in samples}
+    wanted = [s.strip() for s in args.session.split(",") if s.strip()]
+    for name in wanted:
+        if name not in available:
+            parser.error(f"no session {name!r} in {args.dataset}")
+    remaining = set(wanted)
 
     # Replay every earlier session first, silently. Two pieces of agent state
     # carry across sessions and both change the decision: the session counter
@@ -484,18 +579,40 @@ def main() -> None:
     # learned over the whole run. Tracing a session in isolation therefore shows
     # a decision the scored run never made -- measurably so, not theoretically.
     tracer = Tracer(agent, products, catalog_ids)
+    traced: dict[str, dict] = {}
     try:
         for sample in samples:
-            last = sample["sample_id"] == args.session
-            if not last:
-                print(f"  replaying {sample['sample_id']}...", end="\r", file=sys.stderr)
+            name = sample["sample_id"]
+            traced_now = name in remaining
+            if not traced_now:
+                print(f"  replaying {name}...", end="\r", file=sys.stderr)
             else:
                 print(" " * 40, file=sys.stderr)
-            tracer.run(sample, categories, verbose=last)
-            if last:
+            record = tracer.run(sample, categories,
+                                verbose=traced_now and not args.export,
+                                collect=traced_now and bool(args.export))
+            if traced_now:
+                traced[name] = record
+                remaining.discard(name)
+                if args.export:
+                    print(f"  traced {name}", file=sys.stderr)
+            if not remaining:
                 break
     finally:
         tracer.close()
+
+    if args.export:
+        payload = {
+            "generatedAt": datetime.datetime.now().astimezone().isoformat(),
+            "dataset": Path(args.dataset).name,
+            "catalogSize": len(agent._all_ids),
+            "rolloutDepth": AG.ROLLOUT_DEPTH,
+            "sessions": [traced[name] for name in wanted],
+        }
+        out = Path(args.export)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+        print(f"wrote {out} ({len(payload['sessions'])} sessions)", file=sys.stderr)
 
 
 if __name__ == "__main__":

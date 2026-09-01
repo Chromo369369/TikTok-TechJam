@@ -55,12 +55,12 @@ TITLE_CHARS = 55
 
 def short(text: str, limit: int = TITLE_CHARS) -> str:
     text = " ".join(str(text or "").split())
-    return text if len(text) <= limit else text[: limit - 1].rstrip() + "…"
+    return text if len(text) <= limit else text[: limit - 3].rstrip() + "..."
 
 
 def field(label: str, body: str, width: int = WIDTH) -> str:
     """`label    : body`, wrapped and hanging-indented to stay inside `width`."""
-    head = f"{label:<10}: "
+    head = f"{label:<10}: " if label else " " * 12
     return textwrap.fill(
         body, width=width, initial_indent=head,
         subsequent_indent=" " * len(head), break_long_words=False,
@@ -224,7 +224,10 @@ def narrowing(agent: Agent, state: dict) -> str:
         pool = set(asins) if pool is None else (pool & set(asins))
         noun = "requirement" if index == 1 else "requirements"
         parts.append(f"{len(pool):,} ({index} {noun})")
-    return " -> ".join(parts)
+    line = " -> ".join(parts)
+    if pool is not None and not pool:
+        line += "   [nothing satisfies all of them - which is why we score, never filter]"
+    return line
 
 
 # --------------------------------------------------------------------------- #
@@ -277,7 +280,8 @@ class Tracer:
         )
 
         record = {"sample_id": sample["sample_id"], "opening": message,
-                  "turn1_shown": None, "hit_turn": None, "hit_rank": None}
+                  "turn1_shown": None, "turn1_gap": None,
+                  "hit_turn": None, "hit_rank": None}
 
         if verbose:
             print("=" * WIDTH)
@@ -293,6 +297,10 @@ class Tracer:
                                                   self.catalog_ids)
             if turn == 1:
                 record["turn1_shown"] = len(ranked)
+                cap = self.captured or {}
+                scores = (cap.get("ranked") or ([], []))[1]
+                if len(scores) > 1:
+                    record["turn1_gap"] = scores[0] - scores[1]
 
             if verbose:
                 self.report(turn, message, response, ranked, target)
@@ -335,8 +343,8 @@ class Tracer:
 
         phrases = (cap or {}).get("phrases") or []
         if phrases:
-            shown = ", ".join(f'"{p}"' for p in phrases[-6:])
-            print(field("phrases", shown))
+            longest = sorted(phrases, key=lambda p: (-len(p.split()), -len(p)))[:4]
+            print(field("phrases", ", ".join(f'"{p}"' for p in longest)))
 
         if cap:
             state_view = {"category_rows": cap["category_rows"],
@@ -398,6 +406,15 @@ def find_sessions(agent, samples, catalog_ids, categories, products):
     one = [r for r in records if r["turn1_shown"] == 1 and r["hit_rank"] == 1]
     ten = [r for r in records if r["turn1_shown"] == 10]
 
+    counts: dict[int, int] = {}
+    for r in records:
+        counts[r["turn1_shown"]] = counts.get(r["turn1_shown"], 0) + 1
+    print("=" * WIDTH)
+    print("  TURN-1 LIST LENGTH ACROSS ALL 200 SESSIONS")
+    print("  " + "   ".join(f"published {k}: {v}" for k, v in sorted(counts.items())))
+    print("  (list length is chosen per turn from confidence; these counts move whenever")
+    print("   ranking improves, because a better-ranked leader is a more confident one)")
+
     print("=" * WIDTH)
     print("  CATEGORY 1 - showed ONE product on turn 1 and hit at rank 1")
     print(f"  {len(one)} sessions qualify. Five with the shortest opening message:")
@@ -420,7 +437,13 @@ def find_sessions(agent, samples, catalog_ids, categories, products):
                             initial_indent="    ", subsequent_indent="    "))
 
     print("\n" + "=" * WIDTH)
-    print("  Suggested pairing for the video: one session from each category.")
+    gaps_one = [r["turn1_gap"] for r in records
+                if r["turn1_shown"] == 1 and r["turn1_gap"] is not None]
+    print("  Read the turn-1 gap alongside the list length. The agent publishes TEN when it")
+    print("  is nearly certain -- it converts at rank 1 either way, so ten costs nothing and")
+    print("  eliminates nine more non-targets. It publishes ONE when unsure, to avoid locking")
+    print("  in a bad rank. Median gap when publishing one: %.2f." % (
+        sorted(gaps_one)[len(gaps_one) // 2] if gaps_one else 0.0))
     print("  The contrast is the argument: same agent, same turn, different confidence,")
     print("  different list length. Nothing in the code schedules that.")
     print("=" * WIDTH)
@@ -451,12 +474,26 @@ def main() -> None:
         find_sessions(agent, samples, catalog_ids, categories, products)
         return
 
-    chosen = [s for s in samples if s["sample_id"] == args.session]
-    if not chosen:
+    wanted = [s["sample_id"] for s in samples]
+    if args.session not in wanted:
         parser.error(f"no session {args.session!r} in {args.dataset}")
+
+    # Replay every earlier session first, silently. Two pieces of agent state
+    # carry across sessions and both change the decision: the session counter
+    # seeds the planner's randomness, and the "will they answer this?" tally is
+    # learned over the whole run. Tracing a session in isolation therefore shows
+    # a decision the scored run never made -- measurably so, not theoretically.
     tracer = Tracer(agent, products, catalog_ids)
     try:
-        tracer.run(chosen[0], categories, verbose=True)
+        for sample in samples:
+            last = sample["sample_id"] == args.session
+            if not last:
+                print(f"  replaying {sample['sample_id']}...", end="\r", file=sys.stderr)
+            else:
+                print(" " * 40, file=sys.stderr)
+            tracer.run(sample, categories, verbose=last)
+            if last:
+                break
     finally:
         tracer.close()
 

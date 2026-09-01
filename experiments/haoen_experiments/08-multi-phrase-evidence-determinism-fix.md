@@ -1,0 +1,15 @@
+---
+experiment: "08"
+title: "Multi-phrase evidence, and a determinism bug fixed along the way"
+type: experiment
+technical_score: 0.942
+delta: +0.002
+decision: "Adopted"
+summary: "Joint phrase evidence; fixed PYTHONHASHSEED nondeterminism"
+source: "REPORT.md"
+---
+# Multi-phrase evidence, and a determinism bug fixed along the way
+
+The `public_0092` regression above pointed at a real architectural gap. `exact_scores` dampens a revealed phrase's weight by its own fanout (`_EXACT_HIT_WEIGHT / len(hits)`) so a single common phrase can't dominate the ranking -- correct in isolation, but it also throws away *joint* evidence: a candidate that genuinely matches several independently common phrases at once is still strong evidence, the way weak independent signals combine multiplicatively under naive Bayes. `_absorb_exact_phrase` now also tracks `exact_hit_count` -- an unweighted per-candidate count of how many revealed phrases it matches, regardless of fanout -- feeding a 21st feature, `distinct_phrase_match_count`, and a second admission path into the confidence guard (2+ distinct matches counts as confident, alongside the existing weighted-score path). Refitting with this feature: `public_0092` moved from a full miss to a turn-3/rank-3 hit, Hit Rate@10 returned to 1.000, and MTTC fell from 2.735 to 2.255 (more sessions resolve through the confidence guard rather than waiting for the guard's turn cutoff), for a net technical score of **0.942** -- confirmed on a strict target-disjoint OOF refit too (HR@10 1.000, MRR 0.885, score 0.940, closely tracking the deployed all-development-fit number, i.e. this is a genuine generalizing gain, not a same-data artifact).
+
+Two things worth flagging about how this was built: first, the naive version of this fix unioned *every* phrase-matched candidate into the scoring pool regardless of fanout, which for a phrase like `"Imported"` (13,642 catalog matches) balloned the harvested training set from ~53K to ~475K rows and would have meant scoring thousands of candidates per turn in the deployed agent -- caught before deployment and fixed by keeping `exact_hit_count` as a scoring-only signal for candidates already in the pool via BM25/category/the existing weighted tier, never a pool-membership source itself. Second, `_candidate_pool`, `_absorb_message`, and `_extract_features` had four places that truncated a Python `set` via `list(...)[:N]` -- since `set` iteration order depends on Python's per-process hash randomization (`PYTHONHASHSEED`), which candidates the FTS query and scoring even considered was silently nondeterministic across runs of the *exact same agent code*. Fixed by switching to `sorted()` or an order-preserving `dict.fromkeys()` dedup throughout; verified by running the full evaluator under three different hash seeds and confirming byte-identical results. This was a pre-existing bug (present since the constraint-state revision, not introduced by the re-ranker), and independent of the score gain above, it matters for trusting that a locally-measured score will reproduce during official grading rather than drift with whatever hash seed that run happens to get.
